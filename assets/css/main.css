@@ -3094,9 +3094,13 @@ input, select, textarea {
 }
 
 #header .logo img {
-	height: 110px; /* increased logo height */
+	max-height: 110px; /* make sure it doesn't exceed header */
 	width: auto;
 	display: block;
+	margin: 0;
+	padding: 0;
+	line-height: 0;
+	border: none;
 }
 
 /* Navigation */
@@ -3104,7 +3108,7 @@ input, select, textarea {
 	display: flex;
 	align-items: center;
 	font-family: Raleway, Helvetica, sans-serif;
-	font-size: 0.8em;
+	font-size: 1em; /* increased from 0.8em */
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -3114,11 +3118,12 @@ input, select, textarea {
 /* Menu link */
 #header nav a {
 	display: inline-block;
-	padding: 0 1em;
+	padding: 0 1.2em;
 	text-decoration: none;
 	border: 0;
 	line-height: 1;
 	color: inherit;
+	font-size: 1em; /* match font scaling */
 }
 
 /* Burger icon for mobile menu */
@@ -3126,7 +3131,7 @@ input, select, textarea {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.5em 1.35em;
+	padding: 0.65em 1.5em; /* slightly larger padding */
 	border-radius: 5px;
 	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
 	transition: background-color 0.2s ease-in-out;

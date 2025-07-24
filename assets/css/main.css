@@ -3071,81 +3071,97 @@ input, select, textarea {
 		}
 
 /* Header */
-	#header {
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		background-color: rgba(53, 56, 73, 0.95);
-		padding: 0.5em 1em;
-		position: fixed;
-		top: 0;
-		left: 0;
-		width: 100%;
-		z-index: 10000;
-	}
-	
-	#header .logo img {
-		height: 40px;
-		display: block;
-		margin: 0;
-		padding: 0;
-	}
-	
-	/* Navigation */
-	#header nav {
-		font-family: Raleway, Helvetica, sans-serif;
-		font-size: 0.8em;
-		font-weight: 700;
-		letter-spacing: 0.1em;
-		text-transform: uppercase;
-		position: relative;
-	}
-	
-	/* Menu link */
-	#header nav a {
-		border: 0;
-		display: inline-block;
-		padding: 0 1em;
-		text-decoration: none;
-	}
-	
-	/* Burger icon for mobile menu */
-	#header nav a[href="#menu"] {
-		transition: background-color 0.2s ease-in-out;
-		border-radius: 5px;
-		box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
-		padding: 0 1.35em;
-	}
-	
-	#header nav a[href="#menu"]:before {
-		content: '\f0c9';
-		font-family: 'Font Awesome 5 Free';
-		font-weight: 900;
-		display: inline-block;
-		margin-left: 0.75em;
-		font-style: normal;
-		text-rendering: auto;
-		line-height: 1;
-	}
-	
-	/* Hover effects */
-	#header nav a[href="#menu"]:hover {
-		background-color: rgba(255, 255, 255, 0.025);
-	}
-	
-	#header nav a[href="#menu"]:active {
-		background-color: rgba(255, 255, 255, 0.075);
-	}
-	
-	/* ALT header variant (optional) */
-	#header.alt {
-		background-color: transparent;
-	}
-	
-	#header.alt h1 {
-		opacity: 0;
-		visibility: hidden;
-	}
+#header {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: rgba(53, 56, 73, 0.95);
+	padding: 0.75em 1.5em;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 10000;
+	height: 60px; /* ensures consistent height across devices */
+	box-sizing: border-box;
+}
+
+/* Logo wrapper */
+#header .logo {
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+#header .logo img {
+	height: 40px;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+/* Navigation */
+#header nav {
+	font-family: Raleway, Helvetica, sans-serif;
+	font-size: 0.8em;
+	font-weight: 700;
+	letter-spacing: 0.1em;
+	text-transform: uppercase;
+	display: flex;
+	align-items: center;
+	height: 100%;
+}
+
+/* Menu link */
+#header nav a {
+	border: 0;
+	display: inline-block;
+	padding: 0 1em;
+	text-decoration: none;
+	line-height: 1;
+}
+
+/* Burger icon for mobile menu */
+#header nav a[href="#menu"] {
+	transition: background-color 0.2s ease-in-out;
+	border-radius: 5px;
+	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
+	padding: 0.5em 1.35em;
+	display: flex;
+	align-items: center;
+}
+
+/* Font Awesome menu icon */
+#header nav a[href="#menu"]:before {
+	content: '\f0c9';
+	font-family: 'Font Awesome 5 Free';
+	font-weight: 900;
+	display: inline-block;
+	margin-left: 0.75em;
+	font-style: normal;
+	text-rendering: auto;
+	line-height: 1;
+}
+
+/* Hover effects */
+#header nav a[href="#menu"]:hover {
+	background-color: rgba(255, 255, 255, 0.025);
+}
+
+#header nav a[href="#menu"]:active {
+	background-color: rgba(255, 255, 255, 0.075);
+}
+
+/* ALT header variant (optional) */
+#header.alt {
+	background-color: transparent;
+}
+
+#header.alt h1 {
+	opacity: 0;
+	visibility: hidden;
+}
+
 
 /* Menu */
 

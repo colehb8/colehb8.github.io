@@ -3072,25 +3072,23 @@ input, select, textarea {
 
 /* Header */
 	#header {
-		transition: background-color 0.2s ease-in-out;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
 		background-color: rgba(53, 56, 73, 0.95);
-		padding: 0.75em 1.25em;
+		padding: 0.5em 1em;
 		position: fixed;
 		top: 0;
 		left: 0;
 		width: 100%;
 		z-index: 10000;
-	
-		display: flex;
-		justify-content: space-between;
-		align-items: center;
 	}
 	
-	/* Logo inside header */
-	#header img {
-		height: 50px;
-		max-height: 100%;
+	#header .logo img {
+		height: 40px;
 		display: block;
+		margin: 0;
+		padding: 0;
 	}
 	
 	/* Navigation */

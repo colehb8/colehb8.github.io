@@ -3081,7 +3081,7 @@ input, select, textarea {
 	top: 0;
 	left: 0;
 	width: 100%;
-	height: 125px; /* increased header height */
+	height: 125px; /* Increased header height */
 	box-sizing: border-box;
 	z-index: 10000;
 }
@@ -3091,16 +3091,33 @@ input, select, textarea {
 	display: flex;
 	align-items: center;
 	height: 100%;
+	text-decoration: none !important;
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
 }
 
+/* Remove underline / focus ring on hover/focus */
+#header .logo:hover,
+#header .logo:focus,
+#header .logo:active {
+	text-decoration: none !important;
+	border: none !important;
+	outline: none !important;
+	box-shadow: none !important;
+}
+
+/* Logo image */
 #header .logo img {
-	max-height: 110px; /* make sure it doesn't exceed header */
+	max-height: 110px;
 	width: auto;
 	display: block;
 	margin: 0;
 	padding: 0;
 	line-height: 0;
 	border: none;
+	outline: none !important;
+	box-shadow: none !important;
 }
 
 /* Navigation */
@@ -3108,7 +3125,7 @@ input, select, textarea {
 	display: flex;
 	align-items: center;
 	font-family: Raleway, Helvetica, sans-serif;
-	font-size: 1em; /* increased from 0.8em */
+	font-size: 1em; /* Slightly larger for better visibility */
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -3123,7 +3140,7 @@ input, select, textarea {
 	border: 0;
 	line-height: 1;
 	color: inherit;
-	font-size: 1em; /* match font scaling */
+	font-size: 1em;
 }
 
 /* Burger icon for mobile menu */
@@ -3131,7 +3148,7 @@ input, select, textarea {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0.65em 1.5em; /* slightly larger padding */
+	padding: 0.65em 1.5em;
 	border-radius: 5px;
 	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
 	transition: background-color 0.2s ease-in-out;
@@ -3168,6 +3185,7 @@ input, select, textarea {
 	opacity: 0;
 	visibility: hidden;
 }
+
 
 /* Menu */
 

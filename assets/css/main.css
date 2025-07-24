@@ -3076,13 +3076,13 @@ input, select, textarea {
 	align-items: center;
 	justify-content: space-between;
 	background-color: rgba(53, 56, 73, 0.95);
-	padding: 0.75em 1.5em;
+	padding: 0 1.5em;
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 10000;
-	height: 60px; /* ensures consistent height across devices */
+	height: 60px;
 	box-sizing: border-box;
 }
 
@@ -3094,10 +3094,9 @@ input, select, textarea {
 }
 
 #header .logo img {
-	height: 40px;
+	max-height: 40px;
+	width: auto;
 	display: block;
-	margin: 0;
-	padding: 0;
 }
 
 /* Navigation */
@@ -3106,7 +3105,6 @@ input, select, textarea {
 	font-size: 0.8em;
 	font-weight: 700;
 	letter-spacing: 0.1em;
-	text-transform: uppercase;
 	display: flex;
 	align-items: center;
 	height: 100%;
@@ -3118,6 +3116,7 @@ input, select, textarea {
 	display: inline-block;
 	padding: 0 1em;
 	text-decoration: none;
+	text-transform: uppercase;
 	line-height: 1;
 }
 
@@ -3141,6 +3140,7 @@ input, select, textarea {
 	font-style: normal;
 	text-rendering: auto;
 	line-height: 1;
+	text-transform: none !important;
 }
 
 /* Hover effects */
@@ -3152,7 +3152,7 @@ input, select, textarea {
 	background-color: rgba(255, 255, 255, 0.075);
 }
 
-/* ALT header variant (optional) */
+/* ALT header variant */
 #header.alt {
 	background-color: transparent;
 }

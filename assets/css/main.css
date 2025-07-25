@@ -4119,7 +4119,7 @@ input, select, textarea {
 	.contact-info {
 	    display: flex;
 	    justify-content: center;
-	    gap: 3em; /* space between icons */
+	    gap: 2em; /* space between icons */
 	    list-style: none;
 	    padding: 0;
 	    margin-top: 2em;

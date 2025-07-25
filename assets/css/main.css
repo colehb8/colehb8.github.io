@@ -3107,16 +3107,16 @@ a.special:not(.button):active:before {
 
 /* ─ LOGO ─ */
 #header .logo-container {
-  flex: 1;                           /* push title to center */
+  flex: 1;
 }
 #header .logo-container a {
   display: inline-block;
-  border: none !important;           /* remove default underline */
+  border: none !important;
   text-decoration: none !important;
   outline: none !important;
 }
 #header .logo-container img {
-  max-height: 110px;                 /* larger logo */
+  max-height: 110px;
   width: auto;
   display: block;
   margin: 0; padding: 0;
@@ -3124,13 +3124,12 @@ a.special:not(.button):active:before {
 
 /* ─ SITE TITLE ─ */
 #header .title-container {
-  flex: 1;                           /* center title */
+  flex: 1;
   text-align: center;
 }
 #header .site-title {
   margin: 0;
   font-family: Raleway, Helvetica, sans-serif;
-  /* fluidly scale between 2rem and 3.75rem, never wrap */
   font-size: clamp(2rem, 6vw, 3.75rem);
   font-weight: 800;
   color: #fff;
@@ -3140,7 +3139,6 @@ a.special:not(.button):active:before {
   overflow: hidden;
   text-overflow: ellipsis;
 }
-/* hide the title on small screens for extra room */
 @media screen and (max-width: 768px) {
   #header .title-container { display: none; }
 }
@@ -3165,14 +3163,16 @@ a.special:not(.button):active:before {
   line-height: 1;
   border: none;
 }
+
 /* ──────────────────────────────────────────────────────────────────────────
    1) MENU TOGGLE BUTTON (in header)
 ────────────────────────────────────────────────────────────────────────── */
 #header nav a[href="#menu"] {
-  display: flex;
+  display: inline-flex;              /* ← force inline-flex */
   align-items: center;
   justify-content: center;
-  padding: 0.5em 1em;
+  white-space: nowrap;               /* ← no wrapping at any zoom */
+  padding: 0.5em 1.5em;              /* ← more right padding */
   border: 2px solid #fff;
   border-radius: 5px;
   background: transparent;
@@ -3185,24 +3185,20 @@ a.special:not(.button):active:before {
   text-decoration: none;
   transition: background-color 0.2s ease-in-out;
 }
-
 #header nav a[href="#menu"]:before {
   content: "\f0c9";
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 1.2em;
-  margin-right: 0.5em;
+  margin-right: 1em;                 /* ← larger gutter */
   line-height: 1;
 }
-
 #header nav a[href="#menu"]:hover {
   background-color: rgba(255,255,255,0.1);
 }
-
 #header nav a[href="#menu"]:active {
   background-color: rgba(255,255,255,0.2);
 }
-
 
 /* ──────────────────────────────────────────────────────────────────────────
    2) BLUR BACKGROUND ON TOGGLE
@@ -3210,11 +3206,9 @@ a.special:not(.button):active:before {
 #page-wrapper {
   transition: filter 0.25s ease;
 }
-
 body.is-menu-visible #page-wrapper {
   filter: blur(1.5px);
 }
-
 
 /* ──────────────────────────────────────────────────────────────────────────
    3) OVERLAY PANEL
@@ -3232,13 +3226,11 @@ body.is-menu-visible #page-wrapper {
   transition: opacity 0.35s ease, visibility 0.35s ease;
   user-select: none;
 }
-
 body.is-menu-visible #menu {
   pointer-events: auto;
   opacity: 1;
   visibility: visible;
 }
-
 
 /* ──────────────────────────────────────────────────────────────────────────
    4) PANEL INNER CARD
@@ -3254,16 +3246,12 @@ body.is-menu-visible #menu {
   opacity: 0;
   transition: opacity 0.35s ease, transform 0.35s ease;
   -webkit-overflow-scrolling: touch;
-
-  /* ← NEW: center all contents */
-  text-align: center;
+  text-align: center;                /* ← center contents */
 }
-
 body.is-menu-visible #menu .inner {
   transform: translateY(0);
   opacity: 1;
 }
-
 
 /* ──────────────────────────────────────────────────────────────────────────
    5) PANEL HEADER & CLOSE “X”
@@ -3279,7 +3267,6 @@ body.is-menu-visible #menu .inner {
   letter-spacing: 0.1em;
   text-transform: uppercase;
 }
-
 #menu .close {
   position: absolute;
   top: 0.5em;
@@ -3293,7 +3280,6 @@ body.is-menu-visible #menu .inner {
   overflow: hidden;
 }
 
-
 /* ──────────────────────────────────────────────────────────────────────────
    6) MENU LINKS
 ────────────────────────────────────────────────────────────────────────── */
@@ -3302,20 +3288,17 @@ body.is-menu-visible #menu .inner {
   margin: 1.5em 0 0;
   padding: 0;
 }
-
 #menu .links li {
-  margin-bottom: 1em;   /* space between items */
+  margin-bottom: 1em;                /* ← space between items */
 }
-
 #menu .links li:last-child {
-  margin-bottom: 0;     /* no gap after last item */
+  margin-bottom: 0;                  /* ← no gap after last item */
 }
-
 #menu .links li a {
-  display: inline-block;           /* shrink to content width */
-  min-width: 60%;                  /* avoid becoming too narrow */
+  display: inline-block;             /* ← shrink‐to‐content */
+  min-width: 60%;                    /* ← avoid super-narrow */
   max-width: 100%;
-  margin: 0.5em auto;              /* vertical spacing + center */
+  margin: 0.5em auto;                /* ← center + vertical gutter */
   padding: 0.75em 0;
   color: #fff;
   font-family: Raleway, Helvetica, sans-serif;
@@ -3324,16 +3307,14 @@ body.is-menu-visible #menu .inner {
   letter-spacing: 0.05em;
   line-height: 1.85em;
   text-transform: uppercase;
-  text-decoration: none;
+  text-decoration: none;             /* ← remove dotted underline */
+  border-bottom: none !important;    /* ← extra guard */
   transition: background 0.2s ease-in-out;
   text-align: center;
 }
-
-/* hover state stays the same */
 #menu .links li a:hover {
   background: rgba(255,255,255,0.08);
 }
-
 
 /* ──────────────────────────────────────────────────────────────────────────
    7) SMALL-SCREEN TWEAKS

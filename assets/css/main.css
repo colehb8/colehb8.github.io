@@ -3115,6 +3115,18 @@ input, select, textarea {
 	padding: 0;
 	line-height: 0;
 	border: none;
+	outline: none;
+	box-shadow: none;
+}
+
+/* Remove underline/focus from logo links */
+#header .logo-container a,
+#header .logo-container a:visited,
+#header .logo-container a:hover,
+#header .logo-container a:focus,
+#header .logo-container a:active {
+	text-decoration: none !important;
+	border: none !important;
 	outline: none !important;
 	box-shadow: none !important;
 }
@@ -3198,6 +3210,7 @@ input, select, textarea {
 	opacity: 0;
 	visibility: hidden;
 }
+
 
 /* Menu */
 

@@ -3521,7 +3521,7 @@ body.is-preload #banner p {
 .wrapper {
   background-color: #2e3141;
   /* shrink the vertical gap by 1px so the triangles overlap */
-  margin: calc(6.5em - 1px) 0;
+  margin: calc(6.5em - 2px) 0;
   position: relative;
 }
 
@@ -3533,7 +3533,7 @@ body.is-preload #banner p {
   position: absolute;
   width: 100%;
   /* extend the triangle by 1px so it covers the shrunken gap */
-  height: calc(6.5em + 1px);
+  height: calc(6.5em + 2px);
   background-repeat: no-repeat;
   background-size: 100% 100%;
   /* triangle fill = dark gray */
@@ -3544,12 +3544,12 @@ body.is-preload #banner p {
 
 /* position them */
 .wrapper:before {
-  top: calc(-6.5em - 1px);  /* move up the extra px too */
+  top: calc(-6.5em - 2px);  /* move up the extra px too */
   left: 0;
   transform: none;
 }
 .wrapper:after {
-  bottom: calc(-6.5em - 1px);
+  bottom: calc(-6.5em - 2px);
   left: 0;
   transform: scaleY(-1);
 }

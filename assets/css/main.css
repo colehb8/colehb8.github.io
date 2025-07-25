@@ -279,9 +279,11 @@ a.special:not(.button):active:before {
 			font-weight: 200;
 		}
 
-		h1.major, h2.major, h3.major, h4.major, h5.major, h6.major {
-			padding-bottom: 1em;
-			border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+		h1.major,h2.major,h3.major,h4.major,h5.major,h6.major {
+		  /* remove the divider line: */
+		  border-bottom: none !important;
+		  /* collapse the extra bottom‐padding (tweak as you like): */
+		  padding-bottom: 0 !important;
 		}
 
 	h2 {
@@ -306,7 +308,7 @@ a.special:not(.button):active:before {
 
 	@media screen and (max-width: 736px) {
 
-		h2 {
+		 {
 			font-size: 1em;
 		}
 

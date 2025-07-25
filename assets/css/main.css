@@ -3074,81 +3074,115 @@ input, select, textarea {
 
 		}
 
-/* Header */
-#header {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  height: 125px;               /* header height */
-  background-color: rgba(53, 56, 73, 0.95);
-  z-index: 10000;
-}
+/* ──────────────────────────────────────────────────────────────────────────
+   HEADER
+────────────────────────────────────────────────────────────────────────── */
 
-/* Use a relative container to absolutely position the title */
-#header .header-container {
-  position: relative;
+/* the outer header bar */
+#header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
   padding: 0 2em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 125px;                     /* ↑ taller header */
+  background: rgba(53,56,73,0.95);
   box-sizing: border-box;
+  z-index: 10000;
 }
 
-/* Logo sits left */
+/* wrap logo, title & nav so we can flex them nicely */
+#header .header-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+/* ─ LOGO ─ */
 #header .logo-container {
-  z-index: 2;               /* keep on top */
+  flex: 1;                           /* push title to center */
+}
+#header .logo-container a {
+  display: inline-block;
+  border: none !important;           /* nuke that dotted underline */
+  text-decoration: none !important;
+  outline: none !important;
+}
+#header .logo-container img {
+  max-height: 110px;                 /* ↑ larger logo */
+  width: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
 }
 
-/* Title absolutely centered */
+/* ─ SITE TITLE ─ */
 #header .title-container {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  white-space: nowrap;      /* no wrap */
-  z-index: 1;
+  flex: 1;                           /* center title in the header */
+  text-align: center;
 }
-
-/* Title styling */
 #header .site-title {
+  margin: 0;
   font-family: Raleway, Helvetica, sans-serif;
-  font-size: 3.75rem;       /* desktop size */
-  font-weight: 800;
+  font-size: 3.75rem;                /* ↑ much bigger */
+  font-weight: 800;                  /* extra bold */
   color: #fff;
   letter-spacing: 0.05em;
   line-height: 1;
 }
 
-/* Menu sits right */
+/* ─ NAVIGATION ─ */
 #header nav {
-  z-index: 2;
+  flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
+}
+#header nav a {
+  display: inline-block;
+  padding: 0 1.2em;
   font-family: Raleway, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
+  color: #fff;
+  text-decoration: none;
+  line-height: 1;
+  border: none;
+}
+#header nav a[href="#menu"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.65em 1.5em;
+  border-radius: 5px;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.125);
+  transition: background-color 0.2s ease-in-out;
+}
+#header nav a[href="#menu"]:before {
+  content: '\f0c9';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  margin-left: 0.75em;
+}
+#header nav a[href="#menu"]:hover {
+  background-color: rgba(255,255,255,0.025);
+}
+#header nav a[href="#menu"]:active {
+  background-color: rgba(255,255,255,0.075);
 }
 
-/* Responsive scaling */
-@media screen and (max-width: 1024px) {
-  #header .site-title {
-    font-size: 3rem;
-  }
+/* ─ ALT VARIANT (when you add #header.alt) ─ */
+#header.alt {
+  background: transparent;
 }
-
-@media screen and (max-width: 768px) {
-  #header .site-title {
-    font-size: 2rem;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  #header .site-title {
-    font-size: 1.5rem;
-  }
+#header.alt .site-title {
+  visibility: hidden;
+  opacity: 0;
 }
 
 /* Menu link */

@@ -76,7 +76,7 @@
 				<div id="coaching-plans" class="anchor-offset"></div>
 
 				<!-- One -->
-				<section id="one" class="wrapper spotlight style1">
+				<section id="one" class="wrapper spotlight style1 reveal">
 					<div class="inner">
 						<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
 						<div class="content">
@@ -87,7 +87,7 @@
 				</section>
 
 				<!-- Two -->
-				<section id="two" class="wrapper alt spotlight style2">
+				<section id="two" class="wrapper alt spotlight style2 reveal">
 					<div class="inner">
 						<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
 						<div class="content">
@@ -98,7 +98,7 @@
 				</section>
 
 				<!-- Three -->
-				<section id="three" class="wrapper spotlight style3">
+				<section id="three" class="wrapper spotlight style3 reveal">
 					<div class="inner">
 						<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
 						<div class="content">
@@ -109,7 +109,7 @@
 				</section>
 
 				<!-- Posing Packages Anchor -->
-				<div id="posing-packages" class="anchor-offset"></div>
+				<div id="posing-packages" class="anchor-offset reveal"></div>
 
 				<!-- Four -->
 				<section id="four" class="wrapper alt style1">
@@ -169,6 +169,19 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
+		<script>
+		    document.addEventListener('DOMContentLoaded', () => {
+		      const observer = new IntersectionObserver((entries, obs) => {
+		        entries.forEach(entry => {
+		          if (entry.isIntersecting) {
+		            entry.target.classList.add('active');
+		            obs.unobserve(entry.target);
+		          }
+		        });
+		      }, { threshold: 0.1 });
+		
+		      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		    });
+		  </script>
 	</body>
 </html>

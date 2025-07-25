@@ -3210,6 +3210,22 @@ a.special:not(.button):active:before {
   background-color: rgba(255,255,255,0.2) !important;
 }
 
+/* 1) Make that mission statement really big & nicely constrained */
+#banner .mission-statement {
+  font-size: clamp(1.75rem, 5vw, 3rem); /* fluid between 1.75rem ↔ 3rem */
+  line-height: 1.3;
+  max-width: 40em;    /* stops it from getting too wide on large screens */
+  margin: 0 auto;     /* center in its container */
+  padding: 0 1em;     /* a bit of side padding on mobile */
+}
+
+/* 2) Pull the very first coaching “.wrapper.spotlight” up tighter under the banner */
+#wrapper section.wrapper.spotlight:first-of-type {
+  /* you had 6.5em vertical margins by default; 3em here brings it up closer */
+  margin: 3em 0;
+}
+
+
 
 /* ──────────────────────────────────────────────────────────────────────────
    2) BLUR BACKGROUND ON TOGGLE

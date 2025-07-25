@@ -4115,14 +4115,22 @@ input, select, textarea {
 		}
 
 	}
-	/* Centered Contact Info in Footer */
+	/* Center and horizontally align contact links in footer */
 	.contact-info {
-	    text-align: center;
+	    display: flex;
+	    justify-content: center;
+	    gap: 3em; /* space between icons */
+	    list-style: none;
+	    padding: 0;
 	    margin-top: 2em;
+	    flex-wrap: wrap; /* allows wrapping on small screens */
 	}
 	
 	.contact-info li {
-	    display: inline-block;
-	    margin: 0 1em;
+	    display: flex;
+	    align-items: center;
+	    gap: 0.5em;
+	    font-size: 1em;
 	}
+
 

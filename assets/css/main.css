@@ -4115,3 +4115,14 @@ input, select, textarea {
 		}
 
 	}
+	/* Centered Contact Info in Footer */
+	.contact-info {
+	    text-align: center;
+	    margin-top: 2em;
+	}
+	
+	.contact-info li {
+	    display: inline-block;
+	    margin: 0 1em;
+	}
+

@@ -4166,8 +4166,8 @@ body.is-preload #banner p {
   transform: scale(0.85);                /* start at 95% size instead of 80% */
   transform-origin: center center;       /* zoom from center */
   transition:
-    opacity 0.5s ease-out,              /* a bit faster fade */
-    transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1); /* smoother ease-out */
+    opacity 0.8s ease-out,              /* a bit faster fade */
+    transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1); /* smoother ease-out */
 }
 
 .reveal.zoom.active {

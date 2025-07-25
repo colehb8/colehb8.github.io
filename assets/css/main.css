@@ -3085,8 +3085,7 @@ input, select, textarea {
   justify-content: space-between;
   padding: 0 2em;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 125px;                     /* ↑ taller header */
   background: rgba(53,56,73,0.95);
@@ -3107,43 +3106,38 @@ input, select, textarea {
 }
 #header .logo-container a {
   display: inline-block;
-  border: none !important;           /* nuke that dotted underline */
+  border: none !important;           /* remove default underline */
   text-decoration: none !important;
   outline: none !important;
 }
 #header .logo-container img {
-  max-height: 110px;                 /* ↑ larger logo */
+  max-height: 110px;                 /* larger logo */
   width: auto;
   display: block;
-  margin: 0;
-  padding: 0;
+  margin: 0; padding: 0;
 }
 
 /* ─ SITE TITLE ─ */
 #header .title-container {
-  flex: 1;                           /* center title in the header */
+  flex: 1;                           /* center title */
   text-align: center;
 }
-
 #header .site-title {
   margin: 0;
   font-family: Raleway, Helvetica, sans-serif;
-  /* fluidly scale between 2rem and 3.75rem, never wrap or overflow */
+  /* fluidly scale between 2rem and 3.75rem, never wrap */
   font-size: clamp(2rem, 6vw, 3.75rem);
-  font-weight: 800;                  /* extra bold */
+  font-weight: 800;
   color: #fff;
   letter-spacing: 0.05em;
   line-height: 1;
-  white-space: nowrap;               /* keep on one line */
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
-
-/* hide the title entirely on small screens if you need the extra room */
+/* hide the title on small screens for extra room */
 @media screen and (max-width: 768px) {
-  #header .title-container {
-    display: none;
-  }
+  #header .title-container { display: none; }
 }
 
 /* ─ NAVIGATION ─ */
@@ -3153,7 +3147,6 @@ input, select, textarea {
   align-items: center;
   justify-content: flex-end;
 }
-
 #header nav a {
   display: inline-block;
   padding: 0 1.2em;
@@ -3167,26 +3160,30 @@ input, select, textarea {
   line-height: 1;
   border: none;
 }
+/* MENU BUTTON */
 #header nav a[href="#menu"] {
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0.65em 1.5em;
   border-radius: 5px;
-  box-shadow: inset 0 0 0 2px rgba(255,255,255,0.125);
+  border: 2px solid #fff !important;  /* crisp white border */
+  box-shadow: none !important;        /* remove inset */
+  color: #fff !important;
+  background: transparent !important;
   transition: background-color 0.2s ease-in-out;
 }
 #header nav a[href="#menu"]:before {
   content: '\f0c9';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  margin-left: 0.75em;
+  margin-left: 1em;                   /* more space from “Menu” */
 }
 #header nav a[href="#menu"]:hover {
-  background-color: rgba(255,255,255,0.025);
+  background-color: rgba(255,255,255,0.1) !important;
 }
 #header nav a[href="#menu"]:active {
-  background-color: rgba(255,255,255,0.075);
+  background-color: rgba(255,255,255,0.2) !important;
 }
 
 /* ─ ALT VARIANT (when you add #header.alt) ─ */
@@ -3197,61 +3194,6 @@ input, select, textarea {
   visibility: hidden;
   opacity: 0;
 }
-
-/* Menu link */
-#header nav a {
-	display: inline-block;
-	padding: 0 1.2em;
-	text-decoration: none;
-	border: 0;
-	line-height: 1;
-	color: inherit;
-	font-size: 1em;
-}
-
-/* Burger icon for mobile menu */
-#header nav a[href="#menu"] {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	padding: 0.65em 1.5em;
-	border-radius: 5px;
-	box-shadow: inset 0 0 0 2px rgba(255, 255, 255, 0.125);
-	transition: background-color 0.2s ease-in-out;
-}
-
-/* Font Awesome menu icon */
-#header nav a[href="#menu"]:before {
-	content: '\f0c9';
-	font-family: 'Font Awesome 5 Free';
-	font-weight: 900;
-	font-style: normal;
-	text-rendering: auto;
-	display: inline-block;
-	margin-left: 0.75em;
-	line-height: 1;
-	text-transform: none !important;
-}
-
-/* Hover effects */
-#header nav a[href="#menu"]:hover {
-	background-color: rgba(255, 255, 255, 0.025);
-}
-
-#header nav a[href="#menu"]:active {
-	background-color: rgba(255, 255, 255, 0.075);
-}
-
-/* ALT header variant */
-#header.alt {
-	background-color: transparent;
-}
-
-#header.alt h1 {
-	opacity: 0;
-	visibility: hidden;
-}
-
 
 /* Menu */
 

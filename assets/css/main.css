@@ -4115,22 +4115,26 @@ input, select, textarea {
 		}
 
 	}
-	/* Center and horizontally align contact links in footer */
 	.contact-info {
-	    display: flex;
-	    justify-content: center;
-	    gap: 2em; /* space between icons */
-	    list-style: none;
-	    padding: 0;
-	    margin-top: 2em;
-	    flex-wrap: wrap; /* allows wrapping on small screens */
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	  gap: 2em;
+	  list-style: none;
+	  padding: 0;
+	  margin: 2em auto 0 auto;
+	  flex-wrap: nowrap; /* forces single line */
 	}
 	
 	.contact-info li {
-	    display: flex;
-	    align-items: center;
-	    gap: 0.5em;
-	    font-size: 1em;
+	  display: flex;
+	  align-items: center;
+	  gap: 0.5em;
+	  font-size: 1em;
+	  margin: 0; /* remove rogue vertical margins */
+	  padding: 0;
+	  white-space: nowrap; /* keeps text from breaking */
 	}
+
 
 

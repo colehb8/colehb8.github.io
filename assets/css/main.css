@@ -3161,10 +3161,8 @@ input, select, textarea {
   border: none;
 }
 /* ──────────────────────────────────────────────────────────────────────────
-   MENU SECTION OVERRIDES
+   1) MENU TOGGLE BUTTON (in header)
 ────────────────────────────────────────────────────────────────────────── */
-
-/* 1) MENU TOGGLE BUTTON (in header) */
 #header nav a[href="#menu"] {
   display: flex;
   align-items: center;
@@ -3200,7 +3198,10 @@ input, select, textarea {
   background-color: rgba(255,255,255,0.2);
 }
 
-/* 2) BLUR BACKGROUND ON TOGGLE */
+
+/* ──────────────────────────────────────────────────────────────────────────
+   2) BLUR BACKGROUND ON TOGGLE
+────────────────────────────────────────────────────────────────────────── */
 #page-wrapper {
   transition: filter 0.25s ease;
 }
@@ -3209,7 +3210,10 @@ body.is-menu-visible #page-wrapper {
   filter: blur(1.5px);
 }
 
-/* 3) OVERLAY PANEL */
+
+/* ──────────────────────────────────────────────────────────────────────────
+   3) OVERLAY PANEL
+────────────────────────────────────────────────────────────────────────── */
 #menu {
   display: flex;
   align-items: center;
@@ -3230,7 +3234,10 @@ body.is-menu-visible #menu {
   visibility: visible;
 }
 
-/* 4) PANEL INNER CARD */
+
+/* ──────────────────────────────────────────────────────────────────────────
+   4) PANEL INNER CARD
+────────────────────────────────────────────────────────────────────────── */
 #menu .inner {
   position: relative;
   width: 90%;
@@ -3242,6 +3249,9 @@ body.is-menu-visible #menu {
   opacity: 0;
   transition: opacity 0.35s ease, transform 0.35s ease;
   -webkit-overflow-scrolling: touch;
+
+  /* ← NEW: center all contents */
+  text-align: center;
 }
 
 body.is-menu-visible #menu .inner {
@@ -3249,7 +3259,10 @@ body.is-menu-visible #menu .inner {
   opacity: 1;
 }
 
-/* 5) PANEL HEADER & CLOSE “X” */
+
+/* ──────────────────────────────────────────────────────────────────────────
+   5) PANEL HEADER & CLOSE “X”
+────────────────────────────────────────────────────────────────────────── */
 #menu h2 {
   margin: 0 0 1em;
   padding-bottom: 0.5em;
@@ -3275,7 +3288,10 @@ body.is-menu-visible #menu .inner {
   overflow: hidden;
 }
 
-/* 6) MENU LINKS */
+
+/* ──────────────────────────────────────────────────────────────────────────
+   6) MENU LINKS
+────────────────────────────────────────────────────────────────────────── */
 #menu .links {
   list-style: none;
   margin: 1.5em 0 0;
@@ -3283,11 +3299,17 @@ body.is-menu-visible #menu .inner {
 }
 
 #menu .links li {
-  margin: 0;
+  margin-bottom: 1em;   /* space between items */
+}
+
+#menu .links li:last-child {
+  margin-bottom: 0;     /* no gap after last item */
 }
 
 #menu .links li a {
-  display: block;
+  display: inline-block;           /* shrink to content */
+  min-width: 60%;                  /* avoid becoming too narrow */
+  max-width: 100%;                 
   padding: 0.75em 0;
   color: #fff;
   font-family: Raleway, Helvetica, sans-serif;
@@ -3298,19 +3320,25 @@ body.is-menu-visible #menu .inner {
   text-transform: uppercase;
   text-decoration: none;
   border-bottom: 1px solid rgba(255,255,255,0.15);
-  border-radius: 0;
   transition: background 0.2s ease-in-out;
+
+  /* center each link block inside the card */
+  margin: 0 auto;
+  text-align: center;
 }
 
 #menu .links li:last-child a {
-  border-bottom: none;
+  border-bottom: none;  /* drop the divider on the last link */
 }
 
 #menu .links li a:hover {
   background: rgba(255,255,255,0.08);
 }
 
-/* 7) SMALL-SCREEN TWEAKS */
+
+/* ──────────────────────────────────────────────────────────────────────────
+   7) SMALL-SCREEN TWEAKS
+────────────────────────────────────────────────────────────────────────── */
 @media screen and (max-width: 736px) {
   #menu .inner {
     max-height: 100%;
@@ -3320,8 +3348,6 @@ body.is-menu-visible #menu .inner {
     background-size: 1.5em 1.5em;
   }
 }
-
-
 
 /* Banner */
 

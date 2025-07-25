@@ -170,18 +170,24 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
 		<script>
-		    document.addEventListener('DOMContentLoaded', () => {
-		      const observer = new IntersectionObserver((entries, obs) => {
-		        entries.forEach(entry => {
-		          if (entry.isIntersecting) {
-		            entry.target.classList.add('active');
-		            obs.unobserve(entry.target);
-		          }
-		        });
-		      }, { threshold: 0.1 });
-		
-		      document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		  document.addEventListener('DOMContentLoaded', () => {
+		    const observer = new IntersectionObserver((entries) => {
+		      entries.forEach(entry => {
+			if (entry.intersectionRatio > 0.1) {
+			  // scrolled *into* view past 10% → fade in
+			  entry.target.classList.add('active');
+			} else {
+			  // scrolled *out* of view → fade out
+			  entry.target.classList.remove('active');
+			}
+		      });
+		    }, {
+		      threshold: [0, 0.1],              // notify on 0% and 10% visibility
+		      rootMargin: '0px 0px -20% 0px'   // start the 10% trigger when the element is 20% below the bottom
 		    });
-		  </script>
+		
+		    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		  });
+		</script>
 	</body>
 </html>

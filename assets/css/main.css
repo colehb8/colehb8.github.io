@@ -3090,29 +3090,24 @@ input, select, textarea {
 	z-index: 10000;
 }
 
+/* Header container to manage layout */
+#header .header-container {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	width: 100%;
+}
+
 /* Logo wrapper */
-#header .logo {
+#header .logo-container {
+	flex: 1;
 	display: flex;
 	align-items: center;
 	height: 100%;
-	text-decoration: none !important;
-	border: none !important;
-	outline: none !important;
-	box-shadow: none !important;
-}
-
-/* Remove underline / focus ring on hover/focus */
-#header .logo:hover,
-#header .logo:focus,
-#header .logo:active {
-	text-decoration: none !important;
-	border: none !important;
-	outline: none !important;
-	box-shadow: none !important;
 }
 
 /* Logo image */
-#header .logo img {
+#header .logo-container img {
 	max-height: 110px;
 	width: auto;
 	display: block;
@@ -3124,12 +3119,26 @@ input, select, textarea {
 	box-shadow: none !important;
 }
 
+/* Centered site title */
+#header .title-container {
+	flex: 1;
+	text-align: center;
+}
+
+#header .site-title {
+	font-size: 1.25rem;
+	font-weight: 700;
+	color: white;
+}
+
 /* Navigation */
 #header nav {
+	flex: 1;
 	display: flex;
 	align-items: center;
+	justify-content: flex-end;
 	font-family: Raleway, Helvetica, sans-serif;
-	font-size: 1em; /* Slightly larger for better visibility */
+	font-size: 1em;
 	font-weight: 700;
 	letter-spacing: 0.1em;
 	text-transform: uppercase;
@@ -3189,7 +3198,6 @@ input, select, textarea {
 	opacity: 0;
 	visibility: hidden;
 }
-
 
 /* Menu */
 

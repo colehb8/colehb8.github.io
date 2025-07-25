@@ -3138,9 +3138,10 @@ input, select, textarea {
 }
 
 #header .site-title {
-	font-size: 1.25rem;
-	font-weight: 700;
+	font-size: 2rem;       /* Increased font size */
+	font-weight: 800;      /* Bolder */
 	color: white;
+	letter-spacing: 0.05em;
 }
 
 /* Navigation */

@@ -3124,14 +3124,26 @@ input, select, textarea {
   flex: 1;                           /* center title in the header */
   text-align: center;
 }
+
 #header .site-title {
   margin: 0;
   font-family: Raleway, Helvetica, sans-serif;
-  font-size: 3.75rem;                /* ↑ much bigger */
+  /* fluidly scale between 2rem and 3.75rem, never wrap or overflow */
+  font-size: clamp(2rem, 6vw, 3.75rem);
   font-weight: 800;                  /* extra bold */
   color: #fff;
   letter-spacing: 0.05em;
   line-height: 1;
+  white-space: nowrap;               /* keep on one line */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* hide the title entirely on small screens if you need the extra room */
+@media screen and (max-width: 768px) {
+  #header .title-container {
+    display: none;
+  }
 }
 
 /* ─ NAVIGATION ─ */
@@ -3141,6 +3153,7 @@ input, select, textarea {
   align-items: center;
   justify-content: flex-end;
 }
+
 #header nav a {
   display: inline-block;
   padding: 0 1.2em;

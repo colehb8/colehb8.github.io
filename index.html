@@ -183,21 +183,34 @@
 		
 		<script>
 		  document.addEventListener('DOMContentLoaded', () => {
+		    let lastVisible = new Map(); // track last visibility status
+		
 		    const observer = new IntersectionObserver((entries) => {
 		      entries.forEach(entry => {
-		        if (entry.intersectionRatio > 0.3) {
-		          entry.target.classList.add('active');
-		        } else {
-		          entry.target.classList.remove('active');
-		        }
+			const el = entry.target;
+			const wasVisible = lastVisible.get(el) || false;
+			const isVisible = entry.intersectionRatio > 0.25;
+		
+			if (isVisible !== wasVisible) {
+			  if (isVisible) {
+			    el.classList.add('active');
+			  } else {
+			    el.classList.remove('active');
+			  }
+			  lastVisible.set(el, isVisible);
+			}
 		      });
 		    }, {
-		      threshold: [0.3],                // reduced sensitivity to flicker
-		      rootMargin: '0px 0px -10% 0px'   // slight buffer
+		      threshold: [0.25],
+		      rootMargin: '0px 0px -20% 0px'
 		    });
 		
-		    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		    document.querySelectorAll('.reveal').forEach(el => {
+		      lastVisible.set(el, false);
+		      observer.observe(el);
+		    });
 		  });
 		</script>
+
 		</body>
 </html>

@@ -3516,58 +3516,65 @@ body.is-preload #banner p {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   WRAPPER (SVG waves without hairlines + 1px bleed fix)
+   WRAPPER + BLEED-FIXED TRIANGLES
 ─────────────────────────────────────────────────────────────────────────── */
 .wrapper {
+  /* background for the content block */
   background-color: #2e3141;
-  margin: 6.5em 0;
+
+  /* original margin was 6.5em 0; shrink by 1px so triangles overlap perfectly */
+  margin: calc(6.5em - 1px) 0;
   position: relative;
 }
 
-/* both top and bottom wave shapes, default fill = wrapper bg */
+/* both top & bottom wave shapes */
 .wrapper:before,
 .wrapper:after {
   content: '';
-  display: block;
   position: absolute;
   width: 100%;
-  height: 6.5em;            /* base height */
+
+  /* original height was 6.5em; extend by 2px (1px top + 1px bottom) */
+  height: calc(6.5em + 2px);
+
   background-repeat: no-repeat;
   background-size: 100% 100%;
+
+  /* SVG triangle fill matches the wrapper background; hairlines are killed by overlap */
   background-image:
-    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%232e3141%3B' /%3E%3C/svg%3E");
-  box-shadow: none !important; /* kill default hairline */
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%232e3141' />\
+</svg>");
+  box-shadow: none !important; /* kill any default hairlines */
 }
 
-/* position top & bottom */
+/* position the triangles */
 .wrapper:before {
-  top: -6.5em;
+  top: calc(-6.5em - 1px);
   left: 0;
+  transform: none;
 }
 .wrapper:after {
-  bottom: -6.5em;
+  bottom: calc(-6.5em - 1px);
   left: 0;
   transform: scaleY(-1);
 }
 
 /* mirror for .alt sections */
-.wrapper.alt:before {
-  transform: scaleX(-1);
-}
-.wrapper.alt:after {
-  transform: scaleY(-1) scaleX(-1);
-}
+.wrapper.alt:before  { transform: scaleX(-1); }
+.wrapper.alt:after   { transform: scaleY(-1) scaleX(-1); }
 
-/* inner container */
+/* your inner container */
 .wrapper .inner {
-  width: 55em;
   max-width: 100%;
+  width: 55em;
   margin: 0 auto;
   padding: 3em 0 1em;
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   COLOURED VARIANTS (style2..style6 swap the triangle fill)
+   COLOURED VARIANTS (style2…style6 just swap the triangle fill)
 ─────────────────────────────────────────────────────────────────────────── */
 .wrapper.style2 {
   background-color: #353849;
@@ -3575,7 +3582,10 @@ body.is-preload #banner p {
 .wrapper.style2:before,
 .wrapper.style2:after {
   background-image:
-    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23353849%3B' /%3E%3C/svg%3E");
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%23353849' />\
+</svg>");
 }
 
 .wrapper.style3 {
@@ -3584,17 +3594,22 @@ body.is-preload #banner p {
 .wrapper.style3:before,
 .wrapper.style3:after {
   background-image:
-    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%233d4051%3B' /%3E%3C/svg%3E");
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%233d4051' />\
+</svg>");
 }
 
-/* …repeat for style4, style5, style6… */
 .wrapper.style4 {
   background-color: #454858;
 }
 .wrapper.style4:before,
 .wrapper.style4:after {
   background-image:
-    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23454858%3B' /%3E%3C/svg%3E");
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%23454858' />\
+</svg>");
 }
 
 .wrapper.style5 {
@@ -3603,7 +3618,10 @@ body.is-preload #banner p {
 .wrapper.style5:before,
 .wrapper.style5:after {
   background-image:
-    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%234d5060%3B' /%3E%3C/svg%3E");
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%234d5060' />\
+</svg>");
 }
 
 .wrapper.style6 {
@@ -3612,7 +3630,10 @@ body.is-preload #banner p {
 .wrapper.style6:before,
 .wrapper.style6:after {
   background-image:
-    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%23555867%3B' /%3E%3C/svg%3E");
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%23555867' />\
+</svg>");
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
@@ -3624,7 +3645,10 @@ body.is-preload #banner p {
 .wrapper.spotlight:before,
 .wrapper.spotlight:after {
   background-image:
-    url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%234c5c96%3B' /%3E%3C/svg%3E");
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%234c5c96' />\
+</svg>");
 }
 
 .wrapper.spotlight .inner {
@@ -3648,7 +3672,7 @@ body.is-preload #banner p {
   width: 100%;
 }
 
-/* odd ones flip sides */
+/* flip odd‐numbered spotlight sections */
 .wrapper.spotlight:nth-child(2n - 1) .inner {
   flex-direction: row-reverse;
   text-align: right;
@@ -3657,7 +3681,9 @@ body.is-preload #banner p {
   margin: 0 0 2em 3em;
 }
 
-/* responsive tweaks */
+/* ──────────────────────────────────────────────────────────────────────────
+   SPOTLIGHT RESPONSES
+─────────────────────────────────────────────────────────────────────────── */
 @media screen and (max-width: 980px) {
   .wrapper.spotlight .image {
     width: 32em;
@@ -3688,20 +3714,6 @@ body.is-preload #banner p {
     max-width: 85%;
     margin: 0 0 1em 0 !important;
   }
-}
-
-/* ──────────────────────────────────────────────────────────────────────────
-   BLEED FIX: extend triangles & shift by 1px so no gray hairline ever shows
-─────────────────────────────────────────────────────────────────────────── */
-.wrapper:before,
-.wrapper:after {
-  height: calc(6.5em + 2px) !important;
-}
-.wrapper:before {
-  top: calc(-6.5em - 1px) !important;
-}
-.wrapper:after {
-  bottom: calc(-6.5em - 1px) !important;
 }
 
 

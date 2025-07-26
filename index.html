@@ -192,8 +192,9 @@
 			        }
 			      });
 			    }, {
-			      threshold: [0.3],                // reduced sensitivity to flicker
-			      rootMargin: '0px 0px -10% 0px'   // slight buffer
+			    	threshold: [0.2],
+				rootMargin: '0px 0px -15% 0px'
+
 			    });
 			
 			    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));

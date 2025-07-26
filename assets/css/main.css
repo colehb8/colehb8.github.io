@@ -3134,7 +3134,7 @@ a.special:not(.button):active:before {
 #header .site-title {
   margin: 0;
   font-family: Raleway, Helvetica, sans-serif;
-  font-size: clamp(2.5rem, 5vw, 3.75rem); /* ← keep original size */
+  font-size: clamp(2.5rem, 5vw, 4.25rem); /* ← keep original size */
   font-weight: 800;
   color: #fff;
   letter-spacing: 0.05em;

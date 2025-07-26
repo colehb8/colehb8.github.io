@@ -174,32 +174,30 @@
 		</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-			
-			<script>
-			  document.addEventListener('DOMContentLoaded', () => {
-			    const observer = new IntersectionObserver((entries) => {
-			      entries.forEach(entry => {
-			        if (entry.intersectionRatio > 0.3) {
-			          entry.target.classList.add('active');
-			        } else {
-			          entry.target.classList.remove('active');
-			        }
-			      });
-			    }, {
-			    	threshold: [0.2],
-				rootMargin: '0px 0px -15% 0px'
-
-			    });
-			
-			    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-			  });
-			</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		
+		<script>
+		  document.addEventListener('DOMContentLoaded', () => {
+		    const observer = new IntersectionObserver((entries) => {
+		      entries.forEach(entry => {
+		        if (entry.intersectionRatio > 0.2) {
+		          entry.target.classList.add('active');
+		        } else {
+		          entry.target.classList.remove('active');
+		        }
+		      });
+		    }, {
+		      threshold: [0.2],
+		      rootMargin: '0px 0px -15% 0px'
+		    });
+		
+		    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		  });
+		</script>
 		</body>
-	</html>
-
+		</html>

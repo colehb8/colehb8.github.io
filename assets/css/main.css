@@ -3132,7 +3132,7 @@ a.special:not(.button):active:before {
 #header .site-title {
   margin: 0;
   font-family: Raleway, Helvetica, sans-serif;
-  font-size: clamp(2rem, 6vw, 3.75rem);
+  font-size: clamp(2rem, 4vw, 2.5rem); /* limit max to ~40px */
   font-weight: 800;
   color: #fff;
   letter-spacing: 0.05em;
@@ -3140,6 +3140,10 @@ a.special:not(.button):active:before {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+
+  display: flex;
+  align-items: center;
+  height: 110px; /* same as logo max-height */
 }
 @media screen and (max-width: 768px) {
   #header .title-container { display: none; }

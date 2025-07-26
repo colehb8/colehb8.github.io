@@ -3940,6 +3940,44 @@ body.is-preload #banner p {
 	  padding: 0;
 	  white-space: nowrap; /* keeps text from breaking */
 	}
+/* ──────────────────────────────────────────────────────────────────────────
+   1) ENLARGE MISSION STATEMENT
+─────────────────────────────────────────────────────────────────────────── */
+#banner .mission-statement {
+  /* fluidly scale between 2rem and 3rem */
+  font-size: clamp(2rem, 6vw, 3rem);
+  margin-bottom: 2rem;
+  line-height: 1.3;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   2) PULL UP FIRST SPOTLIGHT (kill its top‐wave + margin)
+─────────────────────────────────────────────────────────────────────────── */
+#wrapper > section.wrapper.spotlight:first-of-type {
+  margin: 0 !important;                /* collapse its default space */
+}
+#wrapper > section.wrapper.spotlight:first-of-type::before {
+  display: none !important;            /* hide that ::before triangle */
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   3) ADD MOBILE SIDE PADDING
+─────────────────────────────────────────────────────────────────────────── */
+@media screen and (max-width: 736px) {
+  /* pad the banner & each wrapper section */
+  #banner,
+  #wrapper > section.wrapper {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  /* allow inner containers to go full–width */
+  #banner .inner,
+  .wrapper .inner {
+    width: auto;
+    max-width: none;
+  }
+}
 
 /* ──────────────────────────────────────────────────────────────────────────
    SCROLL‐REVEAL

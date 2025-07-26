@@ -3516,45 +3516,41 @@ body.is-preload #banner p {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   WRAPPER (SVG waves without hairlines)
-────────────────────────────────────────────────────────────────────────── */
+   WRAPPER (SVG waves without hairlines + 1px bleed fix)
+─────────────────────────────────────────────────────────────────────────── */
 .wrapper {
   background-color: #2e3141;
-  /* shrink the vertical gap by 1px so the triangles overlap */
-  margin: calc(6.5em - 2px) 0;
+  margin: 6.5em 0;
   position: relative;
 }
 
-/* both top and bottom wave shapes, default fill = site bg (#2e3141) */
+/* both top and bottom wave shapes, default fill = wrapper bg */
 .wrapper:before,
 .wrapper:after {
   content: '';
   display: block;
   position: absolute;
   width: 100%;
-  /* extend the triangle by 1px so it covers the shrunken gap */
-  height: calc(6.5em + 2px);
+  height: 6.5em;            /* base height */
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  /* triangle fill = dark gray */
   background-image:
     url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%232e3141%3B' /%3E%3C/svg%3E");
-  box-shadow: none !important; /* kill the 1px divider lines */
+  box-shadow: none !important; /* kill default hairline */
 }
 
-/* position them */
+/* position top & bottom */
 .wrapper:before {
-  top: calc(-6.5em - 2px);  /* move up the extra px too */
+  top: -6.5em;
   left: 0;
-  transform: none;
 }
 .wrapper:after {
-  bottom: calc(-6.5em - 2px);
+  bottom: -6.5em;
   left: 0;
   transform: scaleY(-1);
 }
 
-/* mirror for .alt wrappers */
+/* mirror for .alt sections */
 .wrapper.alt:before {
   transform: scaleX(-1);
 }
@@ -3562,7 +3558,7 @@ body.is-preload #banner p {
   transform: scaleY(-1) scaleX(-1);
 }
 
-/* your inner container */
+/* inner container */
 .wrapper .inner {
   width: 55em;
   max-width: 100%;
@@ -3571,8 +3567,8 @@ body.is-preload #banner p {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   STYLE-2 through STYLE-6 (just swap the triangle fill)
-────────────────────────────────────────────────────────────────────────── */
+   COLOURED VARIANTS (style2..style6 swap the triangle fill)
+─────────────────────────────────────────────────────────────────────────── */
 .wrapper.style2 {
   background-color: #353849;
 }
@@ -3591,6 +3587,7 @@ body.is-preload #banner p {
     url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%233d4051%3B' /%3E%3C/svg%3E");
 }
 
+/* …repeat for style4, style5, style6… */
 .wrapper.style4 {
   background-color: #454858;
 }
@@ -3619,93 +3616,17 @@ body.is-preload #banner p {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   STYLE-1 (spotlight) OVERRIDE + LAYOUT
-────────────────────────────────────────────────────────────────────────── */
+   SPOTLIGHT LAYOUT (style1)
+─────────────────────────────────────────────────────────────────────────── */
 .wrapper.spotlight {
   background-color: #4c5c96;
 }
-/* redraw triangles in spotlight blue */
 .wrapper.spotlight:before,
 .wrapper.spotlight:after {
   background-image:
     url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%234c5c96%3B' /%3E%3C/svg%3E");
 }
 
-/* spotlight content layout */
-.wrapper.spotlight .inner {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-}
-.wrapper.spotlight .image {
-  border-radius: 100%;
-  margin: 0 3em 2em 0;
-  width: 22em;
-  overflow: hidden;
-  flex: 1;
-}
-.wrapper.spotlight .image img {
-  width: 100%;
-  border-radius: 100%;
-}
-.wrapper.spotlight .content {
-  flex: 2;
-  width: 100%;
-}
-
-/* alternate sides for odd‐numbered sections */
-.wrapper.spotlight:nth-child(2n - 1) .inner {
-  flex-direction: row-reverse;
-  text-align: right;
-}
-.wrapper.spotlight:nth-child(2n - 1) .image {
-  margin: 0 0 2em 3em;
-}
-
-/* ──────────────────────────────────────────────────────────────────────────
-   SPOTLIGHT RESPONSIVE TWEAKS
-────────────────────────────────────────────────────────────────────────── */
-@media screen and (max-width: 980px) {
-  .wrapper.spotlight .image {
-    margin: 0 2em 2em 0;
-    width: 32em;
-  }
-  .wrapper.spotlight:nth-child(2n - 1) .image {
-    margin: 0 0 2em 2em;
-  }
-}
-
-@media screen and (max-width: 736px) {
-  .wrapper.spotlight .inner {
-    align-items: flex-start;
-  }
-  .wrapper.spotlight .image {
-    width: 19em;
-    margin: 0 1.75em 2em 0;
-  }
-  .wrapper.spotlight:nth-child(2n - 1) .image {
-    margin: 0 0 2em 1.75em;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .wrapper.spotlight .inner {
-    display: block;
-  }
-  .wrapper.spotlight .image {
-    width: 12em;
-    max-width: 85%;
-    margin: 0 0 1em 0 !important;
-  }
-}
-
-
-/* ──────────────────────────────────────────────────────────────────────────
-   SPOTLIGHT LAYOUT
-─────────────────────────────────────────────────────────────────────────── */
-.wrapper.spotlight {
-  background-color: #4c5c96;  /* your style1 color */
-}
 .wrapper.spotlight .inner {
   display: flex;
   align-items: center;
@@ -3726,6 +3647,8 @@ body.is-preload #banner p {
   flex: 2;
   width: 100%;
 }
+
+/* odd ones flip sides */
 .wrapper.spotlight:nth-child(2n - 1) .inner {
   flex-direction: row-reverse;
   text-align: right;
@@ -3734,9 +3657,7 @@ body.is-preload #banner p {
   margin: 0 0 2em 3em;
 }
 
-/* ──────────────────────────────────────────────────────────────────────────
-   SPOTLIGHT RESPONSIVE TWEAKS
-─────────────────────────────────────────────────────────────────────────── */
+/* responsive tweaks */
 @media screen and (max-width: 980px) {
   .wrapper.spotlight .image {
     width: 32em;
@@ -3746,7 +3667,6 @@ body.is-preload #banner p {
     margin: 0 0 2em 2em;
   }
 }
-
 @media screen and (max-width: 736px) {
   .wrapper.spotlight .inner {
     align-items: flex-start;
@@ -3759,7 +3679,6 @@ body.is-preload #banner p {
     margin: 0 0 2em 1.75em;
   }
 }
-
 @media screen and (max-width: 480px) {
   .wrapper.spotlight .inner {
     display: block;
@@ -3770,6 +3689,21 @@ body.is-preload #banner p {
     margin: 0 0 1em 0 !important;
   }
 }
+
+/* ──────────────────────────────────────────────────────────────────────────
+   BLEED FIX: extend triangles & shift by 1px so no gray hairline ever shows
+─────────────────────────────────────────────────────────────────────────── */
+.wrapper:before,
+.wrapper:after {
+  height: calc(6.5em + 2px) !important;
+}
+.wrapper:before {
+  top: calc(-6.5em - 1px) !important;
+}
+.wrapper:after {
+  bottom: calc(-6.5em - 1px) !important;
+}
+
 
 /* Footer */
 

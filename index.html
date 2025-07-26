@@ -183,34 +183,23 @@
 		
 		<script>
 		  document.addEventListener('DOMContentLoaded', () => {
-		    let lastVisible = new Map(); // track last visibility status
-		
 		    const observer = new IntersectionObserver((entries) => {
 		      entries.forEach(entry => {
-			const el = entry.target;
-			const wasVisible = lastVisible.get(el) || false;
-			const isVisible = entry.intersectionRatio > 0.25;
-		
-			if (isVisible !== wasVisible) {
-			  if (isVisible) {
-			    el.classList.add('active');
-			  } else {
-			    el.classList.remove('active');
-			  }
-			  lastVisible.set(el, isVisible);
-			}
+		        if (entry.isIntersecting) {
+		          entry.target.classList.add('active');
+		        } else {
+		          entry.target.classList.remove('active');
+		        }
 		      });
 		    }, {
-		      threshold: [0.25],
-		      rootMargin: '0px 0px -20% 0px'
+		      threshold: 0.1,                   // low threshold for fast trigger
+		      rootMargin: '0px 0px -10% 0px'   // small buffer to avoid flicker
 		    });
 		
-		    document.querySelectorAll('.reveal').forEach(el => {
-		      lastVisible.set(el, false);
-		      observer.observe(el);
-		    });
+		    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 		  });
 		</script>
+
 
 		</body>
 </html>

@@ -185,19 +185,19 @@
 		  document.addEventListener('DOMContentLoaded', () => {
 		    const observer = new IntersectionObserver((entries) => {
 		      entries.forEach(entry => {
-		        if (entry.intersectionRatio > 0.2) {
+		        if (entry.intersectionRatio > 0.3) {
 		          entry.target.classList.add('active');
 		        } else {
 		          entry.target.classList.remove('active');
 		        }
 		      });
 		    }, {
-		      threshold: [0.2],
-		      rootMargin: '0px 0px -15% 0px'
+		      threshold: [0.3],                // reduced sensitivity to flicker
+		      rootMargin: '0px 0px -10% 0px'   // slight buffer
 		    });
 		
 		    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 		  });
 		</script>
 		</body>
-		</html>
+</html>

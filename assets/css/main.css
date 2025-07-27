@@ -3002,7 +3002,7 @@ a.special:not(.button):active:before {
 		}
 
 /* ──────────────────────────────────────────────────────────────────────────
-   FEATURES (with true square thumbnails)
+   FEATURES (with true square, full-bleed thumbnails)
 ─────────────────────────────────────────────────────────────────────────── */
 
 .features {
@@ -3023,27 +3023,34 @@ a.special:not(.button):active:before {
     margin-right: 0;
 }
 
-/*─ make the .image container a perfect square ─*/
+/* ─ make the .image container a perfect square, bleeding to edges ─ */
 .features article .image {
-    width: 100%;               /* fill the article’s width */
-    aspect-ratio: 1 / 1;       /* force 1:1 shape */
-    overflow: hidden;          /* crop anything outside */
-    border-radius: 5px 5px 0 0;
+    position: relative;
+    margin-left: -1.75em;                  /* bleed left */
+    margin-top:  -1.75em;                  /* bleed up */
+    width:       calc(100% + 3.5em);       /* bleed total */
+    aspect-ratio: 1 / 1;                   /* force 1:1 box */
+    overflow:     hidden;                  /* crop overflow */
+    border-radius: 5px 5px 0 0;            /* keep card rounding */
 }
 
 .features article .image img {
-    width: 100%;
+    position: absolute;
+    top:    0; 
+    left:   0;
+    width:  100%;
     height: 100%;
-    object-fit: cover;         /* scale & crop to fill the square */
+    object-fit: cover;                     /* fill + crop */
     display: block;
 }
 
-/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
-/* responsive tweaks: keep the same square logic, just adjust the article width */
+/* ────────────────────────────────────────────────────────────────────────── */
+/* Responsive tweaks: keep the same square/bleed logic, only adjust article width */
+
 @media screen and (max-width: 980px) {
     .features article {
         margin: 1em 2em 1em 0;
-        width: calc(50% - 1em);
+        width:  calc(50% - 1em);
     }
 }
 
@@ -3051,7 +3058,13 @@ a.special:not(.button):active:before {
     .features article {
         padding: 1.5em 1.5em 0.1em 1.5em;
         margin: 0.875em 1.75em 0.875em 0;
-        width: calc(50% - 0.875em - 1px);
+        width:  calc(50% - 0.875em - 1px);
+    }
+    .features article .image {
+        margin-left: -1.5em;
+        margin-top:  -1.5em;
+        width:       calc(100% + 3em);
+        aspect-ratio: 1 / 1;
     }
 }
 

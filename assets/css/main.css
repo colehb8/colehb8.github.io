@@ -3346,14 +3346,12 @@ body.is-menu-visible #menu .inner {
   }
 }
 
-/* Banner */
-
 #banner {
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 1em; /* less vertical padding to allow true centering */
+  padding: 0 1em;
   box-sizing: border-box;
   text-align: center;
 }
@@ -3363,19 +3361,15 @@ body.is-menu-visible #menu .inner {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-
-  height: 100vh;
-  padding-top: 3rem; /* Light push to visually offset the nav bar */
+  padding-top: 2.5rem; /* Tweak as needed for nav height compensation */
   padding-left: 1em;
   padding-right: 1em;
   margin: 0 auto;
   width: 100%;
   max-width: 55em;
   box-sizing: border-box;
+  flex: 1 0 auto;
 }
-
-
 
 #banner .logo {
 	-moz-transition: opacity 2s ease, -moz-transform 1s ease;

@@ -3002,80 +3002,63 @@ a.special:not(.button):active:before {
 		}
 
 /* ──────────────────────────────────────────────────────────────────────────
-   FEATURES (with true square, full-bleed thumbnails)
+   FEATURES (simplified squares + consistent spacing)
 ─────────────────────────────────────────────────────────────────────────── */
 
 .features {
-    display: flex;
-    flex-wrap: wrap;
-    margin: 0 0 2em 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2em;                /* space between cards */
+  margin: 0 0 2em 0;
 }
 
 .features article {
-    padding: 1.75em 1.75em 0.1em 1.75em;
-    background-color: #353849;
-    border-radius: 5px;
-    margin: 1.5em 3em 1.5em 0;
-    width: calc(50% - 1.5em);
+  background-color: #353849;
+  border-radius: 5px;
+  width: calc(50% - 1em);  /* two per row, minus gutter */
+  display: flex;
+  flex-direction: column;  /* stack image + text */
+  overflow: hidden;        /* clip any bleed */
 }
 
-.features article:nth-child(2n) {
-    margin-right: 0;
-}
-
-/* ─ make the .image container a perfect square, bleeding to edges ─ */
+/* square image at top */
 .features article .image {
-    position: relative;
-    margin-left: -1.75em;                  /* bleed left */
-    margin-top:  -1.75em;                  /* bleed up */
-    width:       calc(100% + 3.5em);       /* bleed total */
-    aspect-ratio: 1 / 1;                   /* force 1:1 box */
-    overflow:     hidden;                  /* crop overflow */
-    border-radius: 5px 5px 0 0;            /* keep card rounding */
+  width: 100%;
+  aspect-ratio: 1 / 1;     /* perfect 1:1 */
+  overflow: hidden;
 }
 
 .features article .image img {
-    position: absolute;
-    top:    0; 
-    left:   0;
-    width:  100%;
-    height: 100%;
-    object-fit: cover;                     /* fill + crop */
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;       /* fill & crop */
+  display: block;
 }
 
-/* ────────────────────────────────────────────────────────────────────────── */
-/* Responsive tweaks: keep the same square/bleed logic, only adjust article width */
+/* title + copy spacing */
+.features article h3.major {
+  margin: 1em;             /* space around heading */
+  font-size: 1em;          /* adjust as needed */
+}
 
+.features article p {
+  margin: 0 1em 1.5em 1em;  /* bottom padding before card ends */
+  line-height: 1.6;
+  color: #fff;
+  flex-grow: 1;            /* push footer (if any) down */
+}
+
+/* responsive: one per row on narrow screens */
 @media screen and (max-width: 980px) {
-    .features article {
-        margin: 1em 2em 1em 0;
-        width:  calc(50% - 1em);
-    }
+  .features article {
+    width: calc(50% - 1em);
+  }
 }
 
 @media screen and (max-width: 736px) {
-    .features article {
-        padding: 1.5em 1.5em 0.1em 1.5em;
-        margin: 0.875em 1.75em 0.875em 0;
-        width:  calc(50% - 0.875em - 1px);
-    }
-    .features article .image {
-        margin-left: -1.5em;
-        margin-top:  -1.5em;
-        width:       calc(100% + 3em);
-        aspect-ratio: 1 / 1;
-    }
-}
-
-@media screen and (max-width: 480px) {
-    .features {
-        display: block;
-    }
-    .features article {
-        width: 100%;
-        margin: 0 0 2em 0 !important;
-    }
+  .features article {
+    width: 100%;
+  }
 }
 
 

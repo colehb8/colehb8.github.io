@@ -3627,91 +3627,82 @@ body.is-preload #banner p {
 }
 
 /* ──────────────────────────────────────────────────────────────────────────
-   SPOTLIGHT LAYOUT (style1) – Images always on left, consistent spacing
+   SPOTLIGHT LAYOUT (style1)
 ─────────────────────────────────────────────────────────────────────────── */
 .wrapper.spotlight {
   background-color: #4c5c96;
-  position: relative;
-  overflow: hidden;
 }
-
 .wrapper.spotlight:before,
 .wrapper.spotlight:after {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: calc(6.5em + 2px);
-  background-repeat: no-repeat;
-  background-size: 100% 100%;
-  background-image: url("data:image/svg+xml;charset=utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><polygon points='0,100 100,0 100,100' fill='%234c5c96'/></svg>");
-  box-shadow: none !important;
-}
-.wrapper.spotlight:before {
-  top: -6.5em;
-  left: 0;
-}
-.wrapper.spotlight:after {
-  bottom: -6.5em;
-  left: 0;
-  transform: scaleY(-1);
+  background-image:
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%234c5c96' />\
+</svg>");
 }
 
 .wrapper.spotlight .inner {
   display: flex;
   align-items: center;
-  flex-direction: row;         /* image on left always */
-  text-align: left;           /* consistent text alignment */
-  max-width: 55em;
-  margin: 0 auto;
-  padding: 3em 1em;
+  flex-direction: row;
 }
-
 .wrapper.spotlight .image {
-  flex: 1 1 22em;
-  max-width: 22em;
-  margin: 0 3em 2em 0;         /* space between image & text */
-  border-radius: 100%;
+  flex: 1;
+  width: 22em;
+  margin: 0 3em 2em 0;
   overflow: hidden;
+  border-radius: 100%;
 }
 .wrapper.spotlight .image img {
   width: 100%;
-  height: auto;
-  display: block;
+  border-radius: 100%;
 }
-
 .wrapper.spotlight .content {
-  flex: 2 1 0;
+  flex: 2;
   width: 100%;
-  color: #fff;
 }
 
-/* Responsive adjustments */
+/* flip odd‐numbered spotlight sections */
+.wrapper.spotlight:nth-child(2n - 1) .inner {
+  flex-direction: row-reverse;
+  text-align: right;
+}
+.wrapper.spotlight:nth-child(2n - 1) .image {
+  margin: 0 0 2em 3em;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   SPOTLIGHT RESPONSES
+─────────────────────────────────────────────────────────────────────────── */
 @media screen and (max-width: 980px) {
   .wrapper.spotlight .image {
-    flex: 1 1 32em;
-    max-width: 32em;
+    width: 32em;
     margin: 0 2em 2em 0;
   }
-  .wrapper.spotlight .inner {
-    padding: 2em 1em;
+  .wrapper.spotlight:nth-child(2n - 1) .image {
+    margin: 0 0 2em 2em;
   }
 }
-
 @media screen and (max-width: 736px) {
   .wrapper.spotlight .inner {
-    flex-direction: column;
     align-items: flex-start;
   }
   .wrapper.spotlight .image {
-    width: 100%;
-    max-width: none;
-    margin: 0 0 1.5em 0;
+    width: 19em;
+    margin: 0 1.75em 2em 0;
+  }
+  .wrapper.spotlight:nth-child(2n - 1) .image {
+    margin: 0 0 2em 1.75em;
   }
 }
-
 @media screen and (max-width: 480px) {
   .wrapper.spotlight .inner {
-    padding: 1.5em;
+    display: block;
+  }
+  .wrapper.spotlight .image {
+    width: 12em;
+    max-width: 85%;
+    margin: 0 0 1em 0 !important;
   }
 }
 

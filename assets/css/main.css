@@ -3364,12 +3364,10 @@ body.is-menu-visible #menu .inner {
   align-items: center;
   justify-content: center;
   text-align: center;
-  height: calc(100vh - 4em); /* adjust for top bar height */
-  min-height: 60vh;
-  padding: 4em 1em 2em 1em; /* tweak top/bottom spacing */
-  margin: 0 auto;
-  width: 55em;
+  height: calc(100vh - 5em); /* subtract nav height */
+  padding-top: 5em; /* add some breathing room */
 }
+
 
 #banner .logo {
 	-moz-transition: opacity 2s ease, -moz-transform 1s ease;

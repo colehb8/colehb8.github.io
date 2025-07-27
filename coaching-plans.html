@@ -1,0 +1,141 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Coaching Plans – Set To Adapt</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon-64x64.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <!-- Anchor offset for in‐page links -->
+  <style>
+    .anchor-offset {
+      position: relative;
+      top: -125px;
+      height: 0;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <div class="header-container">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/logo.transparent.png" alt="SetToAdapt Logo">
+          </a>
+        </div>
+        <div class="title-container">
+          <span class="site-title"><b>SET TO ADAPT</b></span>
+        </div>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Slide-out Menu -->
+    <nav id="menu">
+      <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coaching-plans.html">Coaching Plans</a></li>
+          <li><a href="posing-packages.html">Posing Packages</a></li>
+          <li><a href="about.html">About Me</a></li>
+        </ul>
+        <a href="#" class="close">Close</a>
+      </div>
+    </nav>
+
+    <!-- Anchor for “Home” link -->
+    <div id="top" class="anchor-offset"></div>
+
+    <!-- Premium Coaching Plan -->
+    <section id="one" class="wrapper spotlight style1">
+      <div class="inner">
+        <div class="image"><img src="images/pic 01.JPG" alt="" /></div>
+        <div class="content">
+          <h2 class="major">Premium Coaching Plan</h2>
+          <p>
+            The ideal coaching plan for those in competition prep, immediately post competition, and for individuals looking for STA's most hands-on coaching program. Remove the doubt from your training, let STA apply nuanced training concepts to ensure you make progress towards your goals!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Standard Coaching Plan -->
+    <section id="two" class="wrapper alt spotlight style2 reveal">
+      <div class="inner">
+        <div class="image"><img src="images/pic 02.JPEG" alt="" /></div>
+        <div class="content">
+          <h2 class="major">Standard Coaching Plan</h2>
+          <p>
+            This coaching plan is best for those looking for guidance, but not necessarily constant feedback. If you are looking to “<i>main-gain</i>” or perform a body recomposition, optimize your training, recovery, and nutrition with science-backed recommendations and programming.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lifestyle & Transformation Plan -->
+    <section id="three" class="wrapper spotlight style3 reveal">
+      <div class="inner">
+        <div class="image"><img src="images/pic 03.jpeg" alt="" /></div>
+        <div class="content">
+          <h2 class="major">Lifestyle and Transformation Plan</h2>
+          <p>
+            Looking for a major life change? Wishing you were in better shape? This coaching plan is for you. Reframe your perception of what health and fitness need to be. Create structure in various aspects of your life, and set the building blocks for a happier, and more healthy, future.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+      <div class="inner">
+        <div class="contact-info">
+          <ul class="contact-info">
+            <li><i class="icon solid fa-envelope"></i> <a href="mailto:bhella@musc.edu">bhella@musc.edu</a></li>
+            <li><i class="icon brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/cole-bhella/">LinkedIn</a></li>
+            <li><i class="icon brands fa-instagram"></i> <a href="https://www.instagram.com/set2adapt/">Instagram</a></li>
+          </ul>
+        </div>
+        <ul class="copyright">
+          <li>&copy; Untitled Inc. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    window.onbeforeunload = () => window.scrollTo(0,0);
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => e.isIntersecting
+          ? e.target.classList.add('active')
+          : e.target.classList.remove('active'));
+      }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    });
+  </script>
+</body>
+</html>

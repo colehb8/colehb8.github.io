@@ -3363,11 +3363,12 @@ body.is-menu-visible #menu .inner {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  max-width: 55em;
-  padding: 3em 1em;
-  margin: 0 auto;
   text-align: center;
+  height: calc(100vh - 4em); /* adjust for top bar height */
+  min-height: 60vh;
+  padding: 4em 1em 2em 1em; /* tweak top/bottom spacing */
+  margin: 0 auto;
+  width: 55em;
 }
 
 #banner .logo {

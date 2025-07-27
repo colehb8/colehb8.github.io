@@ -1,0 +1,154 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Posing Packages – Set To Adapt</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon-64x64.png" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/main.css" />
+  <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+  <!-- Anchor offset for in‐page links -->
+  <style>
+    .anchor-offset {
+      position: relative;
+      top: -125px;
+      height: 0;
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body class="is-preload">
+  <div id="page-wrapper">
+
+    <!-- Header -->
+    <header id="header">
+      <div class="header-container">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/logo.transparent.png" alt="SetToAdapt Logo">
+          </a>
+        </div>
+        <div class="title-container">
+          <span class="site-title"><b>SET TO ADAPT</b></span>
+        </div>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Slide-out Menu -->
+    <nav id="menu">
+      <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coaching-plans.html">Coaching Plans</a></li>
+          <li><a href="posing-packages.html">Posing Packages</a></li>
+          <li><a href="about.html">About Me</a></li>
+        </ul>
+        <a href="#" class="close">Close</a>
+      </div>
+    </nav>
+
+    <!-- Anchor for “Home” link -->
+    <div id="top" class="anchor-offset"></div>
+
+    <!-- Just The Essentials -->
+    <section id="one" class="wrapper spotlight style1">
+      <div class="inner">
+        <div class="image"><img src="images/pic04.jpg" alt="Just The Essentials" /></div>
+        <div class="content">
+          <h2 class="major">Just The Essentials</h2>
+          <p>
+            Two 45-minute sessions aimed at teaching you how to hit your mandatory poses to your division and organization's specifications.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage Ready -->
+    <section id="two" class="wrapper alt spotlight style2 reveal">
+      <div class="inner">
+        <div class="image"><img src="images/pic05.jpg" alt="Stage Ready" /></div>
+        <div class="content">
+          <h2 class="major">Stage Ready</h2>
+          <p>
+            Don't just learn how to hit your mandatories, but how to command the stage with your presence to show your strongest points.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tailored to Fit -->
+    <section id="three" class="wrapper spotlight style3 reveal">
+      <div class="inner">
+        <div class="image"><img src="images/pic06.jpg" alt="Tailored to Fit" /></div>
+        <div class="content">
+          <h2 class="major">Tailored to Fit</h2>
+          <p>
+            This package is for those looking to create a routine but don't know where to start. STA will choreograph, demonstrate, and teach a unique and custom routine for between 30–90 seconds.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- No Stone Unturned -->
+    <section id="four" class="wrapper alt spotlight style4 reveal">
+      <div class="inner">
+        <div class="image"><img src="images/pic07.jpg" alt="No Stone Unturned" /></div>
+        <div class="content">
+          <h2 class="major">No Stone Unturned</h2>
+          <p>
+            STA's most comprehensive posing package. Learn the mandatories, create a stage presence, and develop a routine that is custom tailored to your strongest poses.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <section id="footer">
+      <div class="inner">
+        <div class="contact-info">
+          <ul class="contact-info">
+            <li><i class="icon solid fa-envelope"></i> <a href="mailto:bhella@musc.edu">bhella@musc.edu</a></li>
+            <li><i class="icon brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/cole-bhella/">LinkedIn</a></li>
+            <li><i class="icon brands fa-instagram"></i> <a href="https://www.instagram.com/set2adapt/">Instagram</a></li>
+          </ul>
+        </div>
+        <ul class="copyright">
+          <li>&copy; Untitled Inc. All rights reserved.</li>
+          <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Scripts -->
+  <script src="assets/js/jquery.min.js"></script>
+  <script src="assets/js/jquery.scrollex.min.js"></script>
+  <script src="assets/js/browser.min.js"></script>
+  <script src="assets/js/breakpoints.min.js"></script>
+  <script src="assets/js/util.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    window.onbeforeunload = () => window.scrollTo(0,0);
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const obs = new IntersectionObserver((entries) => {
+        entries.forEach(e => e.isIntersecting
+          ? e.target.classList.add('active')
+          : e.target.classList.remove('active'));
+      }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+      document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    });
+  </script>
+</body>
+</html>

@@ -3001,16 +3001,12 @@ a.special:not(.button):active:before {
 
 		}
 
-/* Features */
+/* ──────────────────────────────────────────────────────────────────────────
+   FEATURES (with true square thumbnails)
+─────────────────────────────────────────────────────────────────────────── */
 
 .features {
-    display: -moz-flex;
-    display: -webkit-flex;
-    display: -ms-flex;
     display: flex;
-    -moz-flex-wrap: wrap;
-    -webkit-flex-wrap: wrap;
-    -ms-flex-wrap: wrap;
     flex-wrap: wrap;
     margin: 0 0 2em 0;
 }
@@ -3027,31 +3023,23 @@ a.special:not(.button):active:before {
     margin-right: 0;
 }
 
-/* ─── force square image container ───────────────────────────────── */
-
+/*─ make the .image container a perfect square ─*/
 .features article .image {
+    width: 100%;               /* fill the article’s width */
+    aspect-ratio: 1 / 1;       /* force 1:1 shape */
+    overflow: hidden;          /* crop anything outside */
     border-radius: 5px 5px 0 0;
-    display: block;
-    margin-bottom: 1.75em;
-    margin-left: -1.75em;
-    margin-top: -1.75em;
-    position: relative;
-    width: calc(100% + 3.5em);
-
-    /* new: keep it 1:1 and crop overflow */
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
 }
 
 .features article .image img {
-    border-radius: 5px 5px 0 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: cover;         /* scale & crop to fill the square */
+    display: block;
 }
 
-/* ─── responsive tweaks ─────────────────────────────────────────────── */
-
+/*–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––*/
+/* responsive tweaks: keep the same square logic, just adjust the article width */
 @media screen and (max-width: 980px) {
     .features article {
         margin: 1em 2em 1em 0;
@@ -3065,24 +3053,12 @@ a.special:not(.button):active:before {
         margin: 0.875em 1.75em 0.875em 0;
         width: calc(50% - 0.875em - 1px);
     }
-
-    .features article .image {
-        margin-bottom: 1.5em;
-        margin-left: -1.5em;
-        margin-top: -1.5em;
-        width: calc(100% + 3em);
-
-        /* ensure square on small screens too */
-        aspect-ratio: 1 / 1;
-        overflow: hidden;
-    }
 }
 
 @media screen and (max-width: 480px) {
     .features {
         display: block;
     }
-
     .features article {
         width: 100%;
         margin: 0 0 2em 0 !important;

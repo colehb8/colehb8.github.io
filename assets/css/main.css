@@ -3361,15 +3361,18 @@ body.is-menu-visible #menu .inner {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding-top: 2.5rem; /* Tweak as needed for nav height compensation */
-  padding-left: 1em;
-  padding-right: 1em;
+  text-align: center;
+
+  height: 100vh;
+  padding: 3em 1.5em 2em 1.5em; /* generous padding without overflow */
   margin: 0 auto;
+
   width: 100%;
-  max-width: 55em;
+  max-width: 100%; /* removes the too-wide 55em restriction */
   box-sizing: border-box;
-  flex: 1 0 auto;
+  overflow-wrap: break-word; /* ensure long text wraps */
 }
+
 
 #banner .logo {
 	-moz-transition: opacity 2s ease, -moz-transform 1s ease;

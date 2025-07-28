@@ -8,11 +8,77 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon-64x64.png" />
 
-  <!-- CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- Anchor offset for in‐page links -->
+  <!-- Coaching-Page Only Overrides -->
+  <style>
+    /* Header accent */
+    body.coaching-page #header {
+      background: #5b6ba6;
+    }
+
+    /* Spotlight section backgrounds & triangles */
+    body.coaching-page .wrapper.spotlight.style1 {
+      background-color: #2e3448;
+    }
+    body.coaching-page .wrapper.spotlight.style1:before,
+    body.coaching-page .wrapper.spotlight.style1:after {
+      background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%232e3448'/>\
+</svg>");
+    }
+
+    body.coaching-page .wrapper.spotlight.style2 {
+      background-color: #3f4a66;
+    }
+    body.coaching-page .wrapper.spotlight.style2:before,
+    body.coaching-page .wrapper.spotlight.style2:after {
+      background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%233f4a66'/>\
+</svg>");
+    }
+
+    body.coaching-page .wrapper.spotlight.style3 {
+      background-color: #4c5c96;
+    }
+    body.coaching-page .wrapper.spotlight.style3:before,
+    body.coaching-page .wrapper.spotlight.style3:after {
+      background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%234c5c96'/>\
+</svg>");
+    }
+
+    /* Force images always on the left */
+    body.coaching-page .wrapper.spotlight .inner {
+      flex-direction: row !important;
+      text-align: left !important;
+    }
+    body.coaching-page .wrapper.spotlight .image {
+      margin: 0 3em 2em 0 !important;
+    }
+    body.coaching-page .wrapper.spotlight .content {
+      text-align: left;
+    }
+
+    /* Mobile adjustments */
+    @media screen and (max-width: 736px) {
+      body.coaching-page .wrapper.spotlight .inner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      body.coaching-page .wrapper.spotlight .image {
+        width: 100% !important;
+        margin: 0 0 1.5em 0 !important;
+      }
+    }
+  </style>
+
+  <!-- Anchor-offset helper -->
   <style>
     .anchor-offset {
       position: relative;
@@ -56,13 +122,15 @@
       </div>
     </nav>
 
-    <!-- Anchor for “Home” link -->
+    <!-- Top Anchor -->
     <div id="top" class="anchor-offset"></div>
 
     <!-- Premium Coaching Plan -->
     <section id="one" class="wrapper spotlight style1">
       <div class="inner">
-        <div class="image"><img src="images/pic 01.JPG" alt="Premium Coaching Plan" /></div>
+        <div class="image">
+          <img src="images/pic 01.JPG" alt="Premium Coaching Plan" />
+        </div>
         <div class="content">
           <h2 class="major">Premium Coaching Plan</h2>
           <ul class="plan-features">
@@ -81,7 +149,9 @@
     <!-- Standard Coaching Plan -->
     <section id="two" class="wrapper alt spotlight style2">
       <div class="inner">
-        <div class="image"><img src="images/pic 02.JPEG" alt="Standard Coaching Plan" /></div>
+        <div class="image">
+          <img src="images/pic 02.JPEG" alt="Standard Coaching Plan" />
+        </div>
         <div class="content">
           <h2 class="major">Standard Coaching Plan</h2>
           <ul class="plan-features">
@@ -100,7 +170,9 @@
     <!-- Lifestyle & Transformation Plan -->
     <section id="three" class="wrapper spotlight style3">
       <div class="inner">
-        <div class="image"><img src="images/pic 03.jpeg" alt="Lifestyle and Transformation Plan" /></div>
+        <div class="image">
+          <img src="images/pic 03.jpeg" alt="Lifestyle and Transformation Plan" />
+        </div>
         <div class="content">
           <h2 class="major">Lifestyle and Transformation Plan</h2>
           <ul class="plan-features">
@@ -148,10 +220,15 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const obs = new IntersectionObserver((entries) => {
-        entries.forEach(e => e.isIntersecting
-          ? e.target.classList.add('active')
-          : e.target.classList.remove('active'));
-      }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+        entries.forEach(e =>
+          e.isIntersecting
+            ? e.target.classList.add('active')
+            : e.target.classList.remove('active')
+        );
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px'
+      });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     });
   </script>

@@ -3705,6 +3705,41 @@ body.is-preload #banner p {
     margin: 0 0 1em 0 !important;
   }
 }
+/* ──────────────────────────────────────────────────────────────────────────
+   COACHING-PAGE ONLY: FORCE SPOTLIGHT IMAGES ON LEFT
+─────────────────────────────────────────────────────────────────────────── */
+
+body.coaching-page .wrapper.spotlight .inner {
+  flex-direction: row !important;
+  text-align: left !important;
+}
+
+body.coaching-page .wrapper.spotlight .image {
+  margin: 0 3em 2em 0 !important;  /* image on left with right gutter */
+}
+
+body.coaching-page .wrapper.spotlight .content {
+  text-align: left;                /* ensure text stays left-aligned */
+}
+
+/* Responsive tweaks scoped to coaching page */
+@media screen and (max-width: 980px) {
+  body.coaching-page .wrapper.spotlight .image {
+    max-width: 32em;
+    margin: 0 2em 2em 0 !important;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  body.coaching-page .wrapper.spotlight .inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  body.coaching-page .wrapper.spotlight .image {
+    width: 100% !important;
+    margin: 0 0 1.5em 0 !important;
+  }
+}
 
 /* Footer */
 

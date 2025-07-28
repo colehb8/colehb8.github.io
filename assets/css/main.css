@@ -3961,12 +3961,7 @@ body.coaching-page .wrapper.spotlight .content {
    Coaching Plans Page Theme Overrides
 ─────────────────────────────────────────────────────────────────────────── */
 
-/* 1. Header accent */
-body.coaching-page #header {
-  background: #5b6ba6; /* a cooler blue */
-}
-
-/* 2. Spotlight backgrounds */
+/* 1. Spotlight backgrounds */
 /* style1 → a deep slate */
 body.coaching-page .wrapper.spotlight.style1 {
   background-color: #2e3448;
@@ -3980,7 +3975,7 @@ body.coaching-page .wrapper.spotlight.style3 {
   background-color: #4c5c96;
 }
 
-/* 3. Triangles on each section — recolor to match the wrapper */
+/* 2. Triangles on each section — recolor to match the wrapper */
 /* style1 triangles */
 body.coaching-page .wrapper.spotlight.style1:before,
 body.coaching-page .wrapper.spotlight.style1:after {
@@ -4006,7 +4001,7 @@ body.coaching-page .wrapper.spotlight.style3:after {
 </svg>");
 }
 
-/* 4. Optional: adjust text color if needed */
+/* 3. Optional: adjust text color if needed */
 body.coaching-page .wrapper.spotlight .content {
   color: #ffffff;
 }

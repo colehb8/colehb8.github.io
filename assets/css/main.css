@@ -4010,3 +4010,13 @@ body.coaching-page .wrapper.spotlight.style3:after {
 body.coaching-page .wrapper.spotlight .content {
   color: #ffffff;
 }
+/* ──────────────────────────────────────────────────────────────────────────
+   Remove top triangle + margin for first spotlight on coaching‐page
+─────────────────────────────────────────────────────────────────────────── */
+body.coaching-page .wrapper.spotlight:first-of-type {
+  margin-top: 0 !important;                /* collapse the default top spacing */
+}
+
+body.coaching-page .wrapper.spotlight:first-of-type::before {
+  display: none !important;                /* hide that ::before triangle */
+}

@@ -4025,3 +4025,24 @@ body.coaching-page .wrapper.spotlight:first-of-type::before {
 body.coaching-page .wrapper.spotlight.style1 {
   margin-top: 5em !important;  /* tweak “4em” to taste */
 }
+/* ──────────────────────────────────────────────────────────────────────────
+   Mobile side‐padding for Coaching Plans page
+─────────────────────────────────────────────────────────────────────────── */
+@media screen and (max-width: 736px) {
+  /* pad the header’s inner container */
+  body.coaching-page #header .header-container {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  /* pad each spotlight block */
+  body.coaching-page .wrapper.spotlight {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+  /* pad footer inner */
+  body.coaching-page #footer .inner {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+}
+

@@ -4021,8 +4021,8 @@ body.coaching-page .wrapper.spotlight:first-of-type::before {
   display: none !important;                /* hide that ::before triangle */
 }
 /* ──────────────────────────────────────────────────────────────────────────
-   Add breathing room now that triangle is gone
+   Add breathing room above Premium Coaching Plan (style1)
 ─────────────────────────────────────────────────────────────────────────── */
-body.coaching-page .wrapper.spotlight:first-of-type {
-  margin-top: 4em !important;              /* adjust value to taste */
+body.coaching-page .wrapper.spotlight.style1 {
+  margin-top: 4em !important;  /* tweak “4em” to taste */
 }

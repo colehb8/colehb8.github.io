@@ -3957,3 +3957,56 @@ body.coaching-page .wrapper.spotlight .content {
   transform: scale(1);                   /* end at full size */
 }
 
+/* ──────────────────────────────────────────────────────────────────────────
+   Coaching Plans Page Theme Overrides
+─────────────────────────────────────────────────────────────────────────── */
+
+/* 1. Header accent */
+body.coaching-page #header {
+  background: #5b6ba6; /* a cooler blue */
+}
+
+/* 2. Spotlight backgrounds */
+/* style1 → a deep slate */
+body.coaching-page .wrapper.spotlight.style1 {
+  background-color: #2e3448;
+}
+/* style2 → a muted steel */
+body.coaching-page .wrapper.spotlight.style2 {
+  background-color: #3f4a66;
+}
+/* style3 → your original accent */
+body.coaching-page .wrapper.spotlight.style3 {
+  background-color: #4c5c96;
+}
+
+/* 3. Triangles on each section — recolor to match the wrapper */
+/* style1 triangles */
+body.coaching-page .wrapper.spotlight.style1:before,
+body.coaching-page .wrapper.spotlight.style1:after {
+  background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%232e3448'/>\
+</svg>");
+}
+/* style2 triangles */
+body.coaching-page .wrapper.spotlight.style2:before,
+body.coaching-page .wrapper.spotlight.style2:after {
+  background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%233f4a66'/>\
+</svg>");
+}
+/* style3 triangles */
+body.coaching-page .wrapper.spotlight.style3:before,
+body.coaching-page .wrapper.spotlight.style3:after {
+  background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%234c5c96'/>\
+</svg>");
+}
+
+/* 4. Optional: adjust text color if needed */
+body.coaching-page .wrapper.spotlight .content {
+  color: #ffffff;
+}

@@ -4005,6 +4005,10 @@ body.coaching-page .wrapper.spotlight.style3:after {
 body.coaching-page .wrapper.spotlight .content {
   color: #ffffff;
 }
+body.coaching-page #header {
+  background: rgba(53,56,73,0.95) !important;
+}
+
 /* ──────────────────────────────────────────────────────────────────────────
    Remove top triangle + margin for first spotlight on coaching‐page
 ─────────────────────────────────────────────────────────────────────────── */

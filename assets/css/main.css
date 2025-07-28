@@ -4023,7 +4023,7 @@ body.coaching-page .wrapper.spotlight:first-of-type::before {
    Add breathing room above Premium Coaching Plan (style1)
 ─────────────────────────────────────────────────────────────────────────── */
 body.coaching-page .wrapper.spotlight.style1 {
-  margin-top: 5em !important;  /* tweak “4em” to taste */
+  margin-top: 6em !important;  /* tweak “4em” to taste */
 }
 /* ──────────────────────────────────────────────────────────────────────────
    Mobile side‐padding for Coaching Plans page

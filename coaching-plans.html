@@ -14,32 +14,46 @@
 
   <!-- Coaching-Page Only Overrides -->
   <style>
-    /* 0) Anchor-offset helper for in-page links */
-    .anchor-offset {
-      position: relative;
-      top: -125px;
-      height: 0;
-      visibility: hidden;
-    }
-
-    /* 1) Restore original header style and keep it on top even when blurred */
+    /* Header accent */
     body.coaching-page #header {
-      background: rgba(53,56,73,0.95) !important;
-      position: fixed !important;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 10001;
-      filter: none !important;
-      transform: none !important;
+      background: #5b6ba6;
     }
 
-    /* 2) Prevent page-wrapper blur from re-anchoring the header */
-    body.is-menu-visible #header {
-      filter: none !important;
+    /* Spotlight section backgrounds & triangles */
+    body.coaching-page .wrapper.spotlight.style1 {
+      background-color: #2e3448;
+    }
+    body.coaching-page .wrapper.spotlight.style1:before,
+    body.coaching-page .wrapper.spotlight.style1:after {
+      background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%232e3448'/>\
+</svg>");
     }
 
-    /* 3) Force spotlight images on the left, text left-aligned */
+    body.coaching-page .wrapper.spotlight.style2 {
+      background-color: #3f4a66;
+    }
+    body.coaching-page .wrapper.spotlight.style2:before,
+    body.coaching-page .wrapper.spotlight.style2:after {
+      background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%233f4a66'/>\
+</svg>");
+    }
+
+    body.coaching-page .wrapper.spotlight.style3 {
+      background-color: #4c5c96;
+    }
+    body.coaching-page .wrapper.spotlight.style3:before,
+    body.coaching-page .wrapper.spotlight.style3:after {
+      background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%234c5c96'/>\
+</svg>");
+    }
+
+    /* Force images always on the left */
     body.coaching-page .wrapper.spotlight .inner {
       flex-direction: row !important;
       text-align: left !important;
@@ -51,60 +65,8 @@
       text-align: left;
     }
 
-    /* 4) Breathing room above the first spotlight (style1) */
-    body.coaching-page .wrapper.spotlight.style1 {
-      margin-top: 4em !important;
-    }
-
-    /* 5) Spotlight section backgrounds & matching triangles */
-    body.coaching-page .wrapper.spotlight.style1 {
-      background-color: #2e3448;
-    }
-    body.coaching-page .wrapper.spotlight.style1:before,
-    body.coaching-page .wrapper.spotlight.style1:after {
-      background-image: url("data:image/svg+xml;charset=utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
-  <polygon points='0,100 100,0 100,100' fill='%232e3448'/>\
-</svg>") !important;
-    }
-
-    body.coaching-page .wrapper.spotlight.style2 {
-      background-color: #3f4a66;
-    }
-    body.coaching-page .wrapper.spotlight.style2:before,
-    body.coaching-page .wrapper.spotlight.style2:after {
-      background-image: url("data:image/svg+xml;charset=utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
-  <polygon points='0,100 100,0 100,100' fill='%233f4a66'/>\
-</svg>") !important;
-    }
-
-    body.coaching-page .wrapper.spotlight.style3 {
-      background-color: #4c5c96;
-    }
-    body.coaching-page .wrapper.spotlight.style3:before,
-    body.coaching-page .wrapper.spotlight.style3:after {
-      background-image: url("data:image/svg+xml;charset=utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
-  <polygon points='0,100 100,0 100,100' fill='%234c5c96'/>\
-</svg>") !important;
-    }
-
-    /* 6) Mobile side-padding & responsive tweaks */
+    /* Mobile adjustments */
     @media screen and (max-width: 736px) {
-      /* header inner */
-      body.coaching-page #header .header-container {
-        padding: 0 1.5em !important;
-      }
-      /* spotlight wrapper padding */
-      body.coaching-page .wrapper.spotlight {
-        padding: 0 1.5em !important;
-      }
-      /* footer inner */
-      body.coaching-page #footer .inner {
-        padding: 0 1.5em !important;
-      }
-      /* stack image + content */
       body.coaching-page .wrapper.spotlight .inner {
         flex-direction: column !important;
         align-items: flex-start !important;
@@ -116,38 +78,50 @@
     }
   </style>
 
+  <!-- Anchor-offset helper -->
+  <style>
+    .anchor-offset {
+      position: relative;
+      top: -125px;
+      height: 0;
+      visibility: hidden;
+    }
+  </style>
 </head>
 <body class="is-preload coaching-page">
-
-  <!-- Header moved _outside_ of #page-wrapper -->
-  <header id="header">
-    <div class="header-container">
-      <div class="logo-container">
-        <a href="index.html"><img src="images/logo.transparent.png" alt="SetToAdapt Logo"></a>
-      </div>
-      <div class="title-container">
-        <span class="site-title"><b>SET TO ADAPT</b></span>
-      </div>
-      <nav><a href="#menu">Menu</a></nav>
-    </div>
-  </header>
-
   <div id="page-wrapper">
 
-    <!-- Slide-out Menu -->
-    <nav id="menu">
-      <div class="inner">
-        <h2>Menu</h2>
-        <ul class="links">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="coaching-plans.html">Coaching Plans</a></li>
-          <li><a href="posing-packages.html">Posing Packages</a></li>
-          <li><a href="about-us.html">About Us</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeHrYVAdeinLv2AZgy__xaN0n3jn6qonzpMBN9wxDuPv2Y5Tw/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
-        </ul>
-        <a href="#" class="close">Close</a>
+    <!-- Header -->
+    <header id="header">
+      <div class="header-container">
+        <div class="logo-container">
+          <a href="index.html">
+            <img src="images/logo.transparent.png" alt="SetToAdapt Logo">
+          </a>
+        </div>
+        <div class="title-container">
+          <span class="site-title"><b>SET TO ADAPT</b></span>
+        </div>
+        <nav>
+          <a href="#menu">Menu</a>
+        </nav>
       </div>
-    </nav>
+    </header>
+
+    <!-- Menu -->
+			<nav id="menu">
+			  <div class="inner">
+			    <h2>Menu</h2>
+			    <ul class="links">
+			      <li><a href="index.html">Home</a></li>
+			      <li><a href="coaching-plans.html">Coaching Plans</a></li>
+			      <li><a href="posing-packages.html">Posing Packages</a></li>
+			      <li><a href="about-us.html">About Us</a></li>
+			      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeHrYVAdeinLv2AZgy__xaN0n3jn6qonzpMBN9wxDuPv2Y5Tw/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
+			    </ul>
+			    <a href="#" class="close">Close</a>
+			  </div>
+			</nav>
 
     <!-- Top Anchor -->
     <div id="top" class="anchor-offset"></div>
@@ -259,6 +233,5 @@
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     });
   </script>
-
 </body>
 </html>

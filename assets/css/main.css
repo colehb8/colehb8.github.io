@@ -4185,33 +4185,42 @@ section.wrapper.alt.about-section.reveal.active {
 }
 
 /*───────────────────────────────────────────────────────────
-  PINNED HEADER + NO SLIDE ON MENU OPEN
+  Pin the header and position content correctly
 ───────────────────────────────────────────────────────────*/
 
-/* 1) Fix the header in place */
+/* 1) Fixed header */
 #header {
   position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 125px;              /* ← your header’s exact height */
-  z-index: 10000;             /* keep it above everything */
-  /* keep your backdrop‐filter, background, etc. here */
+  top: 0; left: 0; right: 0;
+  height: 125px;               /* ← your actual header height */
+  z-index: 10000;
+  transition: none !important; /* turn off any slide animations */
 }
 
-/* 2) Disable Solid State’s translate on menu open */
+/* 2) Disable hide-on-scroll sliding */
+#header.hide {
+  transform: none !important;
+}
+
+/* 3) Keep header visible when menu opens */
+body.is-menu-visible #header {
+  transform: translateY(0) !important;
+}
+
+/* 4) Push all page content below the header */
+#page-wrapper {
+  padding-top: 125px !important; /* ← same as header height */
+  transform: none !important;     /* cancel any translate */
+  transition: none !important;    /* and transitions */
+}
+
+/* 5) Prevent menu toggle from moving content */
 body.is-menu-visible #page-wrapper {
   transform: none !important;
-  transition: none !important;
 }
 
-/* 3) Shift all content down by the header height */
-#banner,
-#page-wrapper {
-  margin-top: 125px;          /* = the header height */
-}
-
-/* 4) Ensure there’s no leftover padding */
-#page-wrapper {
-  padding-top: 0 !important;
+/* 6) Remove extra top gap on the banner */
+#banner {
+  margin-top: 0 !important;
+  min-height: calc(100vh - 125px) !important;
 }

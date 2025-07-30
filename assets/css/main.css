@@ -4046,3 +4046,23 @@ body.coaching-page .wrapper.spotlight.style1 {
   }
 }
 
+
+/*─────────────────────────
+  ABOUT-PAGE MOBILE PADDING
+─────────────────────────*/
+@media screen and (max-width: 736px) {
+  /* pad the banner & each wrapper section on the about page */
+  body.about-page #banner,
+  body.about-page section.wrapper {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+  }
+
+  /* allow inner containers to go full–width */
+  body.about-page #banner .inner,
+  body.about-page .wrapper .inner {
+    width: auto;
+    max-width: none;
+  }
+}
+

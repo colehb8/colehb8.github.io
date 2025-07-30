@@ -4234,3 +4234,16 @@ body.is-menu-visible #page-wrapper {
   height: calc(100vh - var(--header-h)) !important;
   max-height: none !important;
 }
+/*───────────────────────────────────────────────────────────
+  REMOVE GAP UNDER BANNER (FIRST WRAPPER SECTION)
+───────────────────────────────────────────────────────────*/
+
+/* 1) Zero out the top-margin on the very first .wrapper */
+#page-wrapper > .wrapper:first-of-type {
+  margin-top: 0 !important;
+}
+
+/* 2) Hide that ::before triangle on it */
+#page-wrapper > .wrapper:first-of-type::before {
+  display: none !important;
+}

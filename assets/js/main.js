@@ -27,7 +27,7 @@
 			}, 100);
 		});
 
-	// Header.
+	// Header alt/class toggling on banner scroll (index only)
 		if ($banner.length > 0
 		&&	$header.hasClass('alt')) {
 
@@ -141,5 +141,17 @@
 						$menu._hide();
 
 			});
+
+	// Hide/show header on scroll down/up
+		var lastScrollY = 0;
+		$window.on('scroll', function() {
+			var currentY = window.scrollY;
+			if (currentY > lastScrollY && currentY > 100) {
+				$header.addClass('hide');
+			} else {
+				$header.removeClass('hide');
+			}
+			lastScrollY = currentY;
+		});
 
 })(jQuery);

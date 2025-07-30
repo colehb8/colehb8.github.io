@@ -4251,7 +4251,19 @@ body.is-menu-visible #page-wrapper {
 }
 
 
-/* Collapse only the top‐margin of the first wrapper on each page */
-#wrapper > section.wrapper:first-of-type {
-  margin-top: 0 !important;
+/* ──────────────────────────────────────────────────────────
+   Remove the 6.5 em top/bottom margin that every .wrapper
+   gets by default, since we want this to sit flush under
+   the fixed header with only our custom padding
+─────────────────────────────────────────────────────────── */
+section.wrapper.alt.about-section {
+  margin: 0;              /* ← kill the 6.5em gap above and below */
+  background-color: #2e3448;
+  padding: 3em 2em;
+  position: relative;     /* makes sure those triangles never reappear */
+}
+
+section.wrapper.alt.about-section::before,
+section.wrapper.alt.about-section::after {
+  display: none !important;
 }

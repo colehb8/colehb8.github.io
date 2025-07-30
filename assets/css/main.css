@@ -3957,6 +3957,32 @@ body.coaching-page .wrapper.spotlight .content {
   transform: scale(1);                   /* end at full size */
 }
 
+/*──────────────────────────────────────────────────────────
+  ALL-PAGES: FIXED BLURRY HEADER + HIDE-ON-SCROLL
+──────────────────────────────────────────────────────────*/
+
+/* 1) Make the header fixed & blurred */
+#header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  width: 100%;
+  z-index: 1000;                           /* sit above all content */
+  background-color: rgba(33,36,48,0.8);     /* semi-transparent dark */
+  backdrop-filter: blur(8px);              /* glass-like blur */
+  transition: transform 0.3s ease;         /* slide up/down */
+}
+
+/* 2) When we add “hide”, slide it up & out of view */
+#header.hide {
+  transform: translateY(-100%);
+}
+
+/* 3) Whenever the menu is open, force it back into view */
+body.is-menu-visible #header {
+  transform: translateY(0) !important;
+}
+
+
 /* ──────────────────────────────────────────────────────────────────────────
    Coaching Plans Page Theme Overrides
 ─────────────────────────────────────────────────────────────────────────── */

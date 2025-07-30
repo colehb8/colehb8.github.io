@@ -4066,3 +4066,71 @@ body.coaching-page .wrapper.spotlight.style1 {
   }
 }
 
+/*──────────────────────────────────────────────────────────
+  About Me Gallery (just 3 pics)
+──────────────────────────────────────────────────────────*/
+
+.about-gallery {
+  background-color: #2e3448; /* or pick any accent */
+  padding: 4em 1.5em;
+}
+
+.about-gallery .inner {
+  max-width: 60ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2rem;
+  margin: 2.5rem 0 1.5rem;
+  align-items: start;
+}
+
+.about-card {
+  margin: 0;
+  text-align: center;
+}
+
+.about-card img {
+  width: 8rem;
+  height: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 0.75rem;
+  border: 2px solid rgba(255,255,255,0.25);
+  transition: transform 0.3s ease;
+}
+
+.about-card img:hover {
+  transform: scale(1.05);
+}
+
+.about-card figcaption {
+  color: #ddd;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+/* Optional reveal animation (if you use .reveal) */
+.about-gallery.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.about-gallery.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile tweak */
+@media screen and (max-width: 480px) {
+  .about-card img {
+    width: 6.5rem;
+    height: 6.5rem;
+  }
+}
+

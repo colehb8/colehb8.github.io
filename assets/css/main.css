@@ -4236,7 +4236,7 @@ section.wrapper.alt.about-section.reveal.active {
 /* 2) Give the rest of your page a top-padding equal to your header height
       so content never jumps under it. Adjust 5rem to match your real header height. */
 #page-wrapper {
-  padding-top: 4rem; /* ← height of #header */
+  padding-top: 0rem; /* ← height of #header */
 }
 
 /* 3) When the menu toggles, the default Solid State style will still slide

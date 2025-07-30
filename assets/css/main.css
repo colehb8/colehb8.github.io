@@ -4145,8 +4145,8 @@ section.about-section.reveal.active {
 @media screen and (min-width: 980px) {
   /* increase the circle diameter */
   .about-unified p + .about-image .image img {
-    width: 12rem;
-    height: 12rem;
+    width: 20rem;
+    height: 20rem;
   }
 
   /* add a bit more vertical gutter between paragraph & image */

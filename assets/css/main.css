@@ -4134,3 +4134,79 @@ body.coaching-page .wrapper.spotlight.style1 {
   }
 }
 
+/* ──────────────────────────────────────────────────────────────────────────
+   SPOTLIGHT STYLE4 (About Section)
+─────────────────────────────────────────────────────────────────────────── */
+.wrapper.spotlight.style4 {
+  background-color: #354058; /* pick a complementary hue */
+}
+
+.wrapper.spotlight.style4:before,
+.wrapper.spotlight.style4:after {
+  background-image: url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%23354058'/>\
+</svg>");
+}
+
+/* Layout */
+.wrapper.spotlight.style4 .inner {
+  display: flex;
+  align-items: center;
+  gap: 3em;
+  flex-wrap: wrap;
+  padding: 4em 1.5em;
+}
+
+.wrapper.spotlight.style4 .image {
+  flex: 1 1 16rem;
+  max-width: 16rem;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.wrapper.spotlight.style4 .image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border: 3px solid rgba(255,255,255,0.2);
+}
+
+.wrapper.spotlight.style4 .content {
+  flex: 2 1 30ch;
+  color: #fff;
+}
+
+/* Reveal animation */
+.wrapper.spotlight.style4.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.wrapper.spotlight.style4.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 980px) {
+  .wrapper.spotlight.style4 .inner {
+    padding: 3em 1em;
+    gap: 2em;
+  }
+}
+
+@media screen and (max-width: 736px) {
+  .wrapper.spotlight.style4 .inner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .wrapper.spotlight.style4 .content {
+    max-width: none;
+  }
+  .wrapper.spotlight.style4 .image {
+    margin: 0 auto 1.5em;
+  }
+}

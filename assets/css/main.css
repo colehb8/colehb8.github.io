@@ -4069,11 +4069,12 @@ body.coaching-page .wrapper.spotlight.style1 {
 /* ──────────────────────────────────────────────────────────
    About Section (combined text + 3-pic gallery)
 ─────────────────────────────────────────────────────────── */
-.about-section {
-  background-color: #2e3448;   /* Your accent bg */
+section.about-section {
+  background-color: #2e3448;
   padding: 4em 1.5em;
 }
-.about-section .inner.about-unified {
+
+section.about-section .inner.about-unified {
   display: flex;
   align-items: flex-start;
   gap: 4em;
@@ -4081,66 +4082,85 @@ body.coaching-page .wrapper.spotlight.style1 {
   margin: 0 auto;
   flex-wrap: wrap;
 }
-/* Left column */
-.about-info {
+
+/* Left column (text) */
+section.about-section .about-info {
   flex: 1 1 40ch;
   color: #fff;
 }
-.about-info .major {
+section.about-section .about-info .major {
   margin-bottom: 1rem;
 }
-/* Right column */
-.about-gallery {
+
+/* Right column (gallery) */
+section.about-section .about-gallery {
   flex: 1 1 30ch;
   text-align: center;
 }
-.about-gallery .major {
+section.about-section .about-gallery .major {
   margin-bottom: 1rem;
 }
-/* Grid of three pics */
-.about-grid {
+
+/* Three-pic grid */
+section.about-section .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+  grid-template-columns: 1fr;
   gap: 2rem;
 }
-.about-card {
+
+/* If you ever want side-by-side on wider, change to:
+   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
+*/
+
+/* Individual card */
+section.about-section .about-card {
   text-align: center;
 }
-.about-card img {
-  width: 100%;
-  aspect-ratio: 1/1;
-  object-fit: cover;
+
+section.about-section .about-card img {
+  width: 8rem;
+  height: 8rem;
   border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
   border: 2px solid rgba(255,255,255,0.25);
   transition: transform 0.3s ease;
 }
-.about-card img:hover {
+
+section.about-section .about-card img:hover {
   transform: scale(1.05);
 }
-.about-card figcaption {
+
+section.about-section .about-card figcaption {
   margin-top: 0.5rem;
   font-size: 0.9rem;
   color: #ddd;
 }
-/* Reveal animation (if you’re using .reveal) */
-.about-section.reveal {
+
+/* Reveal animation (if using .reveal) */
+section.about-section.reveal {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-.about-section.reveal.active {
+section.about-section.reveal.active {
   opacity: 1;
   transform: translateY(0);
 }
-/* Mobile stacking */
+
+/* Stack into one column on mobile */
 @media screen and (max-width: 736px) {
-  .about-section .inner.about-unified {
+  section.about-section .inner.about-unified {
     flex-direction: column;
     text-align: center;
     gap: 2em;
   }
-  .about-info,
-  .about-gallery {
+  section.about-section .about-info,
+  section.about-section .about-gallery {
     flex: 1 1 100%;
+  }
+  section.about-section .about-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -4067,146 +4067,74 @@ body.coaching-page .wrapper.spotlight.style1 {
 }
 
 /*──────────────────────────────────────────────────────────
-  About Me Gallery (just 3 pics)
+  Unified About Spotlight (style4 + 3-pic gallery)
 ──────────────────────────────────────────────────────────*/
-
-.about-gallery {
-  background-color: #2e3448; /* or pick any accent */
+.wrapper.spotlight.style4 .inner.about-unified {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 3em;
+  align-items: start;
   padding: 4em 1.5em;
 }
 
-.about-gallery .inner {
-  max-width: 60ch;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about-grid {
+/* Gallery on left */
+.wrapper.spotlight.style4 .about-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
-  gap: 2rem;
-  margin: 2.5rem 0 1.5rem;
-  align-items: start;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 1.5em;
 }
-
-.about-card {
-  margin: 0;
-  text-align: center;
-}
-
-.about-card img {
-  width: 8rem;
-  height: 8rem;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  margin: 0 auto 0.75rem;
-  border: 2px solid rgba(255,255,255,0.25);
-  transition: transform 0.3s ease;
-}
-
-.about-card img:hover {
-  transform: scale(1.05);
-}
-
-.about-card figcaption {
-  color: #ddd;
-  font-size: 0.95rem;
-  font-weight: 500;
-}
-
-/* Optional reveal animation (if you use .reveal) */
-.about-gallery.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.about-gallery.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Mobile tweak */
-@media screen and (max-width: 480px) {
-  .about-card img {
-    width: 6.5rem;
-    height: 6.5rem;
+@media screen and (min-width: 480px) {
+  .wrapper.spotlight.style4 .about-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
-/* ──────────────────────────────────────────────────────────────────────────
-   SPOTLIGHT STYLE4 (About Section)
-─────────────────────────────────────────────────────────────────────────── */
-.wrapper.spotlight.style4 {
-  background-color: #354058; /* pick a complementary hue */
+.wrapper.spotlight.style4 .about-card {
+  background: rgba(255,255,255,0.05);
+  border-radius: 0.75rem;
+  padding: 0.75rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
-.wrapper.spotlight.style4:before,
-.wrapper.spotlight.style4:after {
-  background-image: url("data:image/svg+xml;charset=utf8,\
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
-  <polygon points='0,100 100,0 100,100' fill='%23354058'/>\
-</svg>");
+.wrapper.spotlight.style4 .about-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
-
-/* Layout */
-.wrapper.spotlight.style4 .inner {
-  display: flex;
-  align-items: center;
-  gap: 3em;
-  flex-wrap: wrap;
-  padding: 4em 1.5em;
-}
-
-.wrapper.spotlight.style4 .image {
-  flex: 1 1 16rem;
-  max-width: 16rem;
-  overflow: hidden;
+.wrapper.spotlight.style4 .about-card img {
+  width: 6rem;
+  height: 6rem;
   border-radius: 50%;
-  margin: 0;
-}
-
-.wrapper.spotlight.style4 .image img {
-  width: 100%;
-  height: 100%;
   object-fit: cover;
   display: block;
-  border: 3px solid rgba(255,255,255,0.2);
+  margin: 0 auto 0.5rem;
+  border: 2px solid rgba(255,255,255,0.25);
+}
+.wrapper.spotlight.style4 .about-card figcaption {
+  color: #ddd;
+  font-size: 0.9rem;
 }
 
+/* Bio text on right */
 .wrapper.spotlight.style4 .content {
-  flex: 2 1 30ch;
   color: #fff;
 }
-
-/* Reveal animation */
-.wrapper.spotlight.style4.reveal {
-  opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-.wrapper.spotlight.style4.reveal.active {
-  opacity: 1;
-  transform: translateY(0);
+.wrapper.spotlight.style4 .content p + p {
+  margin-top: 1em;
 }
 
-/* Mobile adjustments */
-@media screen and (max-width: 980px) {
-  .wrapper.spotlight.style4 .inner {
-    padding: 3em 1em;
-    gap: 2em;
-  }
-}
-
+/* Mobile stacking */
 @media screen and (max-width: 736px) {
-  .wrapper.spotlight.style4 .inner {
-    flex-direction: column;
+  .wrapper.spotlight.style4 .inner.about-unified {
+    grid-template-columns: 1fr;
     text-align: center;
+    padding: 3em 1em;
+  }
+  .wrapper.spotlight.style4 .about-grid {
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+    gap: 1rem;
+    margin-bottom: 2em;
   }
   .wrapper.spotlight.style4 .content {
-    max-width: none;
-  }
-  .wrapper.spotlight.style4 .image {
-    margin: 0 auto 1.5em;
+    margin-top: 0;
   }
 }

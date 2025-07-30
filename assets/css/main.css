@@ -4141,3 +4141,22 @@ section.about-section.reveal.active {
     padding: 0;
   }
 }
+/* enlarge & space the “about” circles on desktop */
+@media screen and (min-width: 980px) {
+  /* increase the circle diameter */
+  .about-unified p + .about-image .image img {
+    width: 12rem;
+    height: 12rem;
+  }
+
+  /* add a bit more vertical gutter between paragraph & image */
+  .about-unified p + .about-image .image {
+    margin: 3em 0;
+  }
+
+  /* optionally tighten up the max-width of the text column
+     so the copy doesn’t run too wide next to these bigger pics */
+  .about-unified {
+    max-width: 70ch;
+  }
+}

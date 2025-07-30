@@ -4108,10 +4108,6 @@ section.about-section .about-grid {
   gap: 2rem;
 }
 
-/* If you ever want side-by-side on wider, change to:
-   grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-*/
-
 /* Individual card */
 section.about-section .about-card {
   text-align: center;

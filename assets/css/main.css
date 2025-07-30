@@ -4184,69 +4184,34 @@ section.wrapper.alt.about-section.reveal.active {
   transform: translateY(0);
 }
 
-/*──────────────────────────────────────────────
-  9) MEDIUM SCREENS (≤980px)
-──────────────────────────────────────────────*/
-@media screen and (max-width: 980px) {
-  section.wrapper.alt.about-section {
-    padding: 2.5em 1.5em;    /* 📌 Slightly less padding */
-  }
-  section.wrapper.alt.about-section .inner.about-unified {
-    gap: 2em;               /* 📌 Less vertical gap */
-    max-width: 70ch;        /* 📌 Narrower text block */
-  }
-  section.wrapper.alt.about-section .inner.about-unified .about-image {
-    width: 12rem;           /* 📌 Smaller circles */
-    height: 12rem;
-    margin: 1.5em 0;        /* 📌 Tighter top/bottom margin */
-  }
-}
-
-/*──────────────────────────────────────────────
-  10) SMALL SCREENS (≤736px)
-──────────────────────────────────────────────*/
-@media screen and (max-width: 736px) {
-  section.wrapper.alt.about-section {
-    padding: 2em 1em;       /* 📌 Even tighter padding */
-  }
-  section.wrapper.alt.about-section .inner.about-unified {
-    gap: 1.5em;             /* 📌 Smaller gap */
-    max-width: 100%;        /* 📌 Full width for mobile */
-  }
-  section.wrapper.alt.about-section .inner.about-unified .about-image {
-    width: 8rem;            /* 📌 Tiny circles on phones */
-    height: 8rem;
-    margin: 1em 0;
-  }
-}
-
 /*───────────────────────────────────────────────────────────
-  Pin the header to the top & stop it moving when menu opens
+  PINNED HEADER + NO SLIDE ON MENU OPEN
 ───────────────────────────────────────────────────────────*/
 
-/* 1) Fix the header in place, above everything else */
+/* 1) Fix the header in place */
 #header {
   position: fixed !important;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 10000;    /* sit on top of the menu overlay */
+  height: 125px;              /* ← your header’s exact height */
+  z-index: 10000;             /* keep it above everything */
+  /* keep your backdrop‐filter, background, etc. here */
 }
 
-/* 2) Give the rest of your page a top-padding equal to your header height
-      so content never jumps under it. Adjust 5rem to match your real header height. */
-#page-wrapper {
-  padding-top: 0rem; /* ← height of #header */
-}
-
-/* 3) When the menu toggles, the default Solid State style will still slide
-      the page-wrapper down – we only want it to slide the CONTENT, not the header */
+/* 2) Disable Solid State’s translate on menu open */
 body.is-menu-visible #page-wrapper {
-  transform: translateY(var(--menu-offset, 0)) !important;
-  /* 
-     It will normally be something like `translateY(275px)`,
-     but because #header is fixed, it stays put and the wrapper
-     (i.e. everything *under* the header) slides down.
-  */
+  transform: none !important;
+  transition: none !important;
 }
 
+/* 3) Shift all content down by the header height */
+#banner,
+#page-wrapper {
+  margin-top: 125px;          /* = the header height */
+}
+
+/* 4) Ensure there’s no leftover padding */
+#page-wrapper {
+  padding-top: 0 !important;
+}

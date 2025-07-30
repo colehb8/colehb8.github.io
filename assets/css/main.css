@@ -4185,42 +4185,52 @@ section.wrapper.alt.about-section.reveal.active {
 }
 
 /*───────────────────────────────────────────────────────────
-  Pin the header and position content correctly
+  MASTER OVERRIDES: FIX HEADER & BANNER SPACING
 ───────────────────────────────────────────────────────────*/
 
-/* 1) Fixed header */
+:root {
+  /* set this once to your actual header height */
+  --header-h: 125px;
+}
+
+/* 1) Pin #header in place, no sliding */
 #header {
   position: fixed !important;
   top: 0; left: 0; right: 0;
-  height: 125px;               /* ← your actual header height */
-  z-index: 10000;
-  transition: none !important; /* turn off any slide animations */
+  height: var(--header-h) !important;
+  z-index: 10000 !important;
+  transform: none !important;
+  transition: none !important;
 }
 
-/* 2) Disable hide-on-scroll sliding */
-#header.hide {
+/* 2) Disable hide-on-scroll / menu-slide */
+#header.hide,
+body.is-menu-visible #header {
   transform: none !important;
 }
 
-/* 3) Keep header visible when menu opens */
-body.is-menu-visible #header {
-  transform: translateY(0) !important;
-}
-
-/* 4) Push all page content below the header */
+/* 3) Force all content down by exactly header height */
 #page-wrapper {
-  padding-top: 125px !important; /* ← same as header height */
-  transform: none !important;     /* cancel any translate */
-  transition: none !important;    /* and transitions */
+  padding-top: var(--header-h) !important;
+  transform: none !important;
+  transition: none !important;
 }
 
-/* 5) Prevent menu toggle from moving content */
+/* 4) Prevent menu from moving content */
 body.is-menu-visible #page-wrapper {
   transform: none !important;
 }
 
-/* 6) Remove extra top gap on the banner */
+/* 5) Remove any extra gap on #banner */
 #banner {
-  margin-top: 0 !important;
-  min-height: calc(100vh - 125px) !important;
+  margin: 0 !important;
+  min-height: calc(100vh - var(--header-h)) !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* 6) Ensure inner banner always fills below header */
+#banner .inner {
+  height: calc(100vh - var(--header-h)) !important;
+  max-height: none !important;
 }

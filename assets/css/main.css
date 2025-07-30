@@ -4141,22 +4141,24 @@ section.about-section.reveal.active {
     padding: 0;
   }
 }
-/* enlarge & space the “about” circles on desktop */
+
+/*──────────────────────────────────────────────────────────
+  ENLARGE & SPACE OUT CIRCLES ON DESKTOP
+──────────────────────────────────────────────────────────*/
+
 @media screen and (min-width: 980px) {
-  /* increase the circle diameter */
-  .about-unified p + .about-image .image img {
-    width: 20rem;
-    height: 20rem;
+  /* 1) bump the container size up to 12rem x 12rem */
+  .wrapper.spotlight.style4 .inner .image {
+    width: 12rem !important;
+    height: 12rem !important;
+    margin: 3rem auto;          /* add vertical breathing room */
+    flex: 0 0 auto;             /* prevent flex from shrinking it */
   }
 
-  /* add a bit more vertical gutter between paragraph & image */
-  .about-unified p + .about-image .image {
-    margin: 3em 0;
-  }
-
-  /* optionally tighten up the max-width of the text column
-     so the copy doesn’t run too wide next to these bigger pics */
-  .about-unified {
-    max-width: 70ch;
+  /* 2) make sure the <img> fills that circle container */
+  .wrapper.spotlight.style4 .inner .image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
 }

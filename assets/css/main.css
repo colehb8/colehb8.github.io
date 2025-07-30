@@ -4249,3 +4249,9 @@ body.is-menu-visible #page-wrapper {
      (i.e. everything *under* the header) slides down.
   */
 }
+
+
+/* Collapse only the top‐margin of the first wrapper on each page */
+#wrapper > section.wrapper:first-of-type {
+  margin-top: 0 !important;
+}

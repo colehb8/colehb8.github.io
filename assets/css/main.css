@@ -4074,52 +4074,53 @@ section.about-section {
   padding: 3em 1.5em;
 }
 
-/* make sure no triangles from style4 remain */
-section.about-section::before,
-section.about-section::after {
-  display: none !important;
-}
-
 section.about-section .inner.about-unified {
-  max-width: 60ch;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
+  max-width: 70ch;
+  margin: 0 auto;
+  gap: 2.5em;
   color: #fff;
 }
 
-/* spacing for headings & paragraphs */
-section.about-section .about-unified > .major,
-section.about-section .about-unified h2.major {
-  margin-bottom: 1rem;
+/* Heading spacing */
+section.about-section .inner.about-unified h2.major {
+  margin: 0;
+  font-size: 2.25rem;
 }
-section.about-section .about-unified p {
-  margin: 1.5em 0 0.75em;
+
+/* Paragraphs */
+section.about-section .inner.about-unified p {
+  margin: 0;
   line-height: 1.6;
 }
 
-/* image blocks */
-section.about-section .about-image {
-  width: 12rem;
-  height: 12rem;
-  margin: 0.5em auto 1.5em;
+/* Circle image wrapper */
+section.about-section .inner.about-unified .about-image {
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   overflow: hidden;
   border: 2px solid rgba(255,255,255,0.25);
 }
-section.about-section .about-image img {
+
+/* Circle img itself */
+section.about-section .inner.about-unified .about-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
-}
-
-/* hover “pop” */
-section.about-section .about-image:hover img {
-  transform: scale(1.05);
   transition: transform 0.3s ease;
 }
 
-/* reveal animation (if you’re using .reveal) */
+/* Hover “pop” */
+section.about-section .inner.about-unified .about-image:hover img {
+  transform: scale(1.05);
+}
+
+/* Reveal animation (if using .reveal) */
 section.about-section.reveal {
   opacity: 0;
   transform: translateY(20px);
@@ -4131,34 +4132,31 @@ section.about-section.reveal.active {
   transform: translateY(0);
 }
 
-/* mobile: just one column */
+/*──────────────────────────────────────────────────────────
+  DESKTOP ENLARGEMENT & SPACING
+──────────────────────────────────────────────────────────*/
+@media screen and (min-width: 980px) {
+  section.about-section .inner.about-unified {
+    gap: 3.5em;       /* more breathing room between blocks */
+  }
+  section.about-section .inner.about-unified .about-image {
+    width: 12rem;
+    height: 12rem;
+  }
+}
+
+/*──────────────────────────────────────────────────────────
+  SMALLER MOBILE TWEAKS
+──────────────────────────────────────────────────────────*/
 @media screen and (max-width: 736px) {
   section.about-section {
     padding: 2em 1em;
   }
   section.about-section .inner.about-unified {
-    width: auto;
-    padding: 0;
+    gap: 2em;
   }
-}
-
-/*──────────────────────────────────────────────────────────
-  ENLARGE & SPACE OUT CIRCLES ON DESKTOP
-──────────────────────────────────────────────────────────*/
-
-@media screen and (min-width: 980px) {
-  /* 1) bump the container size up to 12rem x 12rem */
-  .wrapper.spotlight.style4 .inner .image {
-    width: 12rem !important;
-    height: 12rem !important;
-    margin: 3rem auto;          /* add vertical breathing room */
-    flex: 0 0 auto;             /* prevent flex from shrinking it */
-  }
-
-  /* 2) make sure the <img> fills that circle container */
-  .wrapper.spotlight.style4 .inner .image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  section.about-section .inner.about-unified .about-image {
+    width: 8rem;
+    height: 8rem;
   }
 }

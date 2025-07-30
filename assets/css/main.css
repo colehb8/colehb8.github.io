@@ -4071,48 +4071,48 @@ body.coaching-page .wrapper.spotlight.style1 {
 ──────────────────────────────────────────────*/
 section.wrapper.alt.about-section {
   background-color: #2e3448;
-  padding: 2.5em 1.5em;
-  position: relative;       /* ensures ::before/::after are truly hidden */
+  padding: 3em 2em;
+  position: relative;    /* kill any stray triangles from style4 */
 }
 section.wrapper.alt.about-section::before,
 section.wrapper.alt.about-section::after {
   display: none !important;
 }
 
-/* Inner: vertical stack, centered */
+/* Inner: vertical stack, centered, with breathing room */
 section.wrapper.alt.about-section .inner.about-unified {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 90ch;
+  max-width: 80ch;       /* wider lines before wrapping */
   margin: 0 auto;
-  gap: 2em;
+  gap: 2.5em;            /* consistent gap between everything */
   color: #fff;
 }
 
 /* Title */
 section.wrapper.alt.about-section .inner.about-unified > h2.major {
-  margin: 0 0 1rem;
-  font-size: 2.25rem;
-  line-height: 1.25;
+  margin: 0;
+  font-size: 2.5rem;
+  line-height: 1.2;
 }
 
 /* Paragraphs */
 section.wrapper.alt.about-section .inner.about-unified > p {
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.65;
   font-size: 1rem;
-  max-width: 50ch;          /* keep lines readable */
+  max-width: 65ch;       /* keep text blocks readable */
 }
 
 /* Circle image wrapper */
 section.wrapper.alt.about-section .inner.about-unified .about-image {
-  width: 12rem;
-  height: 12rem;
+  width: 14rem;
+  height: 14rem;
   border-radius: 50%;
   overflow: hidden;
-  margin: 1.5em 0;
+  margin: 2em 0;
   border: 2px solid rgba(255,255,255,0.25);
 }
 
@@ -4121,6 +4121,7 @@ section.wrapper.alt.about-section .inner.about-unified .about-image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 0.3s ease;
 }
 
@@ -4129,28 +4130,44 @@ section.wrapper.alt.about-section .inner.about-unified .about-image:hover img {
   transform: scale(1.05);
 }
 
-/* Desktop tweaks: slightly larger circles & more breathing room */
-@media screen and (min-width: 980px) {
+/* Reveal animation (if you’re using .reveal) */
+section.wrapper.alt.about-section.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+section.wrapper.alt.about-section.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/*──────────────────────────────────────────────
+  Responsive tweaks
+──────────────────────────────────────────────*/
+/* On medium screens, slightly scale everything back */
+@media screen and (max-width: 980px) {
   section.wrapper.alt.about-section {
-    padding: 3em 2em;
+    padding: 2.5em 1.5em;
   }
   section.wrapper.alt.about-section .inner.about-unified {
-    gap: 3em;
+    gap: 2em;
+    max-width: 70ch;
   }
   section.wrapper.alt.about-section .inner.about-unified .about-image {
-    width: 14rem;
-    height: 14rem;
-    margin: 2em 0;
+    width: 12rem;
+    height: 12rem;
+    margin: 1.5em 0;
   }
 }
 
-/* Mobile tweak: smaller circles & tighter spacing */
+/* On narrow phones, stack tighter */
 @media screen and (max-width: 736px) {
   section.wrapper.alt.about-section {
     padding: 2em 1em;
   }
   section.wrapper.alt.about-section .inner.about-unified {
     gap: 1.5em;
+    max-width: 100%;
   }
   section.wrapper.alt.about-section .inner.about-unified .about-image {
     width: 8rem;

@@ -4219,3 +4219,33 @@ section.wrapper.alt.about-section.reveal.active {
     margin: 1em 0;
   }
 }
+
+/*───────────────────────────────────────────────────────────
+  Pin the header to the top & stop it moving when menu opens
+───────────────────────────────────────────────────────────*/
+
+/* 1) Fix the header in place, above everything else */
+#header {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10000;    /* sit on top of the menu overlay */
+}
+
+/* 2) Give the rest of your page a top-padding equal to your header height
+      so content never jumps under it. Adjust 5rem to match your real header height. */
+#page-wrapper {
+  padding-top: 5rem; /* ← height of #header */
+}
+
+/* 3) When the menu toggles, the default Solid State style will still slide
+      the page-wrapper down – we only want it to slide the CONTENT, not the header */
+body.is-menu-visible #page-wrapper {
+  transform: translateY(var(--menu-offset, 0)) !important;
+  /* 
+     It will normally be something like `translateY(275px)`,
+     but because #header is fixed, it stays put and the wrapper
+     (i.e. everything *under* the header) slides down.
+  */
+}

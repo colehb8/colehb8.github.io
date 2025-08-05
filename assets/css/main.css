@@ -4276,3 +4276,65 @@ body.posing-page .wrapper.spotlight .image img {
   object-fit: cover !important;
   border-radius: 0 !important; /* let the container do the rounding */
 }
+/* ──────────────────────────────────────────────────────────────────────────
+   Posing-Packages Section Colors (just like Coaching Plans)
+───────────────────────────────────────────────────────────────────────────*/
+body.posing-page .wrapper.spotlight.style1,
+body.posing-page .wrapper.alt.spotlight.style1 {
+  background-color: #2e3448;
+}
+body.posing-page .wrapper.spotlight.style1:before,
+body.posing-page .wrapper.alt.spotlight.style1:before,
+body.posing-page .wrapper.spotlight.style1:after,
+body.posing-page .wrapper.alt.spotlight.style1:after {
+  background-image:
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%232e3448'/>\
+</svg>");
+}
+
+body.posing-page .wrapper.spotlight.style2,
+body.posing-page .wrapper.alt.spotlight.style2 {
+  background-color: #3f4a66;
+}
+body.posing-page .wrapper.spotlight.style2:before,
+body.posing-page .wrapper.alt.spotlight.style2:before,
+body.posing-page .wrapper.spotlight.style2:after,
+body.posing-page .wrapper.alt.spotlight.style2:after {
+  background-image:
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%233f4a66'/>\
+</svg>");
+}
+
+body.posing-page .wrapper.spotlight.style3,
+body.posing-page .wrapper.alt.spotlight.style3 {
+  background-color: #4c5c96;
+}
+body.posing-page .wrapper.spotlight.style3:before,
+body.posing-page .wrapper.alt.spotlight.style3:before,
+body.posing-page .wrapper.spotlight.style3:after,
+body.posing-page .wrapper.alt.spotlight.style3:after {
+  background-image:
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%234c5c96'/>\
+</svg>");
+}
+
+body.posing-page .wrapper.spotlight.style4,
+body.posing-page .wrapper.alt.spotlight.style4 {
+  background-color: #454858;
+}
+body.posing-page .wrapper.spotlight.style4:before,
+body.posing-page .wrapper.alt.spotlight.style4:before,
+body.posing-page .wrapper.spotlight.style4:after,
+body.posing-page .wrapper.alt.spotlight.style4:after {
+  background-image:
+    url("data:image/svg+xml;charset=utf8,\
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'>\
+  <polygon points='0,100 100,0 100,100' fill='%23454858'/>\
+</svg>");
+}

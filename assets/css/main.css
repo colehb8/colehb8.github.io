@@ -4249,33 +4249,3 @@ body.is-menu-visible #page-wrapper {
 }
 
 
-/* Posing-Packages page overrides */
-body.posing-page .wrapper.spotlight .inner {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  text-align: left;
-}
-body.posing-page .wrapper.spotlight .image {
-  width: 22em;
-  height: 22em;
-  margin: 0 3em 2em 0 !important;
-  border-radius: 0 !important;
-  overflow: hidden;
-}
-body.posing-page .wrapper.spotlight .image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-@media screen and (max-width: 736px) {
-  body.posing-page .wrapper.spotlight .inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  body.posing-page .wrapper.spotlight .image {
-    width: 100% !important;
-    height: auto !important;
-    margin: 0 0 1.5em 0 !important;
-  }
-}

@@ -8,7 +8,7 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon-64x64.png" />
 
-  <!-- CSS -->
+  <!-- Main CSS -->
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
@@ -21,8 +21,51 @@
       visibility: hidden;
     }
   </style>
+
+  <!-- ────────────────────────────────────────────────────────────────────────
+       POSING-PAGE ONLY OVERRIDES
+  ──────────────────────────────────────────────────────────────────────────-->
+  <style>
+    /* 1) Scope to this page only */
+    body.posing-page .wrapper.spotlight .inner {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+      text-align: left;
+    }
+
+    /* 2) Square image containers */
+    body.posing-page .wrapper.spotlight .image {
+      width: 22em;
+      height: 22em;
+      margin: 0 3em 2em 0 !important;
+      border-radius: 0 !important;  /* kill any circle */
+      overflow: hidden;
+    }
+
+    /* 3) Fill square, cropping if needed */
+    body.posing-page .wrapper.spotlight .image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* 4) On small screens, stack full-width */
+    @media screen and (max-width: 736px) {
+      body.posing-page .wrapper.spotlight .inner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+      }
+      body.posing-page .wrapper.spotlight .image {
+        width: 100% !important;
+        height: auto !important;
+        margin: 0 0 1.5em 0 !important;
+      }
+    }
+  </style>
 </head>
-<body class="is-preload">
+<body class="is-preload posing-page">
   <div id="page-wrapper">
 
     <!-- Header -->
@@ -43,21 +86,21 @@
     </header>
 
     <!-- Menu -->
-			<nav id="menu">
-			  <div class="inner">
-			    <h2>Menu</h2>
-			    <ul class="links">
-			      <li><a href="index.html">Home</a></li>
-			      <li><a href="coaching-plans.html">Coaching Plans</a></li>
-			      <li><a href="posing-packages.html">Posing Packages</a></li>
-			      <li><a href="about-us.html">About Us</a></li>
-			      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeHrYVAdeinLv2AZgy__xaN0n3jn6qonzpMBN9wxDuPv2Y5Tw/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
-			    </ul>
-			    <a href="#" class="close">Close</a>
-			  </div>
-			</nav>
+    <nav id="menu">
+      <div class="inner">
+        <h2>Menu</h2>
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="coaching-plans.html">Coaching Plans</a></li>
+          <li><a href="posing-packages.html">Posing Packages</a></li>
+          <li><a href="about-us.html">About Us</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeHrYVAdeinLv2AZgy__xaN0n3jn6qonzpMBN9wxDuPv2Y5Tw/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
+        </ul>
+        <a href="#" class="close">Close</a>
+      </div>
+    </nav>
 
-    <!-- Anchor for “Home” link -->
+    <!-- Top Anchor -->
     <div id="top" class="anchor-offset"></div>
 
     <!-- Just The Essentials -->

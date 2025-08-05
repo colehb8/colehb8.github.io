@@ -4248,4 +4248,38 @@ body.is-menu-visible #page-wrapper {
   display: none !important;
 }
 
+/* POSING-PAGE ONLY OVERRIDES (place after all other CSS) */
+body.posing-page .wrapper.spotlight .image {
+  /* 1) Force a square */
+  width: 22em;
+  height: 22em;
+
+  /* 2) Clip into a perfect circle */
+  border-radius: 50%;
+  overflow: hidden;
+
+  /* 3) Your gutter */
+  margin: 0 3em 2em 0 !important;
+}
+
+body.posing-page .wrapper.spotlight .image img {
+  /* fill the circle, cropping as needed */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Mobile stacking */
+@media screen and (max-width: 736px) {
+  body.posing-page .wrapper.spotlight .inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+  }
+  body.posing-page .wrapper.spotlight .image {
+    width: 100% !important;
+    height: auto !important;      /* let it size by its own aspect now */
+    border-radius: 0;             /* rectangles on mobile */
+    margin: 0 0 1.5em 0 !important;
+  }
+}
 

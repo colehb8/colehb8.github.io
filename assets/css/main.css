@@ -4338,3 +4338,19 @@ body.posing-page .wrapper.alt.spotlight.style4:after {
   <polygon points='0,100 100,0 100,100' fill='%23454858'/>\
 </svg>");
 }
+
+ /* 1) Kill scroll-reveal */
+  body.posing-page .reveal,
+  body.posing-page .reveal.active {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* 2) Hover “pop” on the circular images */
+  body.posing-page .wrapper.spotlight .image img {
+    transition: transform 0.3s ease;
+  }
+  body.posing-page .wrapper.spotlight .image:hover img {
+    transform: scale(1.05);
+  }

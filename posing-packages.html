@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- Anchor offset for in‐page links -->
+  <!-- Anchor-offset helper -->
   <style>
     .anchor-offset {
       position: relative;
@@ -22,11 +22,9 @@
     }
   </style>
 
-  <!-- ────────────────────────────────────────────────────────────────────────
-       POSING-PAGE ONLY OVERRIDES
-  ──────────────────────────────────────────────────────────────────────────-->
+  <!-- Posing-page only overrides -->
   <style>
-    /* 1) Scope to this page only */
+    /* 1) Force left-aligned, two-column layout */
     body.posing-page .wrapper.spotlight .inner {
       display: flex !important;
       flex-direction: row !important;
@@ -34,16 +32,16 @@
       text-align: left;
     }
 
-    /* 2) Square image containers */
+    /* 2) Make the image container a perfect circle */
     body.posing-page .wrapper.spotlight .image {
       width: 22em;
       height: 22em;
       margin: 0 3em 2em 0 !important;
-      border-radius: 0 !important;  /* kill any circle */
+      border-radius: 50% !important;
       overflow: hidden;
     }
 
-    /* 3) Fill square, cropping if needed */
+    /* 3) Fill and crop the photo inside */
     body.posing-page .wrapper.spotlight .image img {
       width: 100%;
       height: 100%;
@@ -51,15 +49,15 @@
       display: block;
     }
 
-    /* 4) On small screens, stack full-width */
+    /* 4) Mobile: stack full-width, keep circular containers */
     @media screen and (max-width: 736px) {
       body.posing-page .wrapper.spotlight .inner {
         flex-direction: column !important;
         align-items: flex-start !important;
       }
       body.posing-page .wrapper.spotlight .image {
-        width: 100% !important;
-        height: auto !important;
+        width: 18em !important;
+        height: 18em !important;
         margin: 0 0 1.5em 0 !important;
       }
     }
@@ -94,7 +92,8 @@
           <li><a href="coaching-plans.html">Coaching Plans</a></li>
           <li><a href="posing-packages.html">Posing Packages</a></li>
           <li><a href="about-us.html">About Us</a></li>
-          <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSeHrYVAdeinLv2AZgy__xaN0n3jn6qonzpMBN9wxDuPv2Y5Tw/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
+          <li><a href="https://docs.google.com/forms/d/e/…"
+                 target="_blank">Coaching Inquiry Form</a></li>
         </ul>
         <a href="#" class="close">Close</a>
       </div>
@@ -103,54 +102,51 @@
     <!-- Top Anchor -->
     <div id="top" class="anchor-offset"></div>
 
-    <!-- Just The Essentials -->
+    <!-- Sections -->
     <section id="one" class="wrapper spotlight style1">
       <div class="inner">
-        <div class="image"><img src="images/pic 10.jpg" alt="Just The Essentials" /></div>
+        <div class="image">
+          <img src="images/pic 10.jpg" alt="Just The Essentials" />
+        </div>
         <div class="content">
           <h2 class="major">Just The Essentials</h2>
-          <p>
-            Two 45-minute sessions aimed at teaching you how to hit your mandatory poses to your division and organization's specifications.
-          </p>
+          <p>Two 45-minute sessions aimed at teaching you how to hit your mandatory poses to your division and organization's specifications.</p>
         </div>
       </div>
     </section>
 
-    <!-- Stage Ready -->
     <section id="two" class="wrapper alt spotlight style2 reveal">
       <div class="inner">
-        <div class="image"><img src="images/pic 11.jpeg" alt="Stage Ready" /></div>
+        <div class="image">
+          <img src="images/pic 11.jpeg" alt="Stage Ready" />
+        </div>
         <div class="content">
           <h2 class="major">Stage Ready</h2>
-          <p>
-            Don't just learn how to hit your mandatories, but how to command the stage with your presence to show your strongest points.
-          </p>
+          <p>Don’t just learn how to hit your mandatories, but how to command the stage with your presence to show your strongest points.</p>
         </div>
       </div>
     </section>
 
-    <!-- Tailored to Fit -->
     <section id="three" class="wrapper spotlight style3 reveal">
       <div class="inner">
-        <div class="image"><img src="images/pic 13.jpg" alt="Tailored to Fit" /></div>
+        <div class="image">
+          <img src="images/pic 13.jpg" alt="Tailored to Fit" />
+        </div>
         <div class="content">
           <h2 class="major">Tailored to Fit</h2>
-          <p>
-            This package is for those looking to create a routine but don't know where to start. STA will choreograph, demonstrate, and teach a unique and custom routine for between 30–90 seconds.
-          </p>
+          <p>This package is for those looking to create a routine but don't know where to start. STA will choreograph, demonstrate, and teach a unique and custom routine for between 30–90 seconds.</p>
         </div>
       </div>
     </section>
 
-    <!-- No Stone Unturned -->
     <section id="four" class="wrapper alt spotlight style4 reveal">
       <div class="inner">
-        <div class="image"><img src="images/pic 12.JPG" alt="No Stone Unturned" /></div>
+        <div class="image">
+          <img src="images/pic 12.JPG" alt="No Stone Unturned" />
+        </div>
         <div class="content">
           <h2 class="major">No Stone Unturned</h2>
-          <p>
-            STA's most comprehensive posing package. Learn the mandatories, create a stage presence, and develop a routine that is custom tailored to your strongest poses.
-          </p>
+          <p>STA’s most comprehensive posing package. Learn the mandatories, create a stage presence, and develop a routine that is custom tailored to your strongest poses.</p>
         </div>
       </div>
     </section>
@@ -158,13 +154,11 @@
     <!-- Footer -->
     <section id="footer">
       <div class="inner">
-        <div class="contact-info">
-          <ul class="contact-info">
-            <li><i class="icon solid fa-envelope"></i> <a href="mailto:settoadapt@gmail.com">settoadapt@gmail.com</a></li>
-            <li><i class="icon brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/cole-bhella/">LinkedIn</a></li>
-            <li><i class="icon brands fa-instagram"></i> <a href="https://www.instagram.com/set2adapt/">Instagram</a></li>
-          </ul>
-        </div>
+        <ul class="contact-info">
+          <li><i class="icon solid fa-envelope"></i> <a href="mailto:settoadapt@gmail.com">settoadapt@gmail.com</a></li>
+          <li><i class="icon brands fa-linkedin"></i> <a href="https://linkedin.com/in/cole-bhella">LinkedIn</a></li>
+          <li><i class="icon brands fa-instagram"></i> <a href="https://instagram.com/set2adapt">Instagram</a></li>
+        </ul>
         <ul class="copyright">
           <li>&copy; Set To Adapt. All rights reserved.</li>
           <li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
@@ -174,23 +168,24 @@
 
   </div>
 
-  <!-- Scripts -->
+  <!-- Scripts (unchanged) -->
   <script src="assets/js/jquery.min.js"></script>
   <script src="assets/js/jquery.scrollex.min.js"></script>
   <script src="assets/js/browser.min.js"></script>
   <script src="assets/js/breakpoints.min.js"></script>
   <script src="assets/js/util.js"></script>
   <script src="assets/js/main.js"></script>
-  <script>
-    window.onbeforeunload = () => window.scrollTo(0,0);
-  </script>
+  <script>window.onbeforeunload = () => window.scrollTo(0,0);</script>
   <script>
     document.addEventListener('DOMContentLoaded', () => {
       const obs = new IntersectionObserver((entries) => {
         entries.forEach(e => e.isIntersecting
           ? e.target.classList.add('active')
           : e.target.classList.remove('active'));
-      }, { threshold: 0.1, rootMargin: '0px 0px -10% 0px' });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -10% 0px'
+      });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     });
   </script>

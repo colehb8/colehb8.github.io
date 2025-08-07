@@ -4354,10 +4354,3 @@ body.posing-page .wrapper.alt.spotlight.style4:after {
   body.posing-page .wrapper.spotlight .image:hover img {
     transform: scale(1.05);
   }
-
-body.posing-page .wrapper.spotlight .content {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-

@@ -4415,3 +4415,21 @@ body.posing-page .wrapper.alt.spotlight.style4:after {
     align-items: flex-start !important;
   }
 }
+
+/* Mobile: center the circle image on posing page */
+@media (max-width: 736px) {
+  body.posing-page .wrapper.spotlight > .inner {
+    flex-direction: column !important;
+    align-items: stretch !important;       /* keep text left/full width */
+  }
+  body.posing-page .wrapper.spotlight > .inner .image {
+    align-self: center !important;          /* center only the image */
+    margin: 0 auto 1.5em !important;
+    width: min(80vw, 18em) !important;      /* stays within screen */
+    height: min(80vw, 18em) !important;
+  }
+  body.posing-page .wrapper.spotlight > .inner .content {
+    width: 100%;
+    text-align: left !important;
+  }
+}

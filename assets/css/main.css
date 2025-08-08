@@ -4440,3 +4440,16 @@ body.posing-page .wrapper.alt.spotlight.style4:after {
     width: 100% !important;
   }
 }
+/* Mobile: center the section titles under the image */
+@media screen and (max-width: 736px) {
+  body.posing-page .wrapper.spotlight .content h2.major {
+    text-align: center;
+    margin: 0.5em auto 0.75em; /* small breathing room */
+  }
+
+  /* Keep the paragraph/list text left-aligned */
+  body.posing-page .wrapper.spotlight .content p,
+  body.posing-page .wrapper.spotlight .content ul {
+    text-align: left;
+  }
+}

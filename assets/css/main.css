@@ -4416,20 +4416,27 @@ body.posing-page .wrapper.alt.spotlight.style4:after {
   }
 }
 
-/* Mobile: center the circle image on posing page */
+/* Mobile: center the circle image on the posing page */
 @media (max-width: 736px) {
+  /* stack vertically */
   body.posing-page .wrapper.spotlight > .inner {
     flex-direction: column !important;
-    align-items: stretch !important;       /* keep text left/full width */
+    align-items: stretch !important;      /* keep text full width */
   }
+
+  /* kill the theme's odd-section left margin + center the image */
+  body.posing-page .wrapper.spotlight:nth-child(2n - 1) .image,
   body.posing-page .wrapper.spotlight > .inner .image {
-    align-self: center !important;          /* center only the image */
-    margin: 0 auto 1.5em !important;
-    width: min(80vw, 18em) !important;      /* stays within screen */
+    display: block !important;            /* so auto margins work */
+    margin: 0 auto 1.5em !important;      /* center horizontally */
+    align-self: center !important;        /* belt-and-suspenders */
+    width: min(80vw, 18em) !important;
     height: min(80vw, 18em) !important;
   }
+
+  /* keep text left and full width */
   body.posing-page .wrapper.spotlight > .inner .content {
-    width: 100%;
     text-align: left !important;
+    width: 100% !important;
   }
 }

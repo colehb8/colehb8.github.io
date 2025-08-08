@@ -4394,27 +4394,24 @@ body.posing-page .wrapper.alt.spotlight.style4:after {
   }
 }
 
-/* Center the spotlight image on mobile only (posing page) */
-@media screen and (max-width: 736px) {
-  body.posing-page .wrapper.spotlight .inner {
-    flex-direction: column !important;
-    align-items: center !important;     /* centers image horizontally */
+/* Desktop: vertically center text next to the image on POSING page */
+@media (min-width: 981px) {
+  body.posing-page section.wrapper.spotlight > .inner {
+    display: flex !important;
+    align-items: center !important;     /* override the flex-start */
+    gap: 3em;
   }
-  body.posing-page .wrapper.spotlight .image {
-    margin: 0 auto 1.25em !important;   /* center the circle */
-    align-self: center !important;
-    float: none !important;             /* just in case any float sneaks in */
+  body.posing-page section.wrapper.spotlight > .inner .image {
+    margin: 0 3em 0 0 !important;       /* no extra bottom margin */
+  }
+  body.posing-page section.wrapper.spotlight > .inner .content {
+    margin: 0 !important;               /* kill any top margin that fights centering */
   }
 }
 
-/* Desktop: vertically center text next to the image (posing page only) */
-@media screen and (min-width: 981px) {
-  body.posing-page .wrapper.spotlight .inner {
-    align-items: center !important;   /* center image & text vertically */
-    gap: 3em;                         /* optional: consistent spacing */
-  }
-  /* optional: remove extra bottom margin on the image when centered */
-  body.posing-page .wrapper.spotlight .image {
-    margin: 0 3em 0 0 !important;
+/* Keep your mobile behavior (stacked, top-aligned) */
+@media (max-width: 980px) {
+  body.posing-page section.wrapper.spotlight > .inner {
+    align-items: flex-start !important;
   }
 }

@@ -4393,3 +4393,16 @@ body.posing-page .wrapper.alt.spotlight.style4:after {
     line-height: 1.6;
   }
 }
+
+/* Center the spotlight image on mobile only (posing page) */
+@media screen and (max-width: 736px) {
+  body.posing-page .wrapper.spotlight .inner {
+    flex-direction: column !important;
+    align-items: center !important;     /* centers children horizontally */
+  }
+  body.posing-page .wrapper.spotlight .image {
+    margin: 0 auto 1.25em !important;   /* center the circle */
+    align-self: center !important;
+    float: none !important;             /* just in case any float sneaks in */
+  }
+}

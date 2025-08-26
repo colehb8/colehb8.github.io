@@ -4453,3 +4453,33 @@ body.posing-page .wrapper.alt.spotlight.style4:after {
     text-align: left;
   }
 }
+
+/* Pricing list under each plan title */
+body.coaching-page .plan-pricing{
+  margin: .35em 0 1.1em;
+  padding-left: 0;
+  list-style: none;
+}
+body.coaching-page .plan-pricing li{
+  margin: .25em 0;
+  line-height: 1.35;
+}
+body.coaching-page .plan-pricing li strong{
+  font-weight: 800;
+  letter-spacing: .01em;
+}
+body.coaching-page .plan-pricing li.note{
+  opacity: .85;
+  font-style: italic;
+  font-size: .95em;
+}
+
+/* (optional) add a faint divider before the features list */
+body.coaching-page .plan-pricing + .plan-features{
+  margin-top: 1.1em;
+  padding-top: .8em;
+  border-top: 1px solid rgba(255,255,255,.12);
+}
+@media screen and (max-width: 736px){
+  body.coaching-page .plan-pricing{ margin: .45em 0 1.15em; }
+}

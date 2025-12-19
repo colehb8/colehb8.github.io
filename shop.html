@@ -31,17 +31,18 @@
                - Centered content
             */
             .product-card {
-                /* Slightly stronger background to define the shell */
-                background: rgba(255, 255, 255, 0.05);
-                border: 2px solid rgba(255, 255, 255, 0.15); /* Thicker border */
+                /* More solid background to give the box weight */
+                background: rgba(46, 52, 72, 0.6); 
+                border: 2px solid rgba(255, 255, 255, 0.2);
                 
-                padding: 2rem;
+                /* Reduced padding allows content to expand closer to edges */
+                padding: 1.5rem;
                 
                 /* SIZING: Width matches layout columns, aspect-ratio forces square */
                 width: calc(50% - 1em);
                 aspect-ratio: 1 / 1; 
                 
-                border-radius: 6px;
+                border-radius: 8px;
                 text-align: center;
                 transition: all 0.3s ease;
                 
@@ -50,9 +51,8 @@
                 flex-direction: column;
                 align-items: center;
                 
-                /* FILL THE CARD: Center content but spread it out comfortably */
-                justify-content: center; 
-                gap: 3rem; /* Push title and button apart to fill space */
+                /* FILL THE CARD: Spreads items evenly to occupy the full height */
+                justify-content: space-evenly;
             }
 
             /* Mobile Sizing: Stack them 1 per row on smaller screens */
@@ -60,30 +60,34 @@
                 .product-card {
                     width: 100%;
                     aspect-ratio: auto;
-                    min-height: 350px; 
-                    gap: 2rem;
+                    min-height: 400px; 
                 }
             }
 
             /* Stronger hover effect */
             .product-card:hover {
                 border-color: #ffffff; /* Highlight border on hover */
-                background: rgba(255, 255, 255, 0.1);
+                background: rgba(46, 52, 72, 0.9);
                 transform: scale(1.02); /* Slight grow effect */
-                box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+                box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             }
 
             /* Title Styling */
             .product-card h3 {
-                font-size: 2.2rem; /* Large */
-                letter-spacing: 0.15em;
+                font-size: 3rem; /* MASSIVE TEXT */
+                letter-spacing: 0.1em;
                 text-transform: uppercase;
                 margin: 0;
                 font-weight: 900; /* Extra Bold */
                 color: #ffffff;
                 border-bottom: none; 
                 width: 100%;
-                line-height: 1.2;
+                line-height: 1.1;
+                
+                /* Ensure it centers nicely */
+                display: flex;
+                align-items: center;
+                justify-content: center;
             }
 
             /* Button Container */
@@ -93,8 +97,9 @@
                 justify-content: center;
                 align-items: center;
                 
-                /* Scale button to match the card's visual weight */
-                transform: scale(1.25); 
+                /* HUGE SCALE: Makes the button fill the bottom space */
+                transform: scale(1.5); 
+                transform-origin: center center;
             }
         </style>
 	</head>

@@ -34,10 +34,7 @@
                 background: rgba(46, 52, 72, 0.6); 
                 border: 2px solid rgba(255, 255, 255, 0.2);
                 
-                /* MATCHING POSING PACKAGES: 
-                   Reduced padding significantly to push content closer to the edge.
-                   The posing tiles often have text nearly touching the circle edge.
-                */
+                /* Reduced padding to maximize space for the tile */
                 padding: 1rem;
                 
                 width: calc(50% - 1em);
@@ -51,8 +48,8 @@
                 flex-direction: column;
                 align-items: center;
                 
-                /* Fill space evenly */
-                justify-content: space-evenly;
+                /* Center the stripe tile perfectly */
+                justify-content: center;
             }
 
             @media screen and (max-width: 736px) {
@@ -68,23 +65,6 @@
                 background: rgba(46, 52, 72, 0.9);
                 transform: scale(1.02);
                 box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-            }
-
-            /* Title Styling */
-            .product-card h3 {
-                font-size: 3rem; 
-                letter-spacing: 0.1em;
-                text-transform: uppercase;
-                margin: 0;
-                font-weight: 900; 
-                color: #ffffff;
-                border-bottom: none; 
-                width: 100%;
-                line-height: 1.1;
-                
-                display: flex;
-                align-items: center;
-                justify-content: center;
             }
 
             /* Button Container */
@@ -156,7 +136,6 @@
 
                             <!-- Product 1 -->
                             <article class="product-card">
-                                <h3>First Product</h3>
                                 <div class="stripe-container">
                                     <stripe-buy-button
                                         buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
@@ -168,7 +147,6 @@
 
                             <!-- Product 2 -->
                             <article class="product-card">
-                                <h3>Second Product</h3>
                                 <div class="stripe-container">
                                     <stripe-buy-button
                                         buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"

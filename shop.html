@@ -31,14 +31,15 @@
                - Centered content
             */
             .product-card {
-                /* More solid background to give the box weight */
                 background: rgba(46, 52, 72, 0.6); 
                 border: 2px solid rgba(255, 255, 255, 0.2);
                 
-                /* Reduced padding allows content to expand closer to edges */
-                padding: 1.5rem;
+                /* MATCHING POSING PACKAGES: 
+                   Reduced padding significantly to push content closer to the edge.
+                   The posing tiles often have text nearly touching the circle edge.
+                */
+                padding: 1rem;
                 
-                /* SIZING: Width matches layout columns, aspect-ratio forces square */
                 width: calc(50% - 1em);
                 aspect-ratio: 1 / 1; 
                 
@@ -46,16 +47,14 @@
                 text-align: center;
                 transition: all 0.3s ease;
                 
-                /* Flexbox for centering content vertically and horizontally */
                 display: flex;
                 flex-direction: column;
                 align-items: center;
                 
-                /* FILL THE CARD: Spreads items evenly to occupy the full height */
+                /* Fill space evenly */
                 justify-content: space-evenly;
             }
 
-            /* Mobile Sizing: Stack them 1 per row on smaller screens */
             @media screen and (max-width: 736px) {
                 .product-card {
                     width: 100%;
@@ -64,27 +63,25 @@
                 }
             }
 
-            /* Stronger hover effect */
             .product-card:hover {
-                border-color: #ffffff; /* Highlight border on hover */
+                border-color: #ffffff;
                 background: rgba(46, 52, 72, 0.9);
-                transform: scale(1.02); /* Slight grow effect */
+                transform: scale(1.02);
                 box-shadow: 0 15px 40px rgba(0,0,0,0.4);
             }
 
             /* Title Styling */
             .product-card h3 {
-                font-size: 3rem; /* MASSIVE TEXT */
+                font-size: 3rem; 
                 letter-spacing: 0.1em;
                 text-transform: uppercase;
                 margin: 0;
-                font-weight: 900; /* Extra Bold */
+                font-weight: 900; 
                 color: #ffffff;
                 border-bottom: none; 
                 width: 100%;
                 line-height: 1.1;
                 
-                /* Ensure it centers nicely */
                 display: flex;
                 align-items: center;
                 justify-content: center;
@@ -96,8 +93,6 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                
-                /* HUGE SCALE: Makes the button fill the bottom space */
                 transform: scale(1.5); 
                 transform-origin: center center;
             }
@@ -161,10 +156,7 @@
 
                             <!-- Product 1 -->
                             <article class="product-card">
-                                <!-- Title -->
                                 <h3>First Product</h3>
-                                
-                                <!-- Button -->
                                 <div class="stripe-container">
                                     <stripe-buy-button
                                         buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
@@ -176,10 +168,7 @@
 
                             <!-- Product 2 -->
                             <article class="product-card">
-                                <!-- Title -->
                                 <h3>Second Product</h3>
-                                
-                                <!-- Button -->
                                 <div class="stripe-container">
                                     <stripe-buy-button
                                         buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"

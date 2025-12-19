@@ -1,88 +1,169 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop Our Products</title>
-    <!-- Tailwind CSS for styling -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Stripe Script: Only needs to be included ONCE per page -->
-    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
-</head>
-<body class="font-sans text-gray-900 antialiased bg-gray-50">
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Shop - Set To Adapt</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-    <!-- Navigation Placeholder -->
-    <nav class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16">
-                <div class="flex items-center">
-                    <a href="index.html" class="text-xl font-bold text-indigo-600">Set to Adapt</a>
-                </div>
-                <div class="flex items-center space-x-4">
-                    <a href="index.html" class="text-gray-500 hover:text-gray-900">Home</a>
-                    <a href="shop.html" class="text-gray-900 font-medium">Shop</a>
-                    <a href="contact.html" class="text-gray-500 hover:text-gray-900">Contact</a>
-                </div>
-            </div>
-        </div>
-    </nav>
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="images/favicon-64x64.png" />
 
-    <!-- Header -->
-    <header class="bg-white">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl font-extrabold text-gray-900">Shop Our Collection</h1>
-            <p class="mt-4 text-xl text-gray-500">Secure checkout powered by Stripe.</p>
-        </div>
-    </header>
+		<!-- Link to your existing theme CSS -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-    <!-- Product Grid -->
-    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+		<!-- Stripe Script (Required for buttons to work) -->
+		<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+	</head>
 
-            <!-- PRODUCT 1 -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 border border-gray-100 transition hover:shadow-xl">
-                <h2 class="text-lg font-bold mb-2">First Product</h2>
-                <p class="text-gray-600 text-sm mb-6 text-center">Description of the first item.</p>
-                
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
-                  publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
-                >
-                </stripe-buy-button>
-            </div>
+	<body class="is-preload">
 
-            <!-- PRODUCT 2 (NEWLY ADDED) -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 border border-gray-100 transition hover:shadow-xl">
-                <h2 class="text-lg font-bold mb-2">Second Product</h2>
-                <p class="text-gray-600 text-sm mb-6 text-center">Description of the second item.</p>
-                
-                <!-- New Button Code Here -->
-                <stripe-buy-button
-                  buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
-                  publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
-                >
-                </stripe-buy-button>
-            </div>
+		<!-- Page Wrapper -->
+		<div id="page-wrapper">
 
-            <!-- PRODUCT 3 (Placeholder) -->
-            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 border border-gray-100 transition hover:shadow-xl">
-                <h2 class="text-lg font-bold mb-2">Coming Soon</h2>
-                <p class="text-gray-600 text-sm mb-6 text-center">More products are on the way.</p>
-                
-                <div class="p-4 bg-gray-100 rounded text-center w-full mt-auto">
-                    <p class="text-gray-400 text-sm italic">Slot available</p>
-                </div>
-            </div>
+			<!-- Header -->
+			<header id="header">
+			  <div class="header-container">
+			    <div class="logo-container">
+			      <a href="index.html">
+			        <img src="images/logo.transparent.png" alt="SetToAdapt Logo">
+			      </a>
+			    </div>
+			    <div class="title-container">
+			      <span class="site-title"><b>SET TO ADAPT</b></span>
+			    </div>
+			    <nav>
+			      <a href="#menu">Menu</a>
+			    </nav>
+			  </div>
+			</header>
 
-        </div>
-    </main>
+			<!-- Menu -->
+			<nav id="menu">
+			  <div class="inner">
+			    <h2>Menu</h2>
+			    <ul class="links">
+			      <li><a href="index.html">Home</a></li>
+			      <li><a href="coaching-plans.html">Coaching Plans</a></li>
+			      <li><a href="posing-packages.html">Posing Packages</a></li>
+			      <li><a href="about-us.html">About Us</a></li>
+			      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfviMkP3zRk7azxwsqgI-NEFWzfAqnctnfuO0jlGmp7IhY5Og/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
+				  <li><a href="shop.html">Shop</a></li>
+			    </ul>
+			    <a href="#" class="close">Close</a>
+			  </div>
+			</nav>
 
-    <!-- Footer -->
-    <footer class="bg-gray-800 text-white py-8 mt-12">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p>&copy; 2025 MyBrand. All rights reserved.</p>
-        </div>
-    </footer>
+			<!-- Wrapper -->
+			<section id="wrapper">
+				
+				<!-- Page Header -->
+				<header>
+					<div class="inner">
+						<h2>Shop</h2>
+						<p>Official Set To Adapt Services and Products</p>
+					</div>
+				</header>
 
-</body>
+				<!-- Content -->
+				<div class="wrapper">
+					<div class="inner">
+						
+						<!-- 
+                           We use the "features" class here because your theme 
+                           already styles this as a nice grid (seen in your Posing Packages).
+                        -->
+						<section class="features">
+
+                            <!-- Product 1 -->
+							<article>
+								<!-- If you have an image for this product, uncomment below and add path -->
+								<!-- <div class="image"><img src="images/product1.jpg" alt="" /></div> -->
+								
+								<h3 class="major">First Product</h3>
+								<p>Description of the first item.</p>
+
+                                <!-- Stripe Button 1 -->
+                                <stripe-buy-button
+                                  buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
+                                  publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                                >
+                                </stripe-buy-button>
+							</article>
+
+                            <!-- Product 2 -->
+							<article>
+								<!-- <div class="image"><img src="images/product2.jpg" alt="" /></div> -->
+								
+								<h3 class="major">Second Product</h3>
+								<p>Description of the second item.</p>
+
+                                <!-- Stripe Button 2 -->
+                                <stripe-buy-button
+                                  buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
+                                  publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                                >
+                                </stripe-buy-button>
+							</article>
+
+						</section>
+
+					</div>
+				</div>
+
+			</section>
+
+			<!-- Footer -->
+			<section id="footer">
+				<div class="inner">
+					<div class="contact-info">
+						<ul class="contact-info">
+							  <li><i class="icon solid fa-envelope"></i> <a href="mailto:settoadapt@gmail.com">settoadapt@gmail.com</a></li>
+							  <li><i class="icon brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/cole-bhella/">LinkedIn</a></li>
+							  <li><i class="icon brands fa-instagram"></i> <a href="https://www.instagram.com/set2adapt/">Instagram</a></li>
+						</ul>
+					</div>
+					<ul class="copyright">
+				          <li>&copy; Set To Adapt. All rights reserved.</li>
+						<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+					</ul>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+        
+        <!-- Page specific scripts (copied from your index.html) -->
+		<script>
+		  window.onbeforeunload = function () {
+		    window.scrollTo(0, 0);
+		  };
+		</script>
+		<script>
+		  document.addEventListener('DOMContentLoaded', () => {
+		    const observer = new IntersectionObserver((entries) => {
+		      entries.forEach(entry => {
+		        if (entry.isIntersecting) {
+		          entry.target.classList.add('active');
+		        } else {
+		          entry.target.classList.remove('active');
+		        }
+		      });
+		    }, {
+		      threshold: 0.1,                
+		      rootMargin: '0px 0px -10% 0px'   
+		    });
+		
+		    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+		  });
+		</script>
+
+	</body>
 </html>

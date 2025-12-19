@@ -65,62 +65,53 @@
 					</div>
 				</header>
 
-				<!-- Content -->
-				<div class="wrapper">
-					<div class="inner">
+                <!-- 
+                   PRODUCT 1: SPOTLIGHT STYLE 1 
+                   (Image Left, Text Right, Dark Background)
+                -->
+                <section class="wrapper spotlight style1">
+                    <div class="inner">
+                        <div class="image">
+                            <!-- Placeholder image - Replace 'src' with your actual product image -->
+                            <img src="https://placehold.co/500x500/2e3448/FFF?text=Product+1" alt="First Product" />
+                        </div>
+                        <div class="content">
+                            <h2 class="major">First Product</h2>
+                            <p>Description of the first item. Perfect for your training needs. This plan includes everything you need to get started.</p>
+                            
+                            <!-- Stripe Button -->
+                            <stripe-buy-button
+                                buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
+                                publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                            >
+                            </stripe-buy-button>
+                        </div>
+                    </div>
+                </section>
 
-                        <!-- 
-                           Using the theme's native grid system (.row) 
-                           and box styling (.box)
-                        -->
-                        <div class="row gtr-uniform">
-
-                            <!-- Product 1 -->
-                            <!-- col-6 means 50% width on desktop, col-12-medium means full width on tablets/mobile -->
-                            <div class="col-6 col-12-medium">
-                                <section class="box">
-                                    <!-- Centered Content -->
-                                    <div class="align-center">
-                                        <span class="icon solid major fa-dumbbell"></span>
-                                        <h3>First Product</h3>
-                                        <p>Description of the first item. Perfect for your training needs.</p>
-                                        
-                                        <!-- Stripe Button Container -->
-                                        <div style="display: flex; justify-content: center; margin-top: 1.5em;">
-                                            <stripe-buy-button
-                                            buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
-                                            publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
-                                            >
-                                            </stripe-buy-button>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-
-                            <!-- Product 2 -->
-                            <div class="col-6 col-12-medium">
-                                <section class="box">
-                                    <div class="align-center">
-                                        <span class="icon solid major fa-tshirt"></span>
-                                        <h3>Second Product</h3>
-                                        <p>Description of the second item. High quality material.</p>
-                                        
-                                        <div style="display: flex; justify-content: center; margin-top: 1.5em;">
-                                            <stripe-buy-button
-                                            buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
-                                            publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
-                                            >
-                                            </stripe-buy-button>
-                                        </div>
-                                    </div>
-                                </section>
-                            </div>
-
-                        </div> 
-                        <!-- End Row -->
-
-					</div>
-				</div>
+                <!-- 
+                   PRODUCT 2: SPOTLIGHT STYLE 2 (ALT)
+                   (Image Right, Text Left, Lighter Background)
+                -->
+                <section class="wrapper alt spotlight style2">
+                    <div class="inner">
+                        <div class="image">
+                             <!-- Placeholder image - Replace 'src' with your actual product image -->
+                            <img src="https://placehold.co/500x500/3f4a66/FFF?text=Product+2" alt="Second Product" />
+                        </div>
+                        <div class="content">
+                            <h2 class="major">Second Product</h2>
+                            <p>Description of the second item. High quality material designed to last. Available in multiple sizes.</p>
+                            
+                            <!-- Stripe Button -->
+                            <stripe-buy-button
+                                buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
+                                publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                            >
+                            </stripe-buy-button>
+                        </div>
+                    </div>
+                </section>
 
 			</section>
 

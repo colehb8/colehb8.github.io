@@ -8,38 +8,12 @@
 		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="images/favicon-64x64.png" />
 
-		<!-- Link to your existing theme CSS -->
+		<!-- Theme CSS -->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-		<!-- Stripe Script (Required for buttons to work) -->
+		<!-- Stripe Script -->
 		<script async src="https://js.stripe.com/v3/buy-button.js"></script>
-
-        <!-- Custom Shop Styles -->
-        <style>
-            /* Force the Stripe button to center itself */
-            stripe-buy-button {
-                display: block;
-                margin: 1.5em auto; /* Top/Bottom margin and Auto left/right */
-            }
-
-            /* Center text within the product cards */
-            .features article {
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start; /* Aligns content to top */
-            }
-
-            /* Style for the placeholder icon */
-            .shop-icon {
-                font-size: 3em;
-                margin-bottom: 0.5em;
-                opacity: 0.7;
-                color: #ffffff; /* Adjust based on your theme's accent color */
-            }
-        </style>
 	</head>
 
 	<body class="is-preload">
@@ -94,46 +68,56 @@
 				<!-- Content -->
 				<div class="wrapper">
 					<div class="inner">
-						
-						<!-- 
-                           We use the "features" class here because your theme 
-                           already styles this as a nice grid.
+
+                        <!-- 
+                           Using the theme's native grid system (.row) 
+                           and box styling (.box)
                         -->
-						<section class="features">
+                        <div class="row gtr-uniform">
 
                             <!-- Product 1 -->
-							<article>
-                                <!-- Placeholder Icon (replaces image for now) -->
-                                <span class="icon solid fa-shopping-cart major"></span>
-								
-								<h3 class="major">First Product</h3>
-								<p>Description of the first item. High quality coaching materials.</p>
-
-                                <!-- Stripe Button 1 -->
-                                <stripe-buy-button
-                                  buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
-                                  publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
-                                >
-                                </stripe-buy-button>
-							</article>
+                            <!-- col-6 means 50% width on desktop, col-12-medium means full width on tablets/mobile -->
+                            <div class="col-6 col-12-medium">
+                                <section class="box">
+                                    <!-- Centered Content -->
+                                    <div class="align-center">
+                                        <span class="icon solid major fa-dumbbell"></span>
+                                        <h3>First Product</h3>
+                                        <p>Description of the first item. Perfect for your training needs.</p>
+                                        
+                                        <!-- Stripe Button Container -->
+                                        <div style="display: flex; justify-content: center; margin-top: 1.5em;">
+                                            <stripe-buy-button
+                                            buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
+                                            publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                                            >
+                                            </stripe-buy-button>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
 
                             <!-- Product 2 -->
-							<article>
-                                <!-- Placeholder Icon -->
-                                <span class="icon solid fa-tag major"></span>
-								
-								<h3 class="major">Second Product</h3>
-								<p>Description of the second item. Exclusive merchandise.</p>
+                            <div class="col-6 col-12-medium">
+                                <section class="box">
+                                    <div class="align-center">
+                                        <span class="icon solid major fa-tshirt"></span>
+                                        <h3>Second Product</h3>
+                                        <p>Description of the second item. High quality material.</p>
+                                        
+                                        <div style="display: flex; justify-content: center; margin-top: 1.5em;">
+                                            <stripe-buy-button
+                                            buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
+                                            publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                                            >
+                                            </stripe-buy-button>
+                                        </div>
+                                    </div>
+                                </section>
+                            </div>
 
-                                <!-- Stripe Button 2 -->
-                                <stripe-buy-button
-                                  buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
-                                  publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
-                                >
-                                </stripe-buy-button>
-							</article>
-
-						</section>
+                        </div> 
+                        <!-- End Row -->
 
 					</div>
 				</div>
@@ -167,29 +151,10 @@
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
         
-        <!-- Page specific scripts (copied from your index.html) -->
 		<script>
 		  window.onbeforeunload = function () {
 		    window.scrollTo(0, 0);
 		  };
-		</script>
-		<script>
-		  document.addEventListener('DOMContentLoaded', () => {
-		    const observer = new IntersectionObserver((entries) => {
-		      entries.forEach(entry => {
-		        if (entry.isIntersecting) {
-		          entry.target.classList.add('active');
-		        } else {
-		          entry.target.classList.remove('active');
-		        }
-		      });
-		    }, {
-		      threshold: 0.1,                
-		      rootMargin: '0px 0px -10% 0px'   
-		    });
-		
-		    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-		  });
 		</script>
 
 	</body>

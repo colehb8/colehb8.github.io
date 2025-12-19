@@ -15,57 +15,73 @@
 		<!-- Stripe Script -->
 		<script async src="https://js.stripe.com/v3/buy-button.js"></script>
 
-        <!-- Custom Shop Sizing Fixes -->
+        <!-- Elegant Shop Styles -->
         <style>
-            /* Make the spotlight sections more compact for products 
-               (Overrides the default theme big sizing)
+            /* Grid Container
+               - Uses Flexbox for a clean, responsive layout
+               - Centers items horizontally
+               - Adds consistent gap between cards
             */
-            .shop-spotlight {
-                padding: 3em 0 !important; /* Reduced from the standard 6em+ */
+            .shop-grid {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 3rem; /* Generous breathing room */
+                margin-top: 2rem;
             }
 
-            /* Make the image circle smaller */
-            .shop-spotlight .image {
-                width: 15em !important; /* Reduced from 22em */
-                margin-right: 3em;      /* Keep gap between image and text */
-                flex: 0 0 auto;         /* Stop image from squishing */
-            }
-
-            /* Remove extra bottom margin from image container */
-            .shop-spotlight .image img {
-                margin-bottom: 0;
-            }
-
-            /* Tighten up the content side */
-            .shop-spotlight .content {
+            /* Product Card 
+               - Minimalist semi-transparent background
+               - Subtle border
+               - consistent width
+            */
+            .product-card {
+                background: rgba(255, 255, 255, 0.03); /* Very subtle background */
+                border: 1px solid rgba(255, 255, 255, 0.1);
+                padding: 2.5rem;
+                width: 380px;
+                max-width: 100%;
+                border-radius: 4px;
+                text-align: center;
+                transition: all 0.3s ease;
                 display: flex;
                 flex-direction: column;
-                justify-content: center;
-                /* If you want the button aligned left with title, keep this. 
-                   If you want centered, add 'align-items: center;' and 'text-align: center;' */
-                align-items: flex-start; 
+                align-items: center;
             }
 
-            /* Bring the button closer to the title */
-            .shop-spotlight h2 {
-                margin-bottom: 0.5em !important;
-                border-bottom: none !important; /* Remove line since no text follows */
-                padding-bottom: 0 !important;
+            /* Subtle hover effect for interactivity */
+            .product-card:hover {
+                border-color: rgba(255, 255, 255, 0.3);
+                background: rgba(255, 255, 255, 0.06);
+                transform: translateY(-5px);
             }
 
-            /* Mobile adjustments */
-            @media screen and (max-width: 736px) {
-                .shop-spotlight {
-                    padding: 2em 1.5em !important;
-                }
-                .shop-spotlight .image {
-                    width: 12em !important;
-                    margin: 0 auto 1.5em auto !important; /* Center image on mobile */
-                }
-                .shop-spotlight .content {
-                    align-items: center; /* Center text/button on mobile */
-                    text-align: center;
-                }
+            /* Image Styling */
+            .product-image {
+                width: 100%;
+                height: 300px; /* Fixed height for consistency */
+                object-fit: cover;
+                margin-bottom: 1.5rem;
+                border-radius: 2px;
+                background-color: rgba(0,0,0,0.2); /* Fallback for transparent imgs */
+            }
+
+            /* Title Styling */
+            .product-card h3 {
+                font-size: 1.3rem;
+                letter-spacing: 0.1em;
+                text-transform: uppercase;
+                margin-bottom: 1.5rem;
+                font-weight: 600;
+                color: #ffffff;
+                border-bottom: 1px solid rgba(255,255,255,0.1); /* Subtle divider */
+                padding-bottom: 1rem;
+                width: 100%;
+            }
+
+            /* Button Container */
+            .stripe-container {
+                margin-top: auto; /* Pushes button to bottom if heights vary */
             }
         </style>
 	</head>
@@ -119,47 +135,52 @@
 					</div>
 				</header>
 
-                <!-- 
-                   PRODUCT 1 
-                   Added 'shop-spotlight' class for better sizing
-                -->
-                <section class="wrapper spotlight style1 shop-spotlight">
+                <!-- Content Area -->
+                <div class="wrapper">
                     <div class="inner">
-                        <div class="image">
-                            <!-- Placeholder image -->
-                            <img src="https://placehold.co/500x500/2e3448/FFF?text=Product+1" alt="First Product" />
-                        </div>
-                        <div class="content">
-                            <h2 class="major">First Product</h2>
-                            <stripe-buy-button
-                                buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
-                                publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
-                            >
-                            </stripe-buy-button>
-                        </div>
-                    </div>
-                </section>
+                        
+                        <div class="shop-grid">
 
-                <!-- 
-                   PRODUCT 2
-                   Added 'shop-spotlight' class for better sizing
-                -->
-                <section class="wrapper alt spotlight style2 shop-spotlight">
-                    <div class="inner">
-                        <div class="image">
-                             <!-- Placeholder image -->
-                            <img src="https://placehold.co/500x500/3f4a66/FFF?text=Product+2" alt="Second Product" />
+                            <!-- Product 1 -->
+                            <article class="product-card">
+                                <!-- Image -->
+                                <img src="https://placehold.co/400x300/2e3448/FFF?text=Product+1" alt="First Product" class="product-image" />
+                                
+                                <!-- Title -->
+                                <h3>First Product</h3>
+                                
+                                <!-- Button -->
+                                <div class="stripe-container">
+                                    <stripe-buy-button
+                                        buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
+                                        publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                                    >
+                                    </stripe-buy-button>
+                                </div>
+                            </article>
+
+                            <!-- Product 2 -->
+                            <article class="product-card">
+                                <!-- Image -->
+                                <img src="https://placehold.co/400x300/3f4a66/FFF?text=Product+2" alt="Second Product" class="product-image" />
+                                
+                                <!-- Title -->
+                                <h3>Second Product</h3>
+                                
+                                <!-- Button -->
+                                <div class="stripe-container">
+                                    <stripe-buy-button
+                                        buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
+                                        publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                                    >
+                                    </stripe-buy-button>
+                                </div>
+                            </article>
+
                         </div>
-                        <div class="content">
-                            <h2 class="major">Second Product</h2>
-                            <stripe-buy-button
-                                buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
-                                publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
-                            >
-                            </stripe-buy-button>
-                        </div>
+
                     </div>
-                </section>
+                </div>
 
 			</section>
 

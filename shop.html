@@ -14,6 +14,60 @@
 
 		<!-- Stripe Script -->
 		<script async src="https://js.stripe.com/v3/buy-button.js"></script>
+
+        <!-- Custom Shop Sizing Fixes -->
+        <style>
+            /* Make the spotlight sections more compact for products 
+               (Overrides the default theme big sizing)
+            */
+            .shop-spotlight {
+                padding: 3em 0 !important; /* Reduced from the standard 6em+ */
+            }
+
+            /* Make the image circle smaller */
+            .shop-spotlight .image {
+                width: 15em !important; /* Reduced from 22em */
+                margin-right: 3em;      /* Keep gap between image and text */
+                flex: 0 0 auto;         /* Stop image from squishing */
+            }
+
+            /* Remove extra bottom margin from image container */
+            .shop-spotlight .image img {
+                margin-bottom: 0;
+            }
+
+            /* Tighten up the content side */
+            .shop-spotlight .content {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                /* If you want the button aligned left with title, keep this. 
+                   If you want centered, add 'align-items: center;' and 'text-align: center;' */
+                align-items: flex-start; 
+            }
+
+            /* Bring the button closer to the title */
+            .shop-spotlight h2 {
+                margin-bottom: 0.5em !important;
+                border-bottom: none !important; /* Remove line since no text follows */
+                padding-bottom: 0 !important;
+            }
+
+            /* Mobile adjustments */
+            @media screen and (max-width: 736px) {
+                .shop-spotlight {
+                    padding: 2em 1.5em !important;
+                }
+                .shop-spotlight .image {
+                    width: 12em !important;
+                    margin: 0 auto 1.5em auto !important; /* Center image on mobile */
+                }
+                .shop-spotlight .content {
+                    align-items: center; /* Center text/button on mobile */
+                    text-align: center;
+                }
+            }
+        </style>
 	</head>
 
 	<body class="is-preload">
@@ -66,20 +120,17 @@
 				</header>
 
                 <!-- 
-                   PRODUCT 1: SPOTLIGHT STYLE 1 
-                   (Image Left, Button Right, Dark Background)
+                   PRODUCT 1 
+                   Added 'shop-spotlight' class for better sizing
                 -->
-                <section class="wrapper spotlight style1">
+                <section class="wrapper spotlight style1 shop-spotlight">
                     <div class="inner">
                         <div class="image">
-                            <!-- Placeholder image - Replace 'src' with your actual product image -->
+                            <!-- Placeholder image -->
                             <img src="https://placehold.co/500x500/2e3448/FFF?text=Product+1" alt="First Product" />
                         </div>
                         <div class="content">
                             <h2 class="major">First Product</h2>
-                            <!-- Description removed as requested -->
-                            
-                            <!-- Stripe Button -->
                             <stripe-buy-button
                                 buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
                                 publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
@@ -90,20 +141,17 @@
                 </section>
 
                 <!-- 
-                   PRODUCT 2: SPOTLIGHT STYLE 2 (ALT)
-                   (Image Right, Button Left, Lighter Background)
+                   PRODUCT 2
+                   Added 'shop-spotlight' class for better sizing
                 -->
-                <section class="wrapper alt spotlight style2">
+                <section class="wrapper alt spotlight style2 shop-spotlight">
                     <div class="inner">
                         <div class="image">
-                             <!-- Placeholder image - Replace 'src' with your actual product image -->
+                             <!-- Placeholder image -->
                             <img src="https://placehold.co/500x500/3f4a66/FFF?text=Product+2" alt="Second Product" />
                         </div>
                         <div class="content">
                             <h2 class="major">Second Product</h2>
-                            <!-- Description removed as requested -->
-                            
-                            <!-- Stripe Button -->
                             <stripe-buy-button
                                 buy-button-id="buy_btn_1Sg70NKBxYgILZ4hLb7hv3Zm"
                                 publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"

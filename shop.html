@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop Our Products</title>
+    <!-- Tailwind CSS for styling (You can use your own CSS instead) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Stripe Script: This only needs to be included once per page -->
+    <script async src="https://js.stripe.com/v3/buy-button.js"></script>
+</head>
+<body class="font-sans text-gray-900 antialiased bg-gray-50">
+
+    <!-- Navigation Placeholder -->
+    <nav class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-xl font-bold text-indigo-600">MyBrand</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="index.html" class="text-gray-500 hover:text-gray-900">Home</a>
+                    <a href="#" class="text-gray-900 font-medium">Shop</a>
+                    <a href="contact.html" class="text-gray-500 hover:text-gray-900">Contact</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white">
+        <div class="max-w-7xl mx-auto py-16 px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl font-extrabold text-gray-900">Shop Our Collection</h1>
+            <p class="mt-4 text-xl text-gray-500">Secure checkout powered by Stripe.</p>
+        </div>
+    </header>
+
+    <!-- Product Grid -->
+    <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+        <!-- 
+           Grid Layout: 
+           - 1 column on mobile (grid-cols-1)
+           - 2 columns on tablet (md:grid-cols-2)
+           - 3 columns on desktop (lg:grid-cols-3)
+        -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- PRODUCT 1 -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 border border-gray-100 transition hover:shadow-xl">
+                <!-- You can add your own product image here if the Stripe button doesn't show one nicely enough -->
+                <!-- <img src="product1.jpg" alt="Product Name" class="h-48 w-full object-cover mb-4 rounded"> -->
+                
+                <h2 class="text-lg font-bold mb-2">My Awesome Product</h2>
+                <p class="text-gray-600 text-sm mb-6 text-center">Description of the item goes here. Great quality!</p>
+                
+                <!-- PASTE STRIPE CODE FOR PRODUCT 1 HERE -->
+                <stripe-buy-button
+                  buy-button-id="buy_btn_1Sg6asKBxYgILZ4hShOpkONQ"
+                  publishable-key="pk_test_51Sc9G7KBxYgILZ4hCAUcjVNR5g1VeRJ8BWSI0fU4NbZ0x3nZPr5HAxWbmFnL4C0mmt3LrYGYAr93UUUIxRpXKwBz00idXoXoBw"
+                >
+                </stripe-buy-button>
+            </div>
+
+            <!-- PRODUCT 2 (Placeholder) -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 border border-gray-100 transition hover:shadow-xl">
+                <h2 class="text-lg font-bold mb-2">Another Product</h2>
+                <p class="text-gray-600 text-sm mb-6 text-center">Description for the second item.</p>
+                
+                <!-- EXAMPLE: You would generate a NEW button in Stripe and paste it here -->
+                <div class="p-4 bg-gray-100 rounded text-center w-full">
+                    <p class="text-gray-400 text-sm italic">Generate a new button in Stripe Dashboard and paste here</p>
+                </div>
+            </div>
+
+            <!-- PRODUCT 3 (Placeholder) -->
+            <div class="bg-white rounded-lg shadow-lg overflow-hidden flex flex-col items-center p-6 border border-gray-100 transition hover:shadow-xl">
+                <h2 class="text-lg font-bold mb-2">Third Product</h2>
+                <p class="text-gray-600 text-sm mb-6 text-center">Description for the third item.</p>
+                
+                <div class="p-4 bg-gray-100 rounded text-center w-full">
+                    <p class="text-gray-400 text-sm italic">Generate a new button in Stripe Dashboard and paste here</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <p>&copy; 2025 MyBrand. All rights reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

@@ -108,20 +108,8 @@
       </div>
     </header>
 
-	<!-- Menu -->
-			<nav id="menu">
-			  <div class="inner">
-			    <h2>Menu</h2>
-			    <ul class="links">
-			      <li><a href="index.html">Home</a></li>
-			      <li><a href="coaching-plans.html">Coaching Plans</a></li>
-			      <li><a href="posing-packages.html">Posing Packages</a></li>
-			      <li><a href="about-us.html">About Us</a></li>
-			      <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfviMkP3zRk7azxwsqgI-NEFWzfAqnctnfuO0jlGmp7IhY5Og/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
-			    </ul>
-			    <a href="#" class="close">Close</a>
-			  </div>
-			</nav>
+    <!-- Menu (Dynamically loaded via JavaScript) -->
+    <nav id="menu"></nav>
 
     <!-- Top Anchor -->
     <div id="top" class="anchor-offset"></div>
@@ -134,16 +122,16 @@
         </div>
         <div class="content">
           <h2 class="major">Premium Coaching Plan</h2>
-			<ul class="plan-pricing">
-		  <li><strong>$200 (Initial)</strong>, $200 (every four weeks)</li>
-		</ul>
+          <ul class="plan-pricing">
+            <li><strong>$200 (Initial)</strong>, $200 (every four weeks)</li>
+          </ul>
           <ul class="plan-features">
             <li>Fully individualized training program, designed specifically for your goals and the equipment within your gym</li>
             <li>Bi-weekly one-on-one video call for progress review and live-check-in</li>
             <li>Nutritional recommendations based on current literature, your goals, and performance optimization</li>
             <li>Form & technique analysis via video submission with audio and/or message feedback</li>
             <li>24/7 messaging for real-time support & questions</li>
-      	    <li>Posing coaching for mandatory poses for both your organization and division via messages with audio and/or message feedback</li>
+            <li>Posing coaching for mandatory poses for both your organization and division via messages with audio and/or message feedback</li>
             <li>Recommendations for individualized competition prep strategies and peaking protocols</li>
           </ul>
         </div>
@@ -158,16 +146,16 @@
         </div>
         <div class="content">
           <h2 class="major">Standard Coaching Plan</h2>
-			<ul class="plan-pricing">
-			  <li><b>$150 (Initial)</b>, $100 (every four weeks)</li>
-			  <li class="note">* If customizing to a unique gym, added $50 per new 12-week program</li>
-			</ul>
+          <ul class="plan-pricing">
+            <li><b>$150 (Initial)</b>, $100 (every four weeks)</li>
+            <li class="note">* If customizing to a unique gym, added $50 per new 12-week program</li>
+          </ul>
           <ul class="plan-features">
             <li>Individualized training program, created specifically for your goals</li>
             <li>Personalized caloric intake and macronutrient recommendations</li>
             <li>24/7 messaging for real-time support & questions</li>
             <li>Exercise form assistance through visual and/or audio feedback</li>
-		    <li>Bi-weekly virtual check-in, assessing progress, adherance, questions, etc.</li>
+            <li>Bi-weekly virtual check-in, assessing progress, adherence, questions, etc.</li>
             <li>Bi-monthly 45-minute analysis of your program progress with tailored next-step recommendations</li>
           </ul>
         </div>
@@ -215,6 +203,28 @@
         rootMargin: '0px 0px -10% 0px'
       });
       document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    });
+  </script>
+
+  <!-- Shared Menu Loader Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                const menuEl = document.getElementById('menu');
+                if (menuEl) {
+                    menuEl.innerHTML = data;
+                    
+                    // Re-initialize template menu toggle logic
+                    if (window.initMenu) {
+                        window.initMenu();
+                    } else if (typeof $ !== 'undefined' && $.fn.scrollex) {
+                        $(window).trigger('resize');
+                    }
+                }
+            })
+            .catch(error => console.error('Error loading the shared menu:', error));
     });
   </script>
 </body>

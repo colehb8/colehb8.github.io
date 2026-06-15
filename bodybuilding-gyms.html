@@ -5,7 +5,6 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 
-		<!-- Favicon -->
 		<link rel="icon" type="image/png" href="images/favicon-64x64.png" />
 
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -34,36 +33,43 @@
 				margin: 0 !important;
 			}
 
+			/* The Cropping Container: Hides everything shifted outside its borders */
 			.notion-wrapper {
 				width: 100%;
 				margin: 0 !important;
 				padding: 0 !important;
 				background: #15151f;
-				overflow: hidden;
+				overflow: hidden; 
+				position: relative;
+				height: calc(100vh - 4em); /* Locks container to remaining screen height */
 			}
 
-			/* Calculate dynamic height: 100% viewport height minus the exact height of your navigation header banner */
+			/* Shifting the iframe up to crop out the 'Get Notion Free' toolbar */
 			iframe {
 				width: 100%;
-				height: calc(100vh - 4em); 
+				position: absolute;
+				top: -42px; /* Shifts the iframe up by 42px to completely hide the utility bar */
+				height: calc(100vh - 4em + 42px); /* Extends height to account for the shift */
 				border: none;
 				display: block;
 			}
 
-			/* Header height adjustment checkpoint for smaller screen viewports */
+			/* Layout check for mobile screens */
 			@media screen and (max-width: 736px) {
-				iframe {
+				.notion-wrapper {
 					height: calc(100vh - 3.5em);
+				}
+				iframe {
+					top: -42px;
+					height: calc(100vh - 3.5em + 42px);
 				}
 			}
 		</style>
 	</head>
 
 	<body class="is-preload">
-		<!-- Page Wrapper -->
 		<div id="page-wrapper">
 
-			<!-- Header Banner (Kept perfectly intact) -->
 			<header id="header">
 				<div class="header-container">
 					<div class="logo-container">
@@ -80,7 +86,6 @@
 				</div>
 			</header>
 			
-			<!-- Slide-out Menu (Kept perfectly intact) -->
 			<nav id="menu">
 				<div class="inner">
 					<h2>Menu</h2>
@@ -95,11 +100,9 @@
 				</div>
 			</nav>
 
-			<!-- Full-Page Interactive Database Section -->
 			<section id="wrapper">
 				<section class="wrapper style1 notion-embed-section">
 					<div class="inner">
-						<!-- Dynamic Full-Window Container -->
 						<div class="notion-wrapper">
 							<iframe src="https://glacier-tennis-15c.notion.site/ebd//37aae52e4dd580a28a74edeef9512b14" allowfullscreen></iframe>
 						</div>
@@ -109,7 +112,6 @@
 
 		</div>
 
-		<!-- Scripts for Navigation Assets -->
 		<script src="assets/js/jquery.min.js"></script>
 		<script src="assets/js/jquery.scrollex.min.js"></script>
 		<script src="assets/js/browser.min.js"></script>

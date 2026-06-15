@@ -15,33 +15,43 @@
 			/* Custom tweaks to make the dynamic database embed fill the screen flawlessly */
 			.notion-embed-section {
 				width: 100%;
-				padding: 4em 2em; /* Gives breathing room matching your theme padding */
+				padding: 3em 0 0 0; /* Minimal top padding for breathing room; sides and bottom are flush */
 				background: #1f1f2e; /* Matches your dark section template theme */
+			}
+
+			/* Removed the max-width and center padding constraints so the index spans edge-to-edge */
+			.notion-embed-section .inner {
+				max-width: 100% !important;
+				width: 100% !important;
+				padding: 0 !important;
+			}
+
+			.notion-embed-section p, 
+			.notion-embed-section h2 {
+				padding-left: 2rem;
+				padding-right: 2rem;
 			}
 
 			.notion-wrapper {
 				width: 100%;
-				max-width: 1400px;
-				margin: 0 auto;
+				margin: 2em 0 0 0; /* Clear separation from the introductory paragraph */
 				background: #15151f; /* Adjusted to dark slate to match premium dark styling */
-				border-radius: 8px;
 				overflow: hidden;
-				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 			}
 
 			iframe {
 				width: 100%;
-				height: 80vh; /* Fills 80% of the screen height dynamically */
+				height: 85vh; /* Extends dynamically to fill 85% of the viewport height */
 				border: none;
 				display: block;
 			}
 
 			@media screen and (max-width: 736px) {
 				.notion-embed-section {
-					padding: 2em 0.5em; /* Tighter padding for mobile screens */
+					padding: 2em 0 0 0;
 				}
 				iframe {
-					height: 85vh; /* Gives mobile users slightly more vertical scrolling area */
+					height: 90vh; /* Maximizes vertical workspace scrolling space for mobile viewports */
 				}
 			}
 		</style>
@@ -92,8 +102,7 @@
 						
 						<!-- Live Notion Database Container -->
 						<div class="notion-wrapper">
-							<!-- Live Notion Database Container -->
-<iframe src="https://glacier-tennis-15c.notion.site/ebd//37aae52e4dd580a28a74edeef9512b14" width="100%" height="600" frameborder="0" allowfullscreen />
+							<iframe src="https://glacier-tennis-15c.notion.site/ebd//37aae52e4dd580a28a74edeef9512b14" allowfullscreen></iframe>
 						</div>
 					</div>
 				</section>

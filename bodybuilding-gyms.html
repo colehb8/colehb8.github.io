@@ -11,60 +11,54 @@
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
 		<style>
-			/* Reset html and body to prevent unwanted scrollbars on the main page wrapper */
-			html, body, #page-wrapper {
-				height: 100%;
-				overflow: hidden;
-				background: #1f1f2e;
-			}
+    /* Reset html and body to prevent unwanted scrollbars on the main page wrapper */
+    html, body, #page-wrapper {
+        height: 100%;
+        overflow: hidden !important;
+        background: #1f1f2e;
+    }
 
-			/* Make the embedding section drop all padding so it is perfectly flush */
-			.notion-embed-section {
-				width: 100%;
-				padding: 0 !important;
-				margin: 0 !important;
-				background: #1f1f2e;
-			}
+    /* Make the embedding section drop all padding so it is perfectly flush */
+    .notion-embed-section {
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: #1f1f2e;
+    }
 
-			.notion-embed-section .inner {
-				max-width: 100% !important;
-				width: 100% !important;
-				padding: 0 !important;
-				margin: 0 !important;
-			}
+    .notion-embed-section .inner {
+        max-width: 100% !important;
+        width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
 
-			/* The Cropping Container: Hides everything shifted outside its borders */
-			.notion-wrapper {
-				width: 100%;
-				margin: 0 !important;
-				padding: 0 !important;
-				background: #15151f;
-				overflow: hidden; 
-				position: relative;
-				height: calc(100vh - 4em); /* Locks container to remaining screen height */
-			}
+    /* The Cropping Container: Shifted UP by 45px to hide the top bar */
+    .notion-wrapper {
+        width: 100% !important;
+        margin-top: -45px !important; /* Forces the entire block upward, hiding the top bar behind the banner */
+        padding: 0 !important;
+        background: #15151f;
+        overflow: hidden !important; 
+        height: calc(100vh - 4em + 45px) !important; /* Extends height to account for the shift */
+    }
 
-			/* Shifting the iframe up to crop out the 'Get Notion Free' toolbar */
-			iframe {
-				width: 100%;
-				position: absolute;
-				top: -42px; /* Shifts the iframe up by 42px to completely hide the utility bar */
-				height: calc(100vh - 4em + 42px); /* Extends height to account for the shift */
-				border: none;
-				display: block;
-			}
+    /* Force the iframe to fill the adjusted wrapper space completely */
+    iframe {
+        width: 100% !important;
+        height: 100% !important;
+        border: none !important;
+        display: block !important;
+    }
 
-			/* Layout check for mobile screens */
-			@media screen and (max-width: 736px) {
-				.notion-wrapper {
-					height: calc(100vh - 3.5em);
-				}
-				iframe {
-					top: -42px;
-					height: calc(100vh - 3.5em + 42px);
-				}
-			}
-		</style>
+    /* Layout check for mobile screens */
+    @media screen and (max-width: 736px) {
+        .notion-wrapper {
+            margin-top: -45px !important;
+            height: calc(100vh - 3.5em + 45px) !important;
+        }
+    }
+</style>
 	</head>
 
 	<body class="is-preload">

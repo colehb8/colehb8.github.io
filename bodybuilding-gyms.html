@@ -80,19 +80,8 @@
 				</div>
 			</header>
 			
-			<nav id="menu">
-				<div class="inner">
-					<h2>Menu</h2>
-					<ul class="links">
-						<li><a href="index.html">Home</a></li>
-						<li><a href="coaching-plans.html">Coaching Plans</a></li>
-						<li><a href="posing-packages.html">Posing Packages</a></li>
-						<li><a href="about-us.html">About Us</a></li>
-						<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfviMkP3zRk7azxwsqgI-NEFWzfAqnctnfuO0jlGmp7IhY5Og/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
-					</ul>
-					<a href="#" class="close">Close</a>
-				</div>
-			</nav>
+			<!-- Menu (Dynamically loaded via JavaScript) -->
+<nav id="menu"></nav>
 
 			<section id="wrapper">
 				<section class="wrapper style1 notion-embed-section">
@@ -112,6 +101,26 @@
 		<script src="assets/js/breakpoints.min.js"></script>
 		<script src="assets/js/util.js"></script>
 		<script src="assets/js/main.js"></script>
-
+<!-- Shared Menu Loader Script -->
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('menu.html')
+            .then(response => response.text())
+            .then(data => {
+                const menuEl = document.getElementById('menu');
+                if (menuEl) {
+                    menuEl.innerHTML = data;
+                    
+                    // Re-initialize template menu toggle logic
+                    if (window.initMenu) {
+                        window.initMenu();
+                    } else if (typeof $ !== 'undefined' && $.fn.scrollex) {
+                        $(window).trigger('resize');
+                    }
+                }
+            })
+            .catch(error => console.error('Error loading the shared menu:', error));
+    });
+</script>
 	</body>
 </html>

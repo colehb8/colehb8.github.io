@@ -1,7 +1,131 @@
-<div class="notion-container" style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 20px 10px;">
-  <iframe 
-    src="https://glacier-tennis-15c.notion.site/STA-Bodybuilding-Gyms-37aae52e4dd580a28a74edeef9512b14" 
-    style="width: 100%; height: 85vh; border: 1px solid #e2e8f0; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);" 
-    allowfullscreen>
-  </iframe>
-</div>
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>Bodybuilding Gyms | Set To Adapt</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+		<!-- Favicon -->
+		<link rel="icon" type="image/png" href="images/favicon-64x64.png" />
+
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			/* Custom tweaks to make the dynamic database embed fill the screen flawlessly */
+			.notion-embed-section {
+				width: 100%;
+				padding: 4em 2em; /* Gives breathing room matching your theme padding */
+				background: #1f1f2e; /* Matches your dark section template theme */
+			}
+
+			.notion-wrapper {
+				width: 100%;
+				max-width: 1400px;
+				margin: 0 auto;
+				background: #ffffff; /* Gives the white database crisp contrast */
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+			}
+
+			iframe {
+				width: 100%;
+				height: 80vh; /* Fills 80% of the screen height dynamically */
+				border: none;
+				display: block;
+			}
+
+			@media screen and (max-width: 736px) {
+				.notion-embed-section {
+					padding: 2em 0.5em; /* Tighter padding for mobile screens */
+				}
+				iframe {
+					height: 85vh; /* Gives mobile users slightly more vertical scrolling area */
+				}
+			}
+		</style>
+	</head>
+
+	<body class="is-preload">
+		<!-- Page Wrapper -->
+		<div id="page-wrapper">
+
+			<!-- Header (Keeps your exact branding & structural alignment) -->
+			<header id="header">
+				<div class="header-container">
+					<div class="logo-container">
+						<a href="index.html">
+							<img src="images/logo.transparent.png" alt="SetToAdapt Logo">
+						</a>
+					</div>
+					<div class="title-container">
+						<span class="site-title"><b>SET TO ADAPT</b></span>
+					</div>
+					<nav>
+						<a href="#menu">Menu</a>
+					</nav>
+				</div>
+			</header>
+			
+			<!-- Menu (Kept perfectly identical so navigation never breaks) -->
+			<nav id="menu">
+				<div class="inner">
+					<h2>Menu</h2>
+					<ul class="links">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="coaching-plans.html">Coaching Plans</a></li>
+						<li><a href="posing-packages.html">Posing Packages</a></li>
+						<li><a href="about-us.html">About Us</a></li>
+						<li><a href="https://docs.google.com/forms/d/e/1FAIpQLSfviMkP3zRk7azxwsqgI-NEFWzfAqnctnfuO0jlGmp7IhY5Og/viewform?usp=header" target="_blank">Coaching Inquiry Form</a></li>
+					</ul>
+					<a href="#" class="close">Close</a>
+				</div>
+			</nav>
+
+			<!-- Core Interactive Content Section -->
+			<section id="wrapper">
+				<section class="wrapper style1 notion-embed-section">
+					<div class="inner">
+						<h2 class="major">STA Bodybuilding Gyms Index</h2>
+						<p>Explore our data-driven equipment profiles, biomechanical evaluations, and gym ratings. Use the filters and sorting features below to sort by equipment brands or specific training metrics.</p>
+						
+						<!-- Live Notion Database Container -->
+						<div class="notion-wrapper">
+							<iframe 
+								src="https://glacier-tennis-15c.notion.site/STA-Bodybuilding-Gyms-37aae52e4dd580a28a74edeef9512b14" 
+								allowfullscreen>
+							</iframe>
+						</div>
+					</div>
+				</section>
+			</section>
+
+			<!-- Footer (Maintains your clean contact layout and social paths) -->
+			<section id="footer">
+				<div class="inner">
+					<div class="contact-info">
+						<ul class="contact-info">
+							<li><i class="icon solid fa-envelope"></i> <a href="mailto:settoadapt@gmail.com">settoadapt@gmail.com</a></li>
+							<li><i class="icon brands fa-linkedin"></i> <a href="https://www.linkedin.com/in/cole-bhella/">LinkedIn</a></li>
+							<li><i class="icon brands fa-instagram"></i> <a href="https://www.instagram.com/set2adapt/">Instagram</a></li>
+						</ul>
+					</div>
+					<ul class="copyright">
+						<li>&copy; Set To Adapt. All rights reserved.</li>
+					</ul>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Script Assets (Ensures your slide-out navigation menu still opens/closes correctly) -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.scrollex.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
